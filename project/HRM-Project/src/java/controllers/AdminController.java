@@ -16,15 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping("/")
-public class CustomerController {
-    @RequestMapping(value="/customer_profile",method = RequestMethod.GET)
-    public String customer_profile(ModelMap modelMap) {
+public class AdminController {
+    @RequestMapping(value="/approve_company",method = RequestMethod.GET)
+    public String approve_company(ModelMap modelMap) {
         
-        return "customer_profile";
-    }
-    @RequestMapping(value="/customer_update_profile",method = RequestMethod.GET)
-    public String customer_update_profile(ModelMap modelMap) {
-        
-        return "customer_update_profile";
+        return "approve_company";
     }
 }

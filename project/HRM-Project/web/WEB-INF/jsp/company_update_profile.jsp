@@ -1,6 +1,6 @@
 <%-- 
-    Document   : company_profile
-    Created on : Aug 30, 2018, 2:30:21 PM
+    Document   : company_upadte_profile
+    Created on : Aug 31, 2018, 2:29:13 PM
     Author     : Gayathri
 --%>
 
@@ -631,7 +631,7 @@
                                                 </label>
                                             </div>
                                             <div>
-                                            <button type="submit" class="btn btn-gradient-primary mb-2">Submit</button>
+                                            <button type="submit" class="btn btn-gradient-primary mb-2">Update</button>
                                             </div>
                                         </form>
                                     </div>
@@ -680,4 +680,3 @@
 
     <!-- Mirrored from www.urbanui.com/gleam/pages/forms/basic_elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 07:45:13 GMT -->
 </html>
-

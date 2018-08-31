@@ -21,5 +21,10 @@ public class CompanyController {
     public String company_profile(ModelMap modelMap) {
         
         return "company_profile";
-    } 
+    }
+    @RequestMapping(value="/company_update_profile",method = RequestMethod.GET)
+    public String company_update_profile(ModelMap modelMap) {
+        
+        return "company_update_profile";
+    }
 }

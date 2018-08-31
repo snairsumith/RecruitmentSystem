@@ -1,40 +1,23 @@
 <%-- 
-    Document   : company_profile
-    Created on : Aug 30, 2018, 2:30:21 PM
+    Document   : approve_company
+    Created on : Aug 31, 2018, 2:47:55 PM
     Author     : Gayathri
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
 <!DOCTYPE html>
 <html lang="en">
 
 
-    <!-- Mirrored from www.urbanui.com/gleam/pages/forms/basic_elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 07:45:10 GMT -->
+    <!-- Mirrored from www.urbanui.com/gleam/pages/tables/basic-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 07:45:35 GMT -->
     <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Company Profile</title>
-        <!-- 
-        <link rel="stylesheet" href="../../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-        <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
-        <link rel="stylesheet" href="../../vendors/css/vendor.bundle.addons.css">
-        
-        <link rel="stylesheet" href="http://www.urbanui.com/">
-       
-        <link rel="stylesheet" href="../../css/style.css">
-        
-        <link rel="shortcut icon" href="../../images/favicon.png" />
-        --> 
-
-        <spring:url value="/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css" var="hrmCss" />
+       <spring:url value="/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css" var="hrmCss" />
         <spring:url value="/resources/vendors/css/vendor.bundle.base.css" var="hrmCss" />
         <spring:url value="/resources/vendors/css/vendor.bundle.addons.css" var="hrmCss" />
 
         <spring:url value="/resources/css/style.css" var="hrmCss" />
-        <link href="${hrmCss}" rel="stylesheet" />  
+        <link href="${hrmCss}" rel="stylesheet" />
     </head>
 
     <body>
@@ -324,21 +307,21 @@
                             </a>
                             <div class="collapse" id="forms">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="basic_elements.html">Form Elements</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="advanced_elements.html">Advanced Forms</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="validation.html">Validation</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="wizard.html">Wizard</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../forms/basic_elements.html">Form Elements</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../forms/advanced_elements.html">Advanced Forms</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../forms/validation.html">Validation</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../forms/wizard.html">Wizard</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="text_editor.html">
+                            <a class="nav-link" href="../forms/text_editor.html">
                                 <i class="mdi mdi-format-list-bulleted  menu-icon"></i>              
                                 <span class="menu-title">Text editors</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="code_editor.html">
+                            <a class="nav-link" href="../forms/code_editor.html">
                                 <i class="mdi mdi-code-braces menu-icon"></i>              
                                 <span class="menu-title">Code editors</span>
                                 <span class="badge badge-gradient-info badge-pill">6</span>
@@ -371,10 +354,10 @@
                             </a>
                             <div class="collapse" id="tables">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="../tables/basic-table.html">Basic table</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../tables/data-table.html">Data table</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../tables/js-grid.html">Js-grid</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../tables/sortable-table.html">Sortable table</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="basic-table.html">Basic table</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="data-table.html">Data table</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="js-grid.html">Js-grid</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="sortable-table.html">Sortable table</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -493,151 +476,54 @@
                     </ul>
                 </nav>
                 <!-- partial -->
-                <div class="main-panel">        
+                <div class="main-panel">
                     <div class="content-wrapper">
                         <div class="page-header">
                             <h3 class="page-title">
-                                Company Profille
+                                New Company Registered
                             </h3>
-
+                            
                         </div>
                         <div class="row">
-
-
-                            <div class="col-12 grid-margin">
+                            
+                            <div class="col-lg-12 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
+                                        
+                                        
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            Company
+                                                        </th>
+                                                        <th>
+                                                            Company Name
+                                                        </th>
+                                                        <th>
+                                                            Address
+                                                        </th>
+                                                        <th>
+                                                            Email
+                                                        </th>
+                                                        <th>
+                                                            Contact
+                                                        </th>
+                                                        <th>
+                                                            Profile
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
 
-                                        <form class="form-sample">
-                                            <p class="card-description">
-
-                                            </p>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Company ID</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Company Name</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Establishment Date</label>
-                                                        <div class="col-sm-9">
-                                                            <input class="form-control" placeholder="dd/mm/yyyy"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <p class="card-description">
-                                                Address
-                                            </p>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">City</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">State</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Country</label>
-                                                        <div class="col-sm-9">
-                                                            <select class="form-control">
-                                                                <option>America</option>
-                                                                <option>Italy</option>
-                                                                <option>Russia</option>
-                                                                <option>Britain</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Postcode</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Contact</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Secondary Contact</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 grid-margin stretch-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Company Website</h4>
-
-                                        <form class="form-inline">
-                                            <label class="sr-only" for="inlineFormInputName2">Name</label>
-                                            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe">
-
-                                            <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-                                            <div class="input-group mb-2 mr-sm-2">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">@</div>
-                                                </div>
-                                                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
-                                            </div>
-                                            <div class="form-check mx-sm-2">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" checked>
-
-                                                </label>
-                                            </div>
-                                            <div>
-                                            <button type="submit" class="btn btn-gradient-primary mb-2">Submit</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
+                            
                         </div>
                     </div>
                     <!-- content-wrapper ends -->
@@ -654,30 +540,16 @@
             </div>
             <!-- page-body-wrapper ends -->
         </div>
-        <!-- 
-        
-        <script src="../../js/off-canvas.js"></script>
-        <script src="../../js/hoverable-collapse.js"></script>
-        <script src="../../js/misc.js"></script>
-        <script src="../../js/settings.js"></script>
-        <script src="../../js/todolist.js"></script>
-        
-        
-        <script src="../../js/file-upload.js"></script>
-        <script src="../../js/iCheck.js"></script>
-        <script src="../../js/typeahead.js"></script>
-        <script src="../../js/select2.js"></script>
-        -->
-        <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="rationJS" />
-        <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="rationJS" />
-        <spring:url value="/resources/js/off-canvas.js" var="rationJS" />
-        <spring:url value="/resources/js/hoverable-collapse.js" var="rationJS" />
-        <spring:url value="/resources/js/misc.js" var="rationJS" />
-        <spring:url value="/resources/js/settings.js" var="rationJS" />
-        <spring:url value="/resources/js/todolist.js" var="rationJS" />
-    </body>
+    <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="rationJS" />
+    <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="rationJS" />
+    <spring:url value="/resources/js/off-canvas.js" var="rationJS" />
+    <spring:url value="/resources/js/hoverable-collapse.js" var="rationJS" />
+    <spring:url value="/resources/js/misc.js" var="rationJS" />
+    <spring:url value="/resources/js/settings.js" var="rationJS" />
+    <spring:url value="/resources/js/todolist.js" var="rationJS" />
+</body>
 
 
-    <!-- Mirrored from www.urbanui.com/gleam/pages/forms/basic_elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 07:45:13 GMT -->
+<!-- Mirrored from www.urbanui.com/gleam/pages/tables/basic-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 07:45:36 GMT -->
 </html>
 
