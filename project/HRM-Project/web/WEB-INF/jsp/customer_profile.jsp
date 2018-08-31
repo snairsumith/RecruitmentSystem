@@ -1,12 +1,11 @@
 <%-- 
-    Document   : company_profile
-    Created on : Aug 30, 2018, 2:30:21 PM
+    Document   : customer_profile
+    Created on : Aug 30, 2018, 9:22:47 PM
     Author     : Gayathri
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,25 +15,24 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Company Profile</title>
-        <!-- 
+        <title>Customer Profile</title>
+        <!--
         <link rel="stylesheet" href="../../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
         <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
         <link rel="stylesheet" href="../../vendors/css/vendor.bundle.addons.css">
         
         <link rel="stylesheet" href="http://www.urbanui.com/">
-       
+        
         <link rel="stylesheet" href="../../css/style.css">
         
         <link rel="shortcut icon" href="../../images/favicon.png" />
-        --> 
-
+        -->
         <spring:url value="/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css" var="hrmCss" />
         <spring:url value="/resources/vendors/css/vendor.bundle.base.css" var="hrmCss" />
         <spring:url value="/resources/vendors/css/vendor.bundle.addons.css" var="hrmCss" />
 
         <spring:url value="/resources/css/style.css" var="hrmCss" />
-        <link href="${hrmCss}" rel="stylesheet" />  
+        <link href="${hrmCss}" rel="stylesheet" />
     </head>
 
     <body>
@@ -497,25 +495,20 @@
                     <div class="content-wrapper">
                         <div class="page-header">
                             <h3 class="page-title">
-                                Company Profille
+                                Customer Profile
                             </h3>
-
+                            
                         </div>
                         <div class="row">
-
-
                             <div class="col-12 grid-margin">
                                 <div class="card">
                                     <div class="card-body">
-
+                                        <h4 class="card-title">Personal info</h4>
                                         <form class="form-sample">
-                                            <p class="card-description">
-
-                                            </p>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Company ID</label>
+                                                        <label class="col-sm-3 col-form-label">First Name</label>
                                                         <div class="col-sm-9">
                                                             <input type="text" class="form-control" />
                                                         </div>
@@ -523,7 +516,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Company Name</label>
+                                                        <label class="col-sm-3 col-form-label">Last Name</label>
                                                         <div class="col-sm-9">
                                                             <input type="text" class="form-control" />
                                                         </div>
@@ -531,20 +524,51 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Establishment Date</label>
+                                                        <label class="col-sm-3 col-form-label">Gender</label>
+                                                        <div class="col-sm-9">
+                                                            <select class="form-control">
+                                                                <option>Male</option>
+                                                                <option>Female</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Date of Birth</label>
                                                         <div class="col-sm-9">
                                                             <input class="form-control" placeholder="dd/mm/yyyy"/>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row">
 
+
+                                            </div>
                                             <p class="card-description">
                                                 Address
                                             </p>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Home</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">State</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
@@ -556,7 +580,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">State</label>
+                                                        <label class="col-sm-3 col-form-label">Postcode</label>
                                                         <div class="col-sm-9">
                                                             <input type="text" class="form-control" />
                                                         </div>
@@ -575,18 +599,8 @@
                                                                 <option>Britain</option>
                                                             </select>
                                                         </div>
-                                                    </div>
+                                                    </div>    
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Postcode</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Contact</label>
@@ -595,46 +609,133 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Secondary Contact</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Education And Qualification</h4>
+                                        
+                                        <form class="forms-sample">
+                                            <div class="form-group">
+                                                <label>Higher Qualification</label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Mark</label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>University</label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                            <div class="form-group row">
+
+                                                <div class="col-sm-4">
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked="">
+                                                            Fresher
+                                                            <i class="input-helper"></i></label>
                                                     </div>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
+                                                            Experienced
+                                                            <i class="input-helper"></i></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Year of Experience</label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Upload Documents</h4>
+                                        
+                                        <form class="forms-sample">
+                                            <div class="form-group">
+                                                <label>Photo</label>
+                                                <input type="file" name="img[]" class="file-upload-default">
+                                                <div class="input-group col-xs-12">
+                                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Photo">
+                                                    <span class="input-group-append">
+                                                        <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>CV</label>
+                                                <input type="file" name="img[]" class="file-upload-default">
+                                                <div class="input-group col-xs-12">
+                                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload CV">
+                                                    <span class="input-group-append">
+                                                        <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Mark List</label>
+                                                <input type="file" name="img[]" class="file-upload-default">
+                                                <div class="input-group col-xs-12">
+                                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Mark List">
+                                                    <span class="input-group-append">
+                                                        <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>ID Proof</label>
+                                                <input type="file" name="img[]" class="file-upload-default">
+                                                <div class="input-group col-xs-12">
+                                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload ID Proof">
+                                                    <span class="input-group-append">
+                                                        <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="col-12 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Company Website</h4>
-
+                                        <h4 class="card-title">Notification</h4>
                                         <form class="form-inline">
-                                            <label class="sr-only" for="inlineFormInputName2">Name</label>
-                                            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe">
-
-                                            <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-                                            <div class="input-group mb-2 mr-sm-2">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">@</div>
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input">
+                                                        Profile
+                                                        <i class="input-helper"></i></label>
                                                 </div>
-                                                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
-                                            </div>
-                                            <div class="form-check mx-sm-2">
-                                                <label class="form-check-label">
-                                                    <input type="checkbox" class="form-check-input" checked>
-
-                                                </label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input" checked="">
+                                                        Email
+                                                        <i class="input-helper"></i></label>
+                                                </div>
                                             </div>
                                             <button type="submit" class="btn btn-gradient-primary mb-2">Submit</button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
+
 
                         </div>
                     </div>
@@ -653,19 +754,20 @@
             <!-- page-body-wrapper ends -->
         </div>
         <!-- 
+        <script src="../../vendors/js/vendor.bundle.base.js"></script>
+        <script src="../../vendors/js/vendor.bundle.addons.js"></script>
         
         <script src="../../js/off-canvas.js"></script>
         <script src="../../js/hoverable-collapse.js"></script>
         <script src="../../js/misc.js"></script>
         <script src="../../js/settings.js"></script>
         <script src="../../js/todolist.js"></script>
-        
-        
+       
         <script src="../../js/file-upload.js"></script>
         <script src="../../js/iCheck.js"></script>
         <script src="../../js/typeahead.js"></script>
         <script src="../../js/select2.js"></script>
-        -->
+        <!-- End custom js for this page-->
         <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="rationJS" />
         <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="rationJS" />
         <spring:url value="/resources/js/off-canvas.js" var="rationJS" />
