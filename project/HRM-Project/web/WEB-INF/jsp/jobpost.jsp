@@ -507,7 +507,7 @@
 
 
 
-                            
+
 
                             <div class="col-12 grid-margin">
                                 <div class="card">
@@ -525,9 +525,15 @@
                                                     </div>
 
                                                 </div>
+                                                <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Job Name</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
 
                                             </div>
-                                             <p class="card-description">
+                                            <p class="card-description">
                                                 Location
                                             </p>
                                             <div class="row">
@@ -543,7 +549,13 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">State</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <select class="form-control">
+                                                                <option>Kerala</option>
+                                                                <option>TamilNadhu</option>
+                                                                <option>Karanadaka</option>
+                                                                <option>Delhi</option>
+                                                            </select> 
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -553,7 +565,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Country</label>
                                                         <div class="col-sm-9">
-                                                           <select class="form-control">
+                                                            <select class="form-control">
                                                                 <option>America</option>
                                                                 <option>Italy</option>
                                                                 <option>Russia</option>
@@ -594,7 +606,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Job Description</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>

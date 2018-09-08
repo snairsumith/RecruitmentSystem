@@ -32,4 +32,9 @@ public class CompanyController {
         
         return "jobpost";
     }
+    @RequestMapping(value="/send_exam_date",method = RequestMethod.GET)
+    public String send_exam_date(ModelMap modelMap) {
+        
+        return "send_exam_date";
+    }
 }
