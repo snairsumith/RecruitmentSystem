@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Gayathri
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("customer/")
 public class CustomerController {
     @RequestMapping(value="/customer_profile",method = RequestMethod.GET)
     public String customer_profile(ModelMap modelMap) {
