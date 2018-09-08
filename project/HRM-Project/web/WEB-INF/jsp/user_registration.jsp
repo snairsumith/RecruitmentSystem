@@ -38,13 +38,13 @@
                                 <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
                                 <form class="pt-3">
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username">
+                                        <input type="text" class="form-control form-control-lg" id="txtUserName" placeholder="Username">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                                        <input type="email" class="form-control form-control-lg" id="txtEmail" placeholder="Email">
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-control form-control-lg" id="exampleFormControlSelect2">
+                                        <select class="form-control form-control-lg" id="selCountry">
                                             <option>Country</option>
                                             <option>United States of America</option>
                                             <option>United Kingdom</option>
@@ -54,14 +54,14 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                                        <input type="password" class="form-control form-control-lg" id="txtPassword" placeholder="Password">
                                     </div>
                                     <div class="mb-4">
                                         <div class="form-check">
                                             <label class="form-check-label text-muted">
-                                                <input type="checkbox" class="form-check-input">
-                                                I agree to all Terms & Conditions
-                                            </label>
+                                                <input type="checkbox" class="form-check-input" id="chkAgree">
+                                                I agree to all Terms &amp; Conditions
+                                                <i class="input-helper"></i></label>
                                         </div>
                                     </div>
                                     <div class="mt-3">
@@ -95,7 +95,7 @@
         <spring:url value="/resources/js/misc.js" var="rationJS" />
         <spring:url value="/resources/js/settings.js" var="rationJS" />
         <spring:url value="/resources/js/todolist.js" var="rationJS" />
-  
+
         <script src="${rationJS}" var="rationJS" />
     </body>
 

@@ -510,7 +510,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">First Name</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtFirstName" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -518,7 +518,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Last Name</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtLastName" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -539,7 +539,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Date of Birth</label>
                                                         <div class="col-sm-9">
-                                                            <input class="form-control" placeholder="dd/mm/yyyy"/>
+                                                            <input class="form-control" placeholder="dd/mm/yyyy" id="txtDateofBirth"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -556,7 +556,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Home</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtAddress" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -564,7 +564,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">State</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtState"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -574,7 +574,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">City</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtCity"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -582,7 +582,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Postcode</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtPostCode" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -592,7 +592,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Country</label>
                                                         <div class="col-sm-9">
-                                                            <select class="form-control">
+                                                            <select class="form-control" id="selCountry">
                                                                 <option>America</option>
                                                                 <option>Italy</option>
                                                                 <option>Russia</option>
@@ -605,7 +605,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Contact</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtContact" />
                                                         </div>
                                                     </div>
                                                 </div>

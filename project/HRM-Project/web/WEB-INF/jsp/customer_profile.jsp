@@ -510,7 +510,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">First Name</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtFirstName"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -518,7 +518,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Last Name</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtLastName"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -528,7 +528,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Gender</label>
                                                         <div class="col-sm-9">
-                                                            <select class="form-control">
+                                                            <select class="form-control" id="radGender">
                                                                 <option>Male</option>
                                                                 <option>Female</option>
                                                             </select>
@@ -539,7 +539,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Date of Birth</label>
                                                         <div class="col-sm-9">
-                                                            <input class="form-control" placeholder="dd/mm/yyyy"/>
+                                                            <input class="form-control" placeholder="dd/mm/yyyy" id="txtDateofBirth"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -556,7 +556,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Home</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control"id="txtAddress" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -564,7 +564,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">State</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtState" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -574,7 +574,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">City</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtCity"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -582,7 +582,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Postcode</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtPostCode"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -592,7 +592,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Country</label>
                                                         <div class="col-sm-9">
-                                                            <select class="form-control">
+                                                            <select class="form-control" id="selCountry">
                                                                 <option>America</option>
                                                                 <option>Italy</option>
                                                                 <option>Russia</option>
@@ -605,7 +605,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Contact</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtContact"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -622,22 +622,22 @@
                                         <form class="forms-sample">
                                             <div class="form-group">
                                                 <label>Higher Qualification</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" id="txtEducationandQualification" />
                                             </div>
                                             <div class="form-group">
                                                 <label>Mark</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" id="txtMark"/>
                                             </div>
                                             <div class="form-group">
                                                 <label>University</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" id="txtUniversity"/>
                                             </div>
                                             <div class="form-group row">
 
                                                 <div class="col-sm-4">
                                                     <div class="form-check">
                                                         <label class="form-check-label">
-                                                            <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked="">
+                                                            <input type="radio" class="form-check-input" name="membershipRadios" id="radExperienced1" value="" checked="">
                                                             Fresher
                                                             <i class="input-helper"></i></label>
                                                     </div>
@@ -645,7 +645,7 @@
                                                 <div class="col-sm-5">
                                                     <div class="form-check">
                                                         <label class="form-check-label">
-                                                            <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
+                                                            <input type="radio" class="form-check-input" name="membershipRadios" id="radExperienced2" value="option2">
                                                             Experienced
                                                             <i class="input-helper"></i></label>
                                                     </div>
@@ -653,7 +653,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Year of Experience</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" id="txtYearofExperience"/>
                                             </div>
                                         </form>
                                     </div>
@@ -667,7 +667,7 @@
                                         <form class="forms-sample">
                                             <div class="form-group">
                                                 <label>Photo</label>
-                                                <input type="file" name="img[]" class="file-upload-default">
+                                                <input type="file" name="img[]" class="file-upload-default" id="Photo">
                                                 <div class="input-group col-xs-12">
                                                     <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Photo">
                                                     <span class="input-group-append">
@@ -677,7 +677,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>CV</label>
-                                                <input type="file" name="img[]" class="file-upload-default">
+                                                <input type="file" name="img[]" class="file-upload-default" id="CV">
                                                 <div class="input-group col-xs-12">
                                                     <input type="text" class="form-control file-upload-info" disabled placeholder="Upload CV">
                                                     <span class="input-group-append">
@@ -687,7 +687,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Mark List</label>
-                                                <input type="file" name="img[]" class="file-upload-default">
+                                                <input type="file" name="img[]" class="file-upload-default" id="MarkList">
                                                 <div class="input-group col-xs-12">
                                                     <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Mark List">
                                                     <span class="input-group-append">
@@ -697,7 +697,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>ID Proof</label>
-                                                <input type="file" name="img[]" class="file-upload-default">
+                                                <input type="file" name="img[]" class="file-upload-default" id="IdProof">
                                                 <div class="input-group col-xs-12">
                                                     <input type="text" class="form-control file-upload-info" disabled placeholder="Upload ID Proof">
                                                     <span class="input-group-append">
@@ -719,13 +719,13 @@
                                             <div class="form-group">
                                                 <div class="form-check">
                                                     <label class="form-check-label">
-                                                        <input type="checkbox" class="form-check-input">
+                                                        <input type="checkbox" class="form-check-input" id="chkProfile">
                                                         Profile
                                                         <i class="input-helper"></i></label>
                                                 </div>
                                                 <div class="form-check">
                                                     <label class="form-check-label">
-                                                        <input type="checkbox" class="form-check-input" checked="">
+                                                        <input type="checkbox" class="form-check-input" checked="" id="chkEmail">
                                                         Email
                                                         <i class="input-helper"></i></label>
                                                 </div>
