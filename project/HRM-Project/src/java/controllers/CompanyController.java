@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Gayathri
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("company/")
 public class CompanyController {
    @RequestMapping(value="/company_profile",method = RequestMethod.GET)
     public String company_profile(ModelMap modelMap) {
@@ -26,5 +26,10 @@ public class CompanyController {
     public String company_update_profile(ModelMap modelMap) {
         
         return "company_update_profile";
+    }
+     @RequestMapping(value="/jobpost",method = RequestMethod.GET)
+    public String jobpost(ModelMap modelMap) {
+        
+        return "jobpost";
     }
 }
