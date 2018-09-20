@@ -386,7 +386,7 @@
                 </div>
                 <!-- main-panel ends -->
             </div>
-            <!-- page-body-wrapper ends -->
+            <!-- ee-body-wrapper ends -->
         </div>
      
         <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="rationJS" />
