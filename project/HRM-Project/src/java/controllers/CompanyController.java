@@ -37,4 +37,27 @@ public class CompanyController {
         
         return "send_exam_date";
     }
+    
+   @RequestMapping(value="/company_view_appliedcustomer",method = RequestMethod.GET)
+    public String company_view_appliedcustomer(ModelMap modelMap) {
+        
+        return "company_view_appliedcustomer";
+    }
+    @RequestMapping(value="/Send_examlink",method = RequestMethod.GET)
+    public String Send_examlink(ModelMap modelMap) {
+        
+        return "Send_examlink";
+    }
+    @RequestMapping(value="/Rank_list",method = RequestMethod.GET)
+    public String Rank_list(ModelMap modelMap) {
+        
+        return "Rank_list";
+        
+    }
+    @RequestMapping(value="/Company_view_profile",method = RequestMethod.GET)
+    public String Company_view_profile(ModelMap modelMap) {
+        
+        return "Company_view_profile";
+        
+    }
 }

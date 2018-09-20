@@ -1,8 +1,9 @@
 <%-- 
-    Document   : send_exam_date
-    Created on : Sep 8, 2018, 1:59:07 PM
+    Document   : Send_examlink
+    Created on : Sep 20, 2018, 1:50:12 PM
     Author     : HP
 --%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -15,7 +16,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Gleam Admin</title>
+  <title>Send Exam link</title>
   
   <spring:url value="/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css" var="hrmCss" />
         <spring:url value="/resources/vendors/css/vendor.bundle.base.css" var="hrmCss" />
@@ -485,7 +486,7 @@
         <div class="content-wrapper">
           <div class="page-header">
             <h3 class="page-title">
-                Add Notification Date for Exam
+                Exam Link
             </h3>
         
           </div>
@@ -503,7 +504,7 @@
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Add The Details...</h4>
+                  <h4 class="card-title">Add Exam link...</h4>
                   
                   <form class="forms-sample">
                     <div class="form-group">
@@ -513,6 +514,10 @@
                     <div class="form-group">
                       <label for="exampleInputName1">Exam Name</label>
                       <input type="text" class="form-control" id="exampleInputName1" placeholder="Exam Name">
+                    </div>
+                      <div class="form-group">
+                      <label for="exampleInputName1">Exam Link</label>
+                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Time of exam">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputName1">Date of exam</label>
@@ -525,10 +530,10 @@
                     
                     
                     <div class="form-group">
-                      <label for="exampleTextarea1">Remarks</label>
+                      <label for="exampleTextarea1">Instructions</label>
                       <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Send</button>
                     <button class="btn btn-light">Cancel</button>
                   </form>
                 </div>
@@ -567,4 +572,5 @@
 
 <!-- Mirrored from www.urbanui.com/gleam/pages/forms/basic_elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 07:45:13 GMT -->
 </html>
+
 

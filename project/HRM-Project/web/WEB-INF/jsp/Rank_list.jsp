@@ -1,8 +1,9 @@
 <%-- 
-    Document   : jobpost
-    Created on : Aug 31, 2018, 1:20:51 PM
+    Document   : Rank_list
+    Created on : Sep 20, 2018, 2:35:27 PM
     Author     : HP
 --%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -10,25 +11,14 @@
 <html lang="en">
 
 
-    <!-- Mirrored from www.urbanui.com/gleam/pages/forms/basic_elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 07:45:10 GMT -->
+    <!-- Mirrored from www.urbanui.com/gleam/pages/tables/basic-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 07:45:35 GMT -->
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Job Post</title>
-        <!-- plugins:css -->
-        <!--
-        <link rel="stylesheet" href="../../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-        <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
-        <link rel="stylesheet" href="../../vendors/css/vendor.bundle.addons.css">
-        <!-- endinject -->
-        <!-- plugin css for this page -->
-        <!--<link rel="stylesheet" href="http://www.urbanui.com/">-->
-        <!-- End plugin css for this page -->
-        <!-- inject:css -->
-        <!--<link rel="stylesheet" href="../../css/style.css">
-        <!-- endinject -->
-        <!-- <link rel="shortcut icon" href="../../images/favicon.png" /> -->
+        <title>Rank List</title>
+       
+
         <spring:url value="/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css" var="hrmCss" />
         <spring:url value="/resources/vendors/css/vendor.bundle.base.css" var="hrmCss" />
         <spring:url value="/resources/vendors/css/vendor.bundle.addons.css" var="hrmCss" />
@@ -49,7 +39,7 @@
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                         <span class="mdi mdi-menu"></span>
                     </button>
-                    <span class="d-none d-md-inline">Comapany Dashboard</span>
+                    <span class="d-none d-md-inline">Company Dashboard</span>
                     <ul class="navbar-nav navbar-nav-right">
                         <li class="nav-item nav-profile">
                             <a class="nav-link">
@@ -324,21 +314,21 @@
                             </a>
                             <div class="collapse" id="forms">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="basic_elements.html">Form Elements</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="advanced_elements.html">Advanced Forms</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="validation.html">Validation</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="wizard.html">Wizard</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../forms/basic_elements.html">Form Elements</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../forms/advanced_elements.html">Advanced Forms</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../forms/validation.html">Validation</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../forms/wizard.html">Wizard</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="text_editor.html">
+                            <a class="nav-link" href="../forms/text_editor.html">
                                 <i class="mdi mdi-format-list-bulleted  menu-icon"></i>              
                                 <span class="menu-title">Text editors</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="code_editor.html">
+                            <a class="nav-link" href="../forms/code_editor.html">
                                 <i class="mdi mdi-code-braces menu-icon"></i>              
                                 <span class="menu-title">Code editors</span>
                                 <span class="badge badge-gradient-info badge-pill">6</span>
@@ -371,10 +361,10 @@
                             </a>
                             <div class="collapse" id="tables">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="../tables/basic-table.html">Basic table</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../tables/data-table.html">Data table</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../tables/js-grid.html">Js-grid</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../tables/sortable-table.html">Sortable table</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="basic-table.html">Basic table</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="data-table.html">Data table</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="js-grid.html">Js-grid</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="sortable-table.html">Sortable table</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -493,212 +483,212 @@
                     </ul>
                 </nav>
                 <!-- partial -->
-                <div class="main-panel">        
+                <div class="main-panel">
                     <div class="content-wrapper">
                         <div class="page-header">
                             <h3 class="page-title">
-                                Posting Job
+                                Rank List
                             </h3>
-
+                            
                         </div>
-                        <div class="col-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Basic form elements</h4>
-                  <p class="card-description">
-                    Basic form elements
-                  </p>
-                  <form class="forms-sample">
-                      
-                    <div class="form-group">
-                      <label for="exampleInputName1">Created Date</label>
-                       <input class="form-control" placeholder="dd/mm/yyyy"/>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail3">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Gender</label>
-                        <select class="form-control" id="exampleSelectGender">
-                          <option>Male</option>
-                          <option>Female</option>
-                        </select>
-                      </div>
-                    <div class="form-group">
-                      <label>File upload</label>
-                      <input type="file" name="img[]" class="file-upload-default">
-                      <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputCity1">City</label>
-                      <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleTextarea1">Textarea</label>
-                      <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-                        <div class="row">
-
-
-
-
-
-
-
-                            <div class="col-12 grid-margin">
+                        <!--<div class="row">
+                            
+                            <div class="col-lg-12 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <!--  <h4 class="card-title">Horizontal Two column</h4>-->
-                                        <form class="form-sample">
+                                        
+                                        
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                       <div class="form-group">
+                      <label for="exampleInputName1">Company Name</label>
+                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Company Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Exam Name</label>
+                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Exam Name">
+                    </div>
+                                                        <th>
+                                                            Candidate Name
+                                                        </th>
+                                                       <th>
+                                                            Mark
+                                                        </th>
+                                                        <th>
+                                                            Rank
+                                                        </th>
+                                                         
+                                                        
+                                                        
+                                                    </tr>
+                                                    
+                                                </thead>
+                                                <tbody>
 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Created Date</label>
-                                                        <div class="col-sm-9">
-                                                            <input class="form-control" placeholder="dd/mm/yyyy"/>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Job Name</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-
-                                            </div>
-                                            <p class="card-description">
-                                                Location
-                                            </p>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">City</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">State</label>
-                                                        <div class="col-sm-9">
-                                                            <select class="form-control">
-                                                                <option>Kerala</option>
-                                                                <option>TamilNadhu</option>
-                                                                <option>Karanadaka</option>
-                                                                <option>Delhi</option>
-                                                            </select> 
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Country</label>
-                                                        <div class="col-sm-9">
-                                                            <select class="form-control">
-                                                                <option>America</option>
-                                                                <option>Italy</option>
-                                                                <option>Russia</option>
-                                                                <option>Britain</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Postcode</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Contact</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Secondary Contact</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Job Description</label>
-                                                        <div class="col-sm-9">
-                                                            <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Is Active</label>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-
-                                                                    <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked="">
-                                                                    Yes
-                                                                    <i class="input-helper"></i></label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-5">
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
-                                                                    No
-                                                                    <i class="input-helper"></i></label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-
-
-                                                <button type="submit" class="btn btn-gradient-primary mb-2">Submit</button>
-                                            </div>
-                                        </form>
+                                                </tbody>
+                                            </table>
+                                            
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
+                            
+                        </div>-->
+                        <div class="col-md-8 d-flex align-items-stretch">
+              <div class="row flex-grow-1 w-100">
+                <div class="col-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Candidate Rank List</h4>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>
+                                Select
+                              </th>
+                              <th>
+                                Candidate Name
+                              </th>
+                              <th>
+                                Mark
+                              </th>
+                              <th>
+                                Rank
+                              </th>
+                              
+                              <th>
+                                Eligibility
+                              </th>
+                              <th>
+                                Email
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input">
+                                  <i class="input-helper"></i></label>
+                                </div>
+                              </td>
+                              <td>
+                                <img src="images/faces/face12.jpg" alt="image" class="img-sm rounded-circle mr-2">
+                                Gary Edison
+                              </td>
+                              <td>
+                                80363477
+                              </td>
+                              <td>
+                                Development
+                              </td>
+                              <td>
+                                <label class="badge badge-outline-success">Accepted</label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input">
+                                  <i class="input-helper"></i></label>
+                                </div>
+                              </td>
+                              <td>
+                                <img src="images/faces/face1.jpg" alt="image" class="img-sm rounded-circle mr-2">
+                                Watt Mark
+                              </td>
+                              <td>
+                                80363477
+                              </td>
+                              <td>
+                                Data analysis
+                              </td>
+                              <td>
+                                <label class="badge badge-outline-danger">Rejected</label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" checked="">
+                                  <i class="input-helper"></i></label>
+                                </div>
+                              </td>
+                              <td>
+                                <img src="images/faces/face12.jpg" alt="image" class="img-sm rounded-circle mr-2">
+                                James Disney
+                              </td>
+                              <td>
+                                80363477
+                              </td>
+                              <td>
+                                Designing
+                              </td>
+                              <td>
+                                <label class="badge badge-outline-warning">On hold</label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input">
+                                  <i class="input-helper"></i></label>
+                                </div>
+                              </td>
+                              <td>
+                                <img src="images/faces/face2.jpg" alt="image" class="img-sm rounded-circle mr-2">
+                                Genelia Perkins
+                              </td>
+                              <td>
+                                80363477
+                              </td>
+                              <td>
+                                Testing
+                              </td>
+                              <td>
+                                <label class="badge badge-outline-success">Accepted</label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input">
+                                  <i class="input-helper"></i></label>
+                                </div>
+                              </td>
+                              <td>
+                                <img src="images/faces/face9.jpg" alt="image" class="img-sm rounded-circle mr-2">
+                                Jay Morgan
+                              </td>
+                              <td>
+                                80363477
+                              </td>
+                              <td>
+                                Development
+                              </td>
+                              <td>
+                                <label class="badge badge-outline-warning">On hold</label>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+              </div>
+            </div>
                     </div>
                     <!-- content-wrapper ends -->
                     <!-- partial:../../partials/_footer.html -->
@@ -714,27 +704,17 @@
             </div>
             <!-- page-body-wrapper ends -->
         </div>
-        <!-- container-scroller -->
-        <!-- plugins:js -->
-        <script src="../../vendors/js/vendor.bundle.base.js"></script>
-        <script src="../../vendors/js/vendor.bundle.addons.js"></script>
-        <!-- endinject -->
-        <!-- inject:js -->
-        <script src="../../js/off-canvas.js"></script>
-        <script src="../../js/hoverable-collapse.js"></script>
-        <script src="../../js/misc.js"></script>
-        <script src="../../js/settings.js"></script>
-        <script src="../../js/todolist.js"></script>
-        <!-- endinject -->
-        <!-- Custom js for this page-->
-        <script src="../../js/file-upload.js"></script>
-        <script src="../../js/iCheck.js"></script>
-        <script src="../../js/typeahead.js"></script>
-        <script src="../../js/select2.js"></script>
-        <!-- End custom js for this page-->
-    </body>
+   <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="rationJS" />
+        <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="rationJS" />
+        <spring:url value="/resources/js/off-canvas.js" var="rationJS" />
+        <spring:url value="/resources/js/hoverable-collapse.js" var="rationJS" />
+        <spring:url value="/resources/js/misc.js" var="rationJS" />
+        <spring:url value="/resources/js/settings.js" var="rationJS" />
+        <spring:url value="/resources/js/todolist.js" var="rationJS" />
+</body>
 
 
-    <!-- Mirrored from www.urbanui.com/gleam/pages/forms/basic_elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 07:45:13 GMT -->
+<!-- Mirrored from www.urbanui.com/gleam/pages/tables/basic-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 07:45:36 GMT -->
 </html>
+
 
