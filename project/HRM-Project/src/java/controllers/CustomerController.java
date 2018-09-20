@@ -15,16 +15,31 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Gayathri
  */
 @Controller
-@RequestMapping("customer/")
+@RequestMapping("Customer/")
 public class CustomerController {
     @RequestMapping(value="/customer_profile",method = RequestMethod.GET)
     public String customer_profile(ModelMap modelMap) {
         
         return "customer_profile";
     }
-    @RequestMapping(value="/customer_update_profile",method = RequestMethod.GET)
+    @RequestMapping(value="/customer_view_job",method = RequestMethod.GET)
+    public String customer_view_job(ModelMap modelMap) {
+        
+        return "customer_view_job";
+    }
+    @RequestMapping(value="/customer_",method = RequestMethod.GET)
     public String customer_update_profile(ModelMap modelMap) {
         
         return "customer_update_profile";
+    }
+    @RequestMapping(value="/customer_apply_job",method = RequestMethod.GET)
+    public String customer_apply_job(ModelMap modelMap) {
+        
+        return "customer_apply_job";
+    }
+    @RequestMapping(value="/customer_view_profile",method = RequestMethod.GET)
+    public String customer_view_profile(ModelMap modelMap) {
+        
+        return "customer_view_profile";
     }
 }
