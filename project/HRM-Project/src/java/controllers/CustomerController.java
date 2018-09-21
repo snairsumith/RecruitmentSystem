@@ -15,46 +15,36 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Gayathri
  */
 @Controller
-@RequestMapping("Customer/")
+@RequestMapping("Candidate/")
 public class CustomerController {
-    @RequestMapping(value="/customer_profile",method = RequestMethod.GET)
+    @RequestMapping(value="/candidate_profile",method = RequestMethod.GET)
     public String customer_profile(ModelMap modelMap) {
         
-        return "customer_profile";
+        return "candidate_profile";
     }
-    @RequestMapping(value="/customer_view_job",method = RequestMethod.GET)
-    public String customer_view_job(ModelMap modelMap) {
+    @RequestMapping(value="/candidate_view_job",method = RequestMethod.GET)
+    public String candidate_view_job(ModelMap modelMap) {
         
-        return "customer_view_job";
+        return "candidate_view_job";
     }
-    @RequestMapping(value="/customer_",method = RequestMethod.GET)
-    public String customer_update_profile(ModelMap modelMap) {
+    @RequestMapping(value="/candidate_",method = RequestMethod.GET)
+    public String candidate_update_profile(ModelMap modelMap) {
         
-        return "customer_update_profile";
+        return "candidate_update_profile";
     }
-    @RequestMapping(value="/customer_apply_job",method = RequestMethod.GET)
-    public String customer_apply_job(ModelMap modelMap) {
+    @RequestMapping(value="/candidate_apply_job",method = RequestMethod.GET)
+    public String candidate_apply_job(ModelMap modelMap) {
         
-        return "customer_apply_job";
+        return "candidate_apply_job";
     }
-    @RequestMapping(value="/customer_view_profile",method = RequestMethod.GET)
-    public String customer_view_profile(ModelMap modelMap) {
-        
-        return "customer_view_profile";
-    }
-    @RequestMapping(value="/candidate_view_ranklist",method = RequestMethod.GET)
-    public String candidate_view_ranklist(ModelMap modelMap) {
-        
-        return "candidate_view_ranklist";
-    }
-    @RequestMapping(value="/candidate_view_notification",method = RequestMethod.GET)
-    public String candidate_view_notification(ModelMap modelMap) {
-        
-        return "candidate_view_notification";
-    }
-     @RequestMapping(value="/view_applied_jobs",method = RequestMethod.GET)
+    @RequestMapping(value="/view_applied_jobs",method = RequestMethod.GET)
     public String view_applied_jobs(ModelMap modelMap) {
         
         return "view_applied_jobs";
+    }
+    @RequestMapping(value="/candidate_search_company",method = RequestMethod.GET)
+    public String candidate_search_company(ModelMap modelMap) {
+        
+        return "candidate_search_company";
     }
 }
