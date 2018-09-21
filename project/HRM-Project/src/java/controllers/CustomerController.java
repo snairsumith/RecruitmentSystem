@@ -52,4 +52,9 @@ public class CustomerController {
         
         return "candidate_view_notification";
     }
+     @RequestMapping(value="/view_applied_jobs",method = RequestMethod.GET)
+    public String view_applied_jobs(ModelMap modelMap) {
+        
+        return "view_applied_jobs";
+    }
 }
