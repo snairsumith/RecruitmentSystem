@@ -38,26 +38,38 @@ public class CompanyController {
         return "send_exam_date";
     }
     
-   @RequestMapping(value="/company_view_appliedcustomer",method = RequestMethod.GET)
-    public String company_view_appliedcustomer(ModelMap modelMap) {
+   @RequestMapping(value="/company_view_appliedcandidate",method = RequestMethod.GET)
+    public String company_view_appliedcandidate(ModelMap modelMap) {
         
-        return "company_view_appliedcustomer";
+        return "company_view_appliedcandidate";
     }
-    @RequestMapping(value="/Send_examlink",method = RequestMethod.GET)
-    public String Send_examlink(ModelMap modelMap) {
+    @RequestMapping(value="/send_examlink",method = RequestMethod.GET)
+    public String send_examlink(ModelMap modelMap) {
         
-        return "Send_examlink";
+        return "send_examlink";
     }
-    @RequestMapping(value="/Rank_list",method = RequestMethod.GET)
-    public String Rank_list(ModelMap modelMap) {
+    @RequestMapping(value="/rank_list",method = RequestMethod.GET)
+    public String rank_list(ModelMap modelMap) {
         
-        return "Rank_list";
+        return "rank_list";
         
     }
     @RequestMapping(value="/Company_view_profile",method = RequestMethod.GET)
     public String Company_view_profile(ModelMap modelMap) {
         
         return "Company_view_profile";
+        
+    }
+    @RequestMapping(value="/send_interview_notification",method = RequestMethod.GET)
+    public String send_interview_notification(ModelMap modelMap) {
+        
+        return "send_interview_notification";
+        
+    }
+    @RequestMapping(value="/company_search_candidate",method = RequestMethod.GET)
+    public String company_search_candidate(ModelMap modelMap) {
+        
+        return "company_search_candidate";
         
     }
 }

@@ -15,7 +15,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Gleam Admin</title>
+  <title>Send exam date</title>
   
   <spring:url value="/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css" var="hrmCss" />
         <spring:url value="/resources/vendors/css/vendor.bundle.base.css" var="hrmCss" />
