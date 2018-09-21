@@ -42,4 +42,14 @@ public class CustomerController {
         
         return "customer_view_profile";
     }
+    @RequestMapping(value="/candidate_view_ranklist",method = RequestMethod.GET)
+    public String candidate_view_ranklist(ModelMap modelMap) {
+        
+        return "candidate_view_ranklist";
+    }
+    @RequestMapping(value="/candidate_view_notification",method = RequestMethod.GET)
+    public String candidate_view_notification(ModelMap modelMap) {
+        
+        return "candidate_view_notification";
+    }
 }
