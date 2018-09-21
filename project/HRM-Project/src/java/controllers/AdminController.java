@@ -28,5 +28,9 @@ public class AdminController {
         
         return "Admin_View_Customer";
     }
-    
+    @RequestMapping(value="/Admin_View_Customer_Profile",method = RequestMethod.GET)
+    public String Admin_View_Customer_Profile(ModelMap modelMap) {
+        
+        return "Admin_View_Customer_Profile";
+    }
 }

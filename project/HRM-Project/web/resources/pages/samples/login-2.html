@@ -91,18 +91,13 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
-  <script src="../../vendors/js/vendor.bundle.addons.js"></script>
-  <!-- endinject -->
-  <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/misc.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
-  <!-- endinject -->
+ <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="rationJS" />
+    <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="rationJS" />
+    <spring:url value="/resources/js/off-canvas.js" var="rationJS" />
+    <spring:url value="/resources/js/hoverable-collapse.js" var="rationJS" />
+    <spring:url value="/resources/js/misc.js" var="rationJS" />
+    <spring:url value="/resources/js/settings.js" var="rationJS" />
+    <spring:url value="/resources/js/todolist.js" var="rationJS" />
 </body>
 
 
