@@ -18,14 +18,18 @@
   <title>Login Page</title>
   <!-- plugins:css -->
   
-  <spring:url value="/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css" var="hrmCss" />
-   <spring:url value="/resources/vendors/css/vendor.bundle.base.css" var="hrmCss" />
-    <spring:url value="/resources/vendors/css/vendor.bundle.addons.css" var="hrmCss" />
-   <spring:url value="/resources/css/style.css" var="hrmCss" />
+  <spring:url value="/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css" var="materialdesigniconsCss" />
+  <spring:url value="/resources/vendors/css/vendor.bundle.base.css" var="baseCss" />
+  <spring:url value="/resources/vendors/css/vendor.bundle.addons.css" var="addonsCss" />
+  <spring:url value="/resources/css/style.css" var="stylsCss" />
    
   
 
-  <link href="${hrmCss}" rel="stylesheet" />
+  <link href="${materialdesigniconsCss}" rel="stylesheet" />
+    <link href="${baseCss}" rel="stylesheet" />
+      <link href="${addonsCss}" rel="stylesheet" />
+        <link href="${stylsCss}" rel="stylesheet" />
+        
  
 
 
@@ -79,12 +83,12 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="rationJS" />
-  <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="rationJS" />
+  <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="baseJs" />
+  <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="addonsJs" />
   <!-- endinject -->
   <!-- inject:js -->
-  <spring:url value="/resources/js/off-canvas.js" var="rationJS" />
-  <spring:url value="/resources/js/hoverable-collapse.js" var="rationJS" />
+  <spring:url value="/resources/js/off-canvas.js" var="canvasJs" />
+  <spring:url value="/resources/js/hoverable-collapse.js" var="collapseJs" />
   <spring:url value="/resources/js/misc.js" var="rationJS" />
   <spring:url value="/resources/js/settings.js" var="rationJS" />
   <spring:url value="/resources/js/todolist.js" var="rationJS" />

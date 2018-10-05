@@ -44,7 +44,7 @@ public class UserApiController {
                 return "fail";
             }
     }
-    @RequestMapping(value="/userlogin",method = RequestMethod.GET)
+    @RequestMapping(value="/userregistration",method = RequestMethod.GET)
     @ResponseBody
     public String userregistration(@RequestParam("username")String username,
                                   @RequestParam("Email")String Email, 
