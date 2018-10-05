@@ -50,7 +50,7 @@
               </div>
               <h4>Hello! let's get started</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
-              <form class="pt-3">
+               <form class="pt-3">
                 <div class="form-group">
                   <input type="email" class="form-control form-control-lg" id="txtEmail" placeholder="Username">
                 </div>
@@ -58,7 +58,7 @@
                   <input type="password" class="form-control form-control-lg" id="txtPassword" placeholder="Password">
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
+                    <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" onclick="login()">SIGN IN</a>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
@@ -70,7 +70,7 @@
                  
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register.html" class="text-primary">Create</a>
+                  Don't have an account? <a href="user_registration" class="text-primary">Create</a>
                 </div>
               </form>
             </div>
@@ -83,17 +83,16 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="baseJs" />
-  <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="addonsJs" />
+  <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="rationJS1" />
+  <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="rationJS2" />
+    <spring:url value="/resources/js/user.js" var="rationJS3" />
   <!-- endinject -->
   <!-- inject:js -->
-  <spring:url value="/resources/js/off-canvas.js" var="canvasJs" />
-  <spring:url value="/resources/js/hoverable-collapse.js" var="collapseJs" />
-  <spring:url value="/resources/js/misc.js" var="rationJS" />
-  <spring:url value="/resources/js/settings.js" var="rationJS" />
-  <spring:url value="/resources/js/todolist.js" var="rationJS" />
+
   
-   <script src="${rationJS}" var="rationJS" />
+   <script src="${rationJS1}"></script>
+   <script src="${rationJS2}" ></script>
+      <script src="${rationJS3}" ></script>
   
 </body>
 
