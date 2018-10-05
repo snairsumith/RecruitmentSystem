@@ -83,16 +83,16 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="rationJS1" />
-  <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="rationJS2" />
-    <spring:url value="/resources/js/user.js" var="rationJS3" />
+  <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="baseJS" />
+  <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="addonsJS" />
+    <spring:url value="/resources/js/user.js" var="userJS" />
   <!-- endinject -->
   <!-- inject:js -->
 
   
-   <script src="${rationJS1}"></script>
-   <script src="${rationJS2}" ></script>
-      <script src="${rationJS3}" ></script>
+   <script src="${baseJS}"></script>
+   <script src="${addonsJS}" ></script>
+      <script src="${userJS}" ></script>
   
 </body>
 

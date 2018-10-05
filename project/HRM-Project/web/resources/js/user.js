@@ -18,16 +18,22 @@ function login(){
 
 }
 function user_reg(){
-    var username=$("#txtEmail").val();
+    var username=$("#txtUserName").val();
+    var email=$("#txtEmail").val();
+    var country=$("#selCountry").val();
     var password=$("#txtPassword").val();
-    var url=baseUrl+"userapi/userlogin?username="+username+"&password="+password
+    if(username!=""&&password!=""&&country!=""&&email!=""){
+    var url=baseUrl+"userapi/userregistration?Username="+username+"&Email="+email+"&Country="+country+"&Password="+password
     $.ajax({url:url,success: function (data) {
             if(data=="sucess"){
-                window.location.href="Candidate/candidate_profile"
+               window.location.href="login"
             }else{
                 alert("incorrect username and passsword")
             }
         }});
+    }else{
+        alert("Please Fill the blank filed");
+    }
 
 }
 
