@@ -3,7 +3,7 @@
                         <li class="nav-item nav-profile">
                             <span class="nav-link">
                                 <img src="../../images/faces/face7.jpg" alt="image"/>
-                                <span class="nav-profile-text">Name</span>
+                                <span class="nav-profile-text">hoWzzaT</span>
                                 <span class="badge badge-pill badge-gradient-danger">1</span>
                             </span>
                         </li>
@@ -57,6 +57,17 @@
                                 <span class="badge badge-gradient-success badge-pill">9</span>
                             </a>
                         </li>
-                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html">
+                                <i class="mdi mdi-home-outline menu-icon"></i>              
+                                <span class="menu-title">Change Password</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html">
+                                <i class="mdi mdi-home-outline menu-icon"></i>              
+                                <span class="menu-title">Logout</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>

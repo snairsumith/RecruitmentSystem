@@ -9,7 +9,7 @@
                         <li class="nav-item nav-profile">
                             <span class="nav-link">
                                 <img src="../../images/faces/face7.jpg" alt="image"/>
-                                <span class="nav-profile-text">Tyler Barrett</span>
+                                <span class="nav-profile-text">hoWzzaT</span>
                                 <span class="badge badge-pill badge-gradient-danger">1</span>
                             </span>
                         </li>
@@ -22,7 +22,7 @@
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
                                 <i class="mdi mdi-apps menu-icon"></i>              
-                                <span class="menu-title">Page Layouts</span>
+                                <span class="menu-title">Profile</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="page-layouts">
@@ -36,7 +36,7 @@
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
                                 <i class="mdi mdi-playlist-play menu-icon"></i>              
-                                <span class="menu-title">Sidebar Layouts</span>
+                                <span class="menu-title">Search</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="sidebar-layouts">
@@ -52,7 +52,7 @@
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                                 <i class="mdi mdi-texture menu-icon"></i>              
-                                <span class="menu-title">Basic UI Elements</span>
+                                <span class="menu-title">Job</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="ui-basic">
@@ -73,7 +73,7 @@
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
                                 <i class="mdi mdi-vector-arrange-above menu-icon"></i>              
-                                <span class="menu-title">Advanced UI</span>
+                                <span class="menu-title">Online Exam</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="ui-advanced">
@@ -92,34 +92,23 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../ui-features/popups.html">
                                 <i class="mdi mdi-lightbulb-outline menu-icon"></i>              
-                                <span class="menu-title">Popups</span>
+                                <span class="menu-title">Notification</span>
                                 <span class="badge badge-gradient-primary badge-pill">3</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-                                <i class="mdi mdi-cards-playing-outline menu-icon"></i>              
-                                <span class="menu-title">Icons</span>
-                                <i class="menu-arrow"></i>
-                            </a>
-                            <div class="collapse" id="icons">
-                                <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="../icons/mdi.html">Material</a></li>                
-                                    <li class="nav-item"> <a class="nav-link" href="../icons/flag-icons.html">Flag icons</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../icons/font-awesome.html">Font Awesome</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../icons/simple-line-icon.html">Simple line icons</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../icons/themify.html">Themify icons</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../ui-features/notifications.html">
-                                <i class="mdi mdi-backup-restore menu-icon"></i>              
-                                <span class="menu-title">Notifications</span>
-                                <span class="badge badge-gradient-success badge-pill">9</span>
+                            <a class="nav-link" href="../../index.html">
+                                <i class="mdi mdi-home-outline menu-icon"></i>              
+                                <span class="menu-title">Change Password</span>
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="../../index.html">
+                                <i class="mdi mdi-home-outline menu-icon"></i>              
+                                <span class="menu-title">Logout</span>
+                            </a>
+                        </li>
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="../ui-features/slider.html">
                                 <i class="mdi mdi-code-brackets menu-icon"></i>              
                                 <span class="menu-title">Sliders</span>              
@@ -285,7 +274,7 @@
                                 <i class="mdi mdi-file-document-box menu-icon"></i>              
                                 <span class="menu-title">Documentation</span>
                             </a>
-                        </li>
+                        </li>-->
                         <li class="nav-item sidebar-actions">
                             <a class="nav-link" href="#">
                                 <i class="mdi mdi-circle-outline menu-icon text-danger"></i>
@@ -296,7 +285,7 @@
                                 Contact Support
                             </a>
                             <span class="nav-link">
-                                &copy; 2018 Gleam Admin
+                                &copy; 2018 hoWzzaT
                             </span>
                         </li>
                     </ul>

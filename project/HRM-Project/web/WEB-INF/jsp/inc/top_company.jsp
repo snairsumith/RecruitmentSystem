@@ -7,7 +7,7 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-menu"></span>
         </button>
-        <span class="d-none d-md-inline">Adminnn Dashboard</span>
+        <span class="d-none d-md-inline">Company Dashboard</span>
         <ul class="navbar-nav navbar-nav-right">
 
             <li class="nav-item nav-logout d-none d-lg-block">

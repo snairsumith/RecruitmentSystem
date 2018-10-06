@@ -64,4 +64,24 @@ public class UserApiController {
                 return "fail";
             }
     }
+    @RequestMapping(value="/userprofile",method = RequestMethod.GET)
+    @ResponseBody
+    public String userprofile(@RequestParam("Username")String username,
+                                  @RequestParam("Email")String Email, 
+                                  @RequestParam("Country")String Country,
+                                  @RequestParam("Password")String Password)throws SQLException,ClassNotFoundException  {
+        
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm","root","");  
+            Statement stmt=con.createStatement();
+            String sql="insert into user_reg (UserName,Email,Country)values('"+username+"','"+Email+"','"+Country+"')";
+            String sql1="insert into login_tbl (UserName,Password,Role,Status)values('"+username+"','"+Password+"','1','1')";
+            int i =stmt.executeUpdate(sql); 
+             int j =stmt.executeUpdate(sql1); 
+            if(i>0 && j>0){
+                return "sucess";
+            }else{
+                return "fail";
+            }
+    }
 }
