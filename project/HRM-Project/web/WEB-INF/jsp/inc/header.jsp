@@ -7,7 +7,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Customer Profile</title>
+        <title>HowZZat.com</title>
         <spring:url value="/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css" var="materialdesigniconsCss" />
         <spring:url value="/resources/vendors/css/vendor.bundle.base.css" var="baseCss" />
         <spring:url value="/resources/vendors/css/vendor.bundle.addons.css" var="addonsCss" />

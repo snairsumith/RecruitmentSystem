@@ -98,10 +98,10 @@
                   </div>
                 </div>
                                 <div class="mt-3">
-                                    <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="" onclick="user_reg()">SIGN UP</a>
+                                    <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="login" onclick="company_registration()">SIGN UP</a>
                                 </div>
                                 <div class="text-center mt-4 font-weight-light">
-                                    Already have an account? <a href="userlogin" class="text-primary">Login</a>
+                                    Already have an account? <a href="login" class="text-primary">Login</a>
                                 </div>
                             </form>
                         </div>
@@ -115,13 +115,17 @@
         </div>
         <!-- page-body-wrapper ends -->
     </div>
-<spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="rationJS" />
-<spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="rationJS" />
-<spring:url value="/resources/js/off-canvas.js" var="rationJS" />
-<spring:url value="/resources/js/hoverable-collapse.js" var="rationJS" />
-<spring:url value="/resources/js/misc.js" var="rationJS" />
-<spring:url value="/resources/js/settings.js" var="rationJS" />
-<spring:url value="/resources/js/todolist.js" var="rationJS" />
+ <spring:url value="/resources/vendors/js/vendor.bundle.base.js" var="baseJS" />
+         <spring:url value="/resources/vendors/js/vendor.bundle.addons.js" var="addonsJS" />
+         <spring:url value="/resources/js/company.js" var="userJS" />
+  <!-- endinject -->
+  <!-- endinject -->
+  <!-- inject:js -->
+
+  
+   <script src="${baseJS}"></script>
+   <script src="${addonsJS}" ></script>
+      <script src="${userJS}" ></script>
 </body>
 
 

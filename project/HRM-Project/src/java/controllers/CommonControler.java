@@ -34,4 +34,9 @@ public class CommonControler {
         
         return "company_registration";
     }
+    @RequestMapping(value="/reg_link",method = RequestMethod.GET)
+    public String reg_link(ModelMap modelMap) {
+        
+        return "reg_link";
+    }
 }

@@ -34,18 +34,18 @@
                                             </p>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Company ID</label>
+                                                   <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Company Name</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" id="txtCompanyName"/>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Company Name</label>
+                                                     <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Establishment Date</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="txtCompanyName"/>
+                                                            <input class="form-control" placeholder="dd/mm/yyyy" id="txtEstablishmentDate"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -53,12 +53,7 @@
                                             <div class="row">
 
                                                 <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Establishment Date</label>
-                                                        <div class="col-sm-9">
-                                                            <input class="form-control" placeholder="dd/mm/yyyy" id="txtEstablishmentDate"/>
-                                                        </div>
-                                                    </div>
+                                                   
                                                 </div>
                                             </div>
 

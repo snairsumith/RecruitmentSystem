@@ -70,7 +70,7 @@
                  
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="user_registration" class="text-primary">Create</a>
+                  Don't have an account? <a href="reg_link" class="text-primary">Create</a>
                 </div>
               </form>
             </div>
