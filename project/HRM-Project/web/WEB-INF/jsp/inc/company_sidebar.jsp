@@ -25,13 +25,13 @@
                                 <span class="menu-title">Profile</span>
                                 <i class="menu-arrow"></i>
                             </a>
-                            <div class="collapse" id="page-layouts">
+                           <div class="collapse" id="page-layouts">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/boxed-layout.html">Boxed</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/rtl-layout.html">RTL</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/horizontal-menu.html">Horizontal Menu</a></li>                
+                                    <li class="nav-item"> <a class="nav-link" href="company_profile">Profile</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="company_update_profile">Update Profile</a></li>
+                                    <!-- <li class="nav-item"> <a class="nav-link" href="../layout/horizontal-menu.html">Horizontal Menu</a></li>-->                
                                 </ul>
-                            </div>
+                            </div>-->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
@@ -41,11 +41,11 @@
                             </a>
                             <div class="collapse" id="sidebar-layouts">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/compact-menu.html">Compact menu</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-collapsed.html">Icon menu</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-hidden.html">Sidebar Hidden</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="company_search_candidate">Candidate</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="company_view_appliedcandidate">Applied Candidate</a></li>
+                                    <!--<li class="nav-item"> <a class="nav-link" href="../layout/sidebar-hidden.html">Sidebar Hidden</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-hidden-overlay.html">Sidebar Overlay</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-fixed.html">Sidebar Fixed</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-fixed.html">Sidebar Fixed</a></li>-->
                                 </ul>
                             </div>
                         </li>
@@ -57,8 +57,8 @@
                             </a>
                             <div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/accordions.html">Accordions</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/buttons.html">Buttons</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="jobpost">JobPost</a></li>
+                                    <!--<li class="nav-item"> <a class="nav-link" href="../ui-features/buttons.html">Buttons</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/badges.html">Badges</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/breadcrumbs.html">Breadcrumbs</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/dropdowns.html">Dropdowns</a></li>
@@ -66,7 +66,7 @@
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/progress.html">Progress bar</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/pagination.html">Pagination</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/tabs.html">Tabs</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/typography.html">Typography</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/typography.html">Typography</a></li>-->
                                 </ul>
                             </div>
                         </li>
@@ -78,14 +78,14 @@
                             </a>
                             <div class="collapse" id="ui-advanced">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/dragula.html">Dragula</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/clipboard.html">Clipboard</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/context-menu.html">Context menu</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/slider.html">Slider</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="send_exam_date">Send Exam Date</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="send_examlink">Send Exam Link</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="send_interview_notification">Context menu</a></li>
+                                    <!--<li class="nav-item"> <a class="nav-link" href="../ui-features/slider.html">Slider</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/colcade.html">Colcade</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/carousel.html">Carousel</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/loaders.html">Loaders</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/tooltips.html">Tooltip</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/tooltips.html">Tooltip</a></li>-->
                                 </ul>
                             </div>
                         </li>
@@ -103,7 +103,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html">
+                            <a class="nav-link" href="../login">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Logout</span>
                             </a>

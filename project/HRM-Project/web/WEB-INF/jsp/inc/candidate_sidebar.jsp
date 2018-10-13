@@ -21,8 +21,8 @@
                             </a>
                             <div class="collapse" id="page-layouts">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="/candidate_profile.jsp">View</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../candidate_update_profile.jsp">Edit</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="candidate_profile">View</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="candidate_update_profile">Edit</a></li>
                                                     
                                 </ul>
                             </div>
@@ -35,14 +35,14 @@
                             </a>
                             <div class="collapse" id="sidebar-layouts">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/compact-menu.html">Company</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-collapsed.html">Job</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="candidate_search_company">Company</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="candidate_view_job">Job</a></li>
                                     
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <a class="nav-link" data-toggle="collapse" href="view_applied_jobs" aria-expanded="false" aria-controls="ui-basic">
                                 <i class="mdi mdi-texture menu-icon"></i>              
                                 <span class="menu-title">Requested Jobs</span>
                                 <i class="menu-arrow"></i>
@@ -64,7 +64,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html">
+                            <a class="nav-link" href="../login">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Logout</span>
                             </a>

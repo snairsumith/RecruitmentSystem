@@ -19,7 +19,7 @@
                                 <span class="menu-title">Dashboard</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
                                 <i class="mdi mdi-apps menu-icon"></i>              
                                 <span class="menu-title">Profile</span>
@@ -32,30 +32,30 @@
                                     <li class="nav-item"> <a class="nav-link" href="../layout/horizontal-menu.html">Horizontal Menu</a></li>                
                                 </ul>
                             </div>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
+                            <a class="nav-link" data-toggle="collapse" href="" aria-expanded="false" aria-controls="sidebar-layouts">
                                 <i class="mdi mdi-playlist-play menu-icon"></i>              
                                 <span class="menu-title">Company</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="sidebar-layouts">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/compact-menu.html">Compact menu</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-collapsed.html">Icon menu</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="approve_company">Approve Company</a></li>
+                                    <!--<li class="nav-item"> <a class="nav-link" href="../layout/sidebar-collapsed.html">Icon menu</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-hidden.html">Sidebar Hidden</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-hidden-overlay.html">Sidebar Overlay</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-fixed.html">Sidebar Fixed</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-fixed.html">Sidebar Fixed</a></li>-->
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <a class="nav-link" data-toggle="collapse" href="Admin_View_Customer" aria-expanded="false" aria-controls="ui-basic">
                                 <i class="mdi mdi-texture menu-icon"></i>              
                                 <span class="menu-title">Candidate</span>
                                 <i class="menu-arrow"></i>
                             </a>
-                            <div class="collapse" id="ui-basic">
+                            <!--<div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu">
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/accordions.html">Accordions</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/buttons.html">Buttons</a></li>
@@ -68,7 +68,7 @@
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/tabs.html">Tabs</a></li>
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/typography.html">Typography</a></li>
                                 </ul>
-                            </div>
+                            </div>-->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
@@ -78,7 +78,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../ui-features/popups.html">
+                            <a class="nav-link" href="../login">
                                 <i class="mdi mdi-lightbulb-outline menu-icon"></i>              
                                 <span class="menu-title">Logout</span>
                                 <span class="badge badge-gradient-primary badge-pill">3</span>

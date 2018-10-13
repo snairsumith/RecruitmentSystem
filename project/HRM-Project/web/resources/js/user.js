@@ -17,7 +17,7 @@ function login() {
                 } else if (data == 2) {
                     window.location.href = "company/company_profile"
                 } else if (data == 3) {
-                    window.location.href = ""
+                    window.location.href = "Admin/approve_company "
                 }
             } else {
                 alert("incorrect username or password")
