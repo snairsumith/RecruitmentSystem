@@ -39,9 +39,11 @@
                                 <form class="pt-3">
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-lg" id="txtUserName" placeholder="Username">
+                                        <label class="text-danger" id="err_username"></label>
                                     </div>
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-lg" id="txtEmail" placeholder="Email">
+                                        <label class="text-danger" id="err_email"></label>
                                     </div>
                                     <div class="form-group">
                                         <select class="form-control form-control-lg" id="selCountry">
@@ -52,9 +54,11 @@
                                             <option>Germany</option>
                                             <option>Argentina</option>
                                         </select>
+                                        <label class="text-danger" id="err_country"></label>
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-lg" id="txtPassword" placeholder="Password">
+                                        <label class="text-danger" id="err_password"></label>
                                     </div>
                                     <div class="mb-4">
                                         <div class="form-check">

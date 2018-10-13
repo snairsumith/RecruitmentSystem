@@ -60,4 +60,35 @@ public class UserApiController {
             return "fail";
         }
     }
+    @RequestMapping(value = "/user_profile_updation", method = RequestMethod.GET)
+    @ResponseBody
+    public String user_profile_updation(@RequestParam("FirstName") String FirstName,
+            @RequestParam("LastName") String LastName,
+            @RequestParam("Gender") String Gender,
+            @RequestParam("DateofBirth") String DateofBirth,
+            @RequestParam("Home") String Home,
+            @RequestParam("State") String State,
+            @RequestParam("City") String City,
+            @RequestParam("PostCode") String PostCode,
+            @RequestParam("Contact") String Contact,
+            @RequestParam("HigherQualification") String HigherQualification,
+            @RequestParam("Mark") String Mark,
+            @RequestParam("University") String University,         
+            @RequestParam("Experience") String Experience,
+            @RequestParam("ProfileNotification") String ProfileNotification,
+            @RequestParam("EmailNotification") String EmailNotification) throws SQLException, ClassNotFoundException {
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm", "root", "");
+        Statement stmt = con.createStatement();
+        String sql = "update user_reg set FirstName='" + FirstName + "',LastName='" + LastName + "',Gender='" + Gender + "',Dob='" + DateofBirth + "',Home='" + Home + "',State='" + State + "',City='" + City + "',PostCode='"+ PostCode +" ',Contact='" + Contact + "',Experience='" + Experience + "',HigherQualification='" + HigherQualification + "',Marks='" + Mark + "',University='" + University + "',ProfileNotification='" + ProfileNotification + "',EmailNotification='" + EmailNotification + "' where UserName='Athira'";
+        
+        int i = stmt.executeUpdate(sql);
+        
+        if (i > 0) {
+            return "sucess";
+        } else {
+            return "fail";
+        }
+    }
     }

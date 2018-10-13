@@ -47,4 +47,9 @@ public class CustomerController {
         
         return "candidate_search_company";
     }
+    @RequestMapping(value="/uploads",method = RequestMethod.GET)
+    public String uploads(ModelMap modelMap) {
+        
+        return "uploads";
+    }
 }
