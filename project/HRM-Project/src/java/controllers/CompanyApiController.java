@@ -47,19 +47,19 @@ public class CompanyApiController {
     }
     @RequestMapping(value="/company_profile",method = RequestMethod.GET)
     @ResponseBody
-    public String company_profile(@RequestParam("Companyname")String Companyname,
+    public String company_profile(@RequestParam("CompanyName")String CompanyName,
                                   @RequestParam("EstablishmentDate")String EstablishmentDate, 
                                   @RequestParam("City")String City,
                                   @RequestParam("State")String State,
                                   @RequestParam("PostCode")String PostCode,
                                   @RequestParam("Contact")String Contact,
-                                  @RequestParam("SecondaryContact")String SecondaryContact)throws SQLException,ClassNotFoundException  {
+                                  @RequestParam("SecondaryContact")String SecondaryContact,
+                                  @RequestParam("CompanyWebsite")String CompanyWebsite)throws SQLException,ClassNotFoundException  {
         
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm","root","");  
             Statement stmt=con.createStatement();
-            String sql="update into company_reg (Companyname='"+Companyname+"',EstablishmentDate,City,State,PostCode,Contact,SecondaryContact)values(,'"+EstablishmentDate+"','"+City+"','"+State+"','"+PostCode+"','"+Contact+"','"+SecondaryContact+"')";
-            
+            String sql="update company_reg set CompanyName='"+ CompanyName + "',EstablishmentDate='" + EstablishmentDate + "',City='" + City + "',State='" + State + "',PostCode='" + PostCode + "',Contact='" + Contact + "',SecondaryContact='" + SecondaryContact + "',CompanyWebsite='" + CompanyWebsite+"'  where Username='tcs'";
             int i =stmt.executeUpdate(sql); 
              
             if(i>0){
@@ -67,7 +67,9 @@ public class CompanyApiController {
             }else{
                 return "fail";
             }
-    }
+    }       
+    
+
      @RequestMapping(value = "/userregistration", method = RequestMethod.GET)
     @ResponseBody
     public String userregistration(@RequestParam("Username") String username,

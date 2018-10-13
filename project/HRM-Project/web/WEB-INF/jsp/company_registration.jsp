@@ -54,7 +54,8 @@
                                             </span>
                                         </div>
                                         <input type="text" class="form-control form-control-lg border-left-0" id="txtUserName" placeholder="Username">
-                                    </div>
+                                   </div>
+                                    <label class="text-danger" id="err_username"></label>
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
@@ -66,6 +67,7 @@
                                         </div>
                                         <input type="email" class="form-control form-control-lg border-left-0" id="txtEmail" placeholder="Email">
                                     </div>
+                                    <label class="text-danger" id="err_email"></label>
                                 </div>
                                 <div class="form-group">
                                     <label>Country</label>
@@ -77,7 +79,9 @@
                                         <option>Germany</option>
                                         <option>Argentina</option>
                                     </select>
+                                    <label class="text-danger" id="err_country"></label>
                                 </div>
+                                 
                                 <div class="form-group">
                                     <label>Password</label>
                                     <div class="input-group">
@@ -88,17 +92,13 @@
                                         </div>
                                         <input type="password" class="form-control form-control-lg border-left-0" id="txtPassword" placeholder="Password">                        
                                     </div>
+                                     <label class="text-danger" id="err_password"></label>
                                 </div>
                                 <div class="mb-4">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input" id="chkAgree">
-                      I agree to all Terms &amp; Conditions
-                    <i class="input-helper"></i></label>
-                  </div>
+                  
                 </div>
                                 <div class="mt-3">
-                                    <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="login" onclick="company_registration()">SIGN UP</a>
+                                    <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="#" onclick="company_registration()">SIGN UP</a>
                                 </div>
                                 <div class="text-center mt-4 font-weight-light">
                                     Already have an account? <a href="login" class="text-primary">Login</a>

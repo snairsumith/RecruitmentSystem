@@ -39,14 +39,16 @@
                                                         <div class="col-sm-9">
                                                             <input type="text" class="form-control" id="txtCompanyName"/>
                                                         </div>
+                                                         <label class="text-danger" id="err_companyname"></label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                      <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Establishment Date</label>
                                                         <div class="col-sm-9">
-                                                            <input class="form-control" placeholder="dd/mm/yyyy" id="txtEstablishmentDate"/>
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy" id="txtEstablishmentDate"/>
                                                         </div>
+                                                        <label class="text-danger" id="err_establishementdate"></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,8 +67,9 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">City</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="txtAddress"/>
+                                                            <input type="text" class="form-control" id="txtCity"/>
                                                         </div>
+                                                        <label class="text-danger" id="err_city"></label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -81,27 +84,12 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Country</label>
-                                                        <div class="col-sm-9">
-                                                            <select class="form-control" id="selCountry">
-                                                                <option>America</option>
-                                                                <option>Italy</option>
-                                                                <option>Russia</option>
-                                                                <option>Britain</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Postcode</label>
                                                         <div class="col-sm-9">
                                                             <input type="text" class="form-control" id="txtPostCode" />
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Contact</label>
@@ -110,6 +98,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="row">
+                                                
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Secondary Contact</label>
@@ -137,11 +128,11 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text">@</div>
                                                 </div>
-                                                <input type="text" class="form-control" id="txtUserName" placeholder="Username">
+                                                <input type="text" class="form-control" id="txtWebsite" placeholder="Username">
                                             </div>
                                             
                                             <div>
-                                            <button type="submit" class="btn btn-gradient-primary mb-2">Submit</button>
+                                            <button type="button" class="btn btn-gradient-primary mb-2" onclick="company_profile()">Submit</button>
                                             </div>
                                         </form>
                                     </div>
