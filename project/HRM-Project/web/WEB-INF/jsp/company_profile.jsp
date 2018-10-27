@@ -90,7 +90,7 @@
                                                             <input type="text" class="form-control" id="txtPostCode" />
                                                         </div>
                                                          <label class="text-danger" id="err_postcode"></label>
-                                                         <label class="text-danger" id="err_poscod"></label>
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">

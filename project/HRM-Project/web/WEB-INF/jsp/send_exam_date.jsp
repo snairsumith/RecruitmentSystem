@@ -40,27 +40,27 @@
                   <form class="forms-sample">
                     <div class="form-group">
                       <label for="exampleInputName1">Company Name</label>
-                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Company Name">
+                      <input type="text" class="form-control" id="txtCompanyName" placeholder="Company Name">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputName1">Exam Name</label>
-                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Exam Name">
+                      <input type="text" class="form-control" id="txtExamName" placeholder="Exam Name">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputName1">Date of exam</label>
-                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Date of Exam">
+                      <input type="date" class="form-control" id="txtDateofExam" placeholder="Date of Exam">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputName1">Time of exam</label>
-                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Time of exam">
+                      <input type="text" class="form-control" id="txtTimeofExam" placeholder="Time of exam">
                     </div>
                     
                     
                     <div class="form-group">
                       <label for="exampleTextarea1">Remarks</label>
-                      <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                      <textarea class="form-control" id="txtRemark" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
+                    <button type="button" class="btn btn-gradient-primary mr-2" onclick="send_exam_date()">Submit</button>
                     <button class="btn btn-light">Cancel</button>
                   </form>
                 </div>
