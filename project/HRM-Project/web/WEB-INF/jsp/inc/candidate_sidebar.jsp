@@ -2,7 +2,7 @@
                     <ul class="nav">
                         <li class="nav-item nav-profile">
                             <span class="nav-link">
-                                <img src="../../images/faces/face7.jpg" alt="image"/>
+                                <img src="/HRM-Project/resources/images/logo.svg" alt="image"/>
                                 <span class="nav-profile-text">hoWzzaT</span>
                                 <span class="badge badge-pill badge-gradient-danger">1</span>
                             </span>
@@ -14,18 +14,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
+                            <a class="nav-link" href="candidate_update_profile">
                                 <i class="mdi mdi-apps menu-icon"></i>              
                                 <span class="menu-title">Profile</span>
                                 <i class="menu-arrow"></i>
                             </a>
-                            <div class="collapse" id="page-layouts">
-                                <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="candidate_profile">View</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="candidate_update_profile">Edit</a></li>
-                                                    
-                                </ul>
-                            </div>
+                            
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
@@ -42,14 +36,14 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="view_applied_jobs" aria-expanded="false" aria-controls="ui-basic">
+                            <a class="nav-link" href="view_applied_jobs">
                                 <i class="mdi mdi-texture menu-icon"></i>              
                                 <span class="menu-title">Requested Jobs</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             
                         </li>
-
+                          
                         <li class="nav-item">
                             <a class="nav-link" href="../ui-features/notifications.html">
                                 <i class="mdi mdi-backup-restore menu-icon"></i>              

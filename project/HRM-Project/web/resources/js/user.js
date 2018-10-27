@@ -111,21 +111,21 @@ function user_profile_update() {
         isValid = true;
     }
     if (Contact=="") {
-        $("#err_con").text("Contact Required ");
+        $("#err_con").text("blank");
         isValid = false;
     } else {
         $("#err_con").text("");
         isValid = true;
     }
     if (Contact.length>12) {
-        $("#err_contact").text("Enter Valid Contact Number ");
+        $("#err_contact").text("length");
         isValid = false;
     } else {
         $("#err_contact").text("");
         isValid = true;
     }
     if (!Contact.isNaN) {
-        $("#err_c").text("Enter Valid Contact Number ");
+        $("#err_c").text("nan");
         isValid = false;
     } else {
         $("#err_c").text("");

@@ -17,7 +17,7 @@
         <div class="content-wrapper">
             <div class="page-header">
                 <h3 class="page-title">
-                    Modals
+                    Applied jobs
                 </h3>
 
             </div>
@@ -52,8 +52,8 @@
                                         <h6 class="font-weight-normal">Profiles Of The Powerful Advertising Exec Steve Grasse</h6>
                                         <h3 class="font-weight-normal">How To Write Better Advertising Copy</h3>
                                         <div class="d-flex mt-4">
-                                            <img src="../../images/samples/300x300/3.jpg" class="w-25 h-100 rounded" alt="image"/>
-                                            <img src="../../images/samples/300x300/4.jpg" class="w-25 h-100 ml-2 rounded" alt="image"/>                              
+                                            <img src="/HRM-Project/resources/images/carousel/banner_8.jpg" class="w-25 h-100 rounded" alt="image"/>
+                                            <img src="/HRM-Project/resources/images/carousel/banner_9.jpg" class="w-25 h-100 ml-2 rounded" alt="image"/>                              
                                         </div>
                                         <p class="mt-4">
                                             The key to victory is discipline, and that means a well made bed. You will practice until you can make 

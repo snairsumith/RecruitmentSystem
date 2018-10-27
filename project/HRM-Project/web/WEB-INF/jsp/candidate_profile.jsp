@@ -66,7 +66,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Date of Birth</label>
                                                         <div class="col-sm-9">
-                                                            <input class="form-control" placeholder="dd/mm/yyyy" id="txtDateofBirth"/>
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy" id="txtDateofBirth"/>
                                                             <label id="err_DOB" class="text-danger"></label>
                                                         </div>
                                                     </div>
