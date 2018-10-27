@@ -13,12 +13,12 @@
             <h3 class="page-title">
               Profile
             </h3>
-            <nav aria-label="breadcrumb">
+           <!-- <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Sample Pages</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Profile</li>
               </ol>
-            </nav>
+            </nav>-->
           </div>
           <div class="row">
             <div class="col-12">
@@ -37,9 +37,9 @@
                       <div class="border-bottom py-4">
                         <p>Skills</p>
                         <div>
-                          <label class="badge badge-outline-dark">Chalk</label>
-                          <label class="badge badge-outline-dark">Hand lettering</label>
-                          <label class="badge badge-outline-dark">Information Design</label>
+                          <label class="badge badge-outline-dark">c</label>
+                          <label class="badge badge-outline-dark">c++</label>
+                          <label class="badge badge-outline-dark">java</label>
                           <label class="badge badge-outline-dark">Graphic Design</label>
                           <label class="badge badge-outline-dark">Web Design</label>  
                         </div>                                                               
@@ -81,39 +81,15 @@
                             Jacod@testmail.com
                           </span>
                         </p>
-                        <p class="clearfix">
-                          <span class="float-left">
-                            Facebook
-                          </span>
-                          <span class="float-right text-muted">
-                            <a href="#">David Grey</a>
-                          </span>
-                        </p>
-                        <p class="clearfix">
-                          <span class="float-left">
-                            Twitter
-                          </span>
-                          <span class="float-right text-muted">
-                            <a href="#">@davidgrey</a>
-                          </span>
-                        </p>
+                        
                       </div>
                       <button class="btn btn-gradient-primary btn-block">Preview</button>
                     </div>
                     <div class="col-lg-8">
                       <div class="d-flex justify-content-between">
                         <div>
-                          <h3>David Grey. H</h3>
-                          <div class="d-flex align-items-center">
-                            <h5 class="mb-0 mr-2 text-muted">Canada</h5>
-                            <select id="profile-rating" name="rating" autocomplete="off">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                            </select>
-                          </div>
+                          <h3>Documents</h3>
+                         
                         </div>
                         <div>
                           <button class="btn btn-outline-secondary btn-icon">
@@ -127,25 +103,25 @@
                           <li class="nav-item">
                             <a class="nav-link" href="#">
                               <i class="mdi mdi-account-outline"></i>
-                              Info
+                              CV
                             </a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link active" href="#">
                               <i class="mdi mdi-newspaper"></i>
-                              Feed
+                              Resume
                             </a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#">
                               <i class="mdi mdi-calendar"></i>
-                              Agenda
+                              ID_proof
                             </a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#">
                               <i class="mdi mdi-attachment"></i>
-                              Resume
+                              MarkList
                             </a>
                           </li>
                         </ul>
@@ -155,12 +131,12 @@
                           <img src="../../images/faces/face13.jpg" alt="profile" class="img-sm rounded-circle"/>
                           <div class="ml-4">
                             <h6>
-                              Mason Beck
+                              cv
                               <small class="ml-4 text-muted"><i class="mdi mdi-clock mr-1"></i>10 hours</small>
                             </h6>
-                            <p>
+                            <!--<p>
                               There is no better advertisement campaign that is low cost and also successful at the same time.
-                            </p>
+                            </p>-->
                             <p class="small text-muted mt-2 mb-0">
                               <span>
                                 <i class="mdi mdi-star mr-1"></i>4
@@ -178,7 +154,7 @@
                           <img src="../../images/faces/face16.jpg" alt="profile" class="img-sm rounded-circle"/>
                           <div class="ml-4">
                             <h6>
-                              Willie Stanley
+                             Resume
                               <small class="ml-4 text-muted"><i class="mdi mdi-clock mr-1"></i>10 hours</small>
                             </h6>
                             <img src="../../images/samples/1280x768/12.jpg" alt="sample" class="rounded mw-100"/>                            
@@ -199,13 +175,13 @@
                           <img src="../../images/faces/face19.jpg" alt="profile" class="img-sm rounded-circle"/>
                           <div class="ml-4">
                             <h6>
-                              Dylan Silva
+                             Marklist
                               <small class="ml-4 text-muted"><i class="mdi mdi-clock mr-1"></i>10 hours</small>
                             </h6>
-                            <p>
+                           <!-- <p>
                               When I first got into the online advertising business, I was looking for the magical combination 
                               that would put my website into the top search engine rankings
-                            </p>
+                            </p>-->
                             <img src="../../images/samples/1280x768/5.jpg" alt="sample" class="rounded mw-100"/>                                                        
                             <p class="small text-muted mt-2 mb-0">
                               <span>

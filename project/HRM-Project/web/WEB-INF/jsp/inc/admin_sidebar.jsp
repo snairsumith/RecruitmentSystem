@@ -8,7 +8,7 @@
                     <ul class="nav">
                         <li class="nav-item nav-profile">
                             <span class="nav-link">
-                                <img src="../../images/faces/face7.jpg" alt="image"/>
+                                <img src="/HRM-Project/resources/images/logo.svg" alt="logo">
                                 <span class="nav-profile-text">hoWzzaT</span>
                                 <span class="badge badge-pill badge-gradient-danger">1</span>
                             </span>
