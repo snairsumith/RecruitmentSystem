@@ -27,7 +27,7 @@ public class CustomerController {
         
         return "candidate_view_job";
     }
-    @RequestMapping(value="/candidate_p",method = RequestMethod.GET)
+    @RequestMapping(value="/candidate_update_profile",method = RequestMethod.GET)
     public String candidate_update_profile(ModelMap modelMap) {
         
         return "candidate_update_profile";

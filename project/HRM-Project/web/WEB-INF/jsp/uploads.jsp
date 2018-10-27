@@ -23,63 +23,47 @@
                   
                   <form class="forms-sample">
                     <div class="form-group">
-                      <label>File upload</label>
+                      <label>Photo</label>
                       <input type="file" name="img[]" class="file-upload-default">
                       <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Photo">
                         <span class="input-group-append">
                           <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
                         </span>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label>File upload</label>
+                      <label>ID Proof</label>
                       <input type="file" name="img[]" class="file-upload-default">
                       <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload ID Proof">
                         <span class="input-group-append">
                           <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
                         </span>
                       </div>
                     </div>
                    <div class="form-group">
-                      <label>File upload</label>
+                      <label>Mark List</label>
                       <input type="file" name="img[]" class="file-upload-default">
                       <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Mark List">
                         <span class="input-group-append">
                           <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
                         </span>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label>File upload</label>
+                      <label>CV</label>
                       <input type="file" name="img[]" class="file-upload-default">
                       <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload CV">
                         <span class="input-group-append">
                           <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
                         </span>
                       </div>
                     </div>
-                    <div class="form-group">
-                      <label>File upload</label>
-                      <input type="file" name="img[]" class="file-upload-default">
-                      <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                        <span class="input-group-append">
-                          <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputCity1">City</label>
-                      <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleTextarea1">Textarea</label>
-                      <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                    </div>
+                    
+                    
                     <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
                     <button class="btn btn-light">Cancel</button>
                   </form>

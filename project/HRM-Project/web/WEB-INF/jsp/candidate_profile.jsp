@@ -172,7 +172,17 @@
                                                 <input type="text" class="form-control" id="txtUniversity"/>
                                                 <label id="err_university" class="text-danger"></label>
                                             </div>
-                                            <div class="form-group row">
+                                           
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Notification</h4>
+                            <form class="forms-sample">
+                                 <div class="form-group row">
 
                                                 <div class="col-sm-4">
                                                     <div class="form-check">
@@ -196,34 +206,30 @@
                                                 <label id="lblexp" >Year of Experience</label>
                                                 <input type="text" class="form-control" id="txtYearofExperience" value="0"/>
                                             </div>
-                                        </form>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" id="chkProfile" value="1">
+                                            Profile
+                                            <i class="input-helper"></i></label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-12 grid-margin stretch-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Notification</h4>
-                                        <form class="form-inline">
-                                            <div class="form-group">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="checkbox" class="form-check-input" id="chkProfile" value="1">
-                                                        Profile
-                                                        <i class="input-helper"></i></label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="checkbox" class="form-check-input" checked="" id="chkEmail">
-                                                        Email
-                                                        <i class="input-helper"></i></label>
-                                                </div>
-                                            </div>
-                                            <button type="button" class="btn btn-gradient-primary mb-2"onclick="user_profile_update()">Submit</button>
-                                        </form>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" checked="" id="chkEmail">
+                                            Email
+                                            <i class="input-helper"></i></label>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-gradient-primary mb-2"onclick="user_profile_update()">Submit</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
 
                         </div>

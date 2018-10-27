@@ -156,7 +156,7 @@ function user_profile_update() {
         var url = baseUrl + "userapi/user_profile_updation?FirstName=" + Firstname + "&LastName=" + Lastname + "&Gender=" + Gender + "&DateofBirth=" + DateofBirth + "&Home=" + Home + "&State=" + State + "&City=" + City + "&PostCode="+ PostCode +"&Contact=" + Contact + "&Experience=" + Experience + "&HigherQualification=" + HigherQualification + "&Mark=" + Mark + "&University=" + University + "&ProfileNotification=" + ProfileNotification + "&EmailNotification=" + EmailNotification
         $.ajax({url: url, success: function (data) {
                 if (data == "sucess") {
-                    window.location.href = "../login"
+                    window.location.href = "uploads"
                 } else {
                     alert("incorrect username and passsword")
                 }
