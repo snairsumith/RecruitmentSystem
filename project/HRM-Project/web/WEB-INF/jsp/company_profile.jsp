@@ -78,6 +78,7 @@
                                                         <div class="col-sm-9">
                                                             <input type="text" class="form-control" id="txtState"/>
                                                         </div>
+                                                        <label class="text-danger" id="err_state"></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,6 +89,8 @@
                                                         <div class="col-sm-9">
                                                             <input type="text" class="form-control" id="txtPostCode" />
                                                         </div>
+                                                         <label class="text-danger" id="err_postcode"></label>
+                                                         <label class="text-danger" id="err_poscod"></label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -96,6 +99,9 @@
                                                         <div class="col-sm-9">
                                                             <input type="text" class="form-control" id="txtContact"/>
                                                         </div>
+                                                       <label id="err_contact" class="text-danger"></label>
+                                                            <label id="err_con" class="text-danger"></label>
+                                                           
                                                     </div>
                                                 </div>
                                             </div>
@@ -107,6 +113,8 @@
                                                         <div class="col-sm-9">
                                                             <input type="text" class="form-control" id="txtSecondaryContact"/>
                                                         </div>
+                                                        <label id="err_secondarycontact" class="text-danger"></label>
+                                                            <label id="err_seccon" class="text-danger"></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,12 +132,14 @@
                                             <input type="text" class="form-control mb-2 mr-sm-2" id="txtName" placeholder="Jane Doe">
 
                                             <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                                           
                                             <div class="input-group mb-2 mr-sm-2">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text">@</div>
                                                 </div>
                                                 <input type="text" class="form-control" id="txtWebsite" placeholder="Username">
                                             </div>
+                                             <label class="text-danger" id="err_companywebsite"></label>
                                             
                                             <div>
                                             <button type="button" class="btn btn-gradient-primary mb-2" onclick="company_profile()">Submit</button>
