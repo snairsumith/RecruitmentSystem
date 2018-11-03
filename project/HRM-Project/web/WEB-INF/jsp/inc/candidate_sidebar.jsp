@@ -39,7 +39,7 @@
                             <a class="nav-link" href="view_applied_jobs">
                                 <i class="mdi mdi-texture menu-icon"></i>              
                                 <span class="menu-title">Requested Jobs</span>
-                                <i class="menu-arrow"></i>
+                                
                             </a>
                             
                         </li>
@@ -62,6 +62,11 @@
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Logout</span>
                             </a>
+                        </li>
+                        <li class="nav-item sidebar-actions">
+                            <span class="nav-link">
+                                &copy; 2018 hoWzzaT
+                            </span>
                         </li>
                     </ul>
                 </nav>

@@ -39,21 +39,24 @@
                                                             Candidate Name
                                                         </th>
                                                        <th>
-                                                            Registered Date & Time
+                                                            Job Title
                                                         </th>
                                                         <th>
-                                                            Qualification
+                                                            Contact
                                                         </th>
                                                          <th>
                                                             Email
                                                         </th>
-                                                        <th>
-                                                            CV
-                                                        </th>
+                                                        
                                                         <th>
                                                             Profile
                                                         </th>
-                                                        
+                                                        <th>
+                                                            Send Exam Date
+                                                        </th>
+                                                        <th>
+                                                            Send Exam Link
+                                                        </th>
                                                         
                                                     </tr>
                                                 </thead>

@@ -140,10 +140,10 @@ function company_profile() {
     if (isValid) {
         var url = baseUrl + "companyapi/company_profile?CompanyName=" + companyname + "&EstablishmentDate=" + establishementdate + "&City=" + city + "&State=" + state + "&PostCode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&CompanyWebsite=" + companywebsite
         $.ajax({url: url, success: function (data) {
-                if (data == "sucess") {
+                if (data == "success") {
                     window.location.href = "jobpost"
                 } else {
-                    alert("incorrect username and passsword")
+                    alert("ERROR PROFILE")
                 }
             }});
     }
@@ -153,26 +153,27 @@ function company_profile() {
 function job_post() {
     var createdate = $("#txtDate").val();
     var jobname = $("#txtJobname").val();
+    var jobtitle = $("#txtJobtitle").val();
     var salary = $("#txtSalary").val();
     var industry = $("#txtindustry").val();
-    var emptype = $("#txtEmotype").val();
+    var isactive=$("#rdactive").val();
+    var streetadd=$("#txtStreet").val();
     var remark = $("#txtRemark").val();
     var city = $("#txtCity").val();
-    var state = $("#selState").val();
-    var country = $("#selCountry").val();
+    
     var postcode = $("#txtPostCode").val();
     var contact = $("#txtContact").val();
     var secondarycontact = $("#txtSecondaryContact").val();
-    var jobdescripation = $("#txtJobdescription").val();
+    var jobdescription = $("#txtJobdescription").val();
     var isValid = true;
 
     if (isValid) {
-        //// var url = baseUrl + "companyapi/jobpost?CompanyName=" + createdate + "&EstablishmentDate=" + establishementdate + "&City=" + city + "&State=" + state + "&PostCode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&CompanyWebsite=" + companywebsite
+        var url = baseUrl + "companyapi/jobpost?Createddate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&PostCode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&Streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&Isactive=" + isactive;
         $.ajax({url: url, success: function (data) {
                 if (data == "sucess") {
                     window.location.href = "company_profile"
                 } else {
-                    alert("incorrect username and passsword")
+                    alert("ERROR JOBPOST")
                 }
             }});
     }
@@ -191,10 +192,10 @@ function send_exam_date() {
     if (isValid) {
         var url = baseUrl + "companyapi/send_exam_date?CompanyName=" + CompanyName + "&ExamName=" + ExamName + "&DateofExam=" + DateofExam + "&TimeofExam=" + TimeofExam + "&Remark=" + Remark
         $.ajax({url: url, success: function (data) {
-                if (data == "sucess") {
+                if (data == "success") {
                     window.location.href = "company_profile"
                 } else {
-                    alert("incorrect username and passsword")
+                    alert("ERROR DETAILS")
                 }
             }});
     }

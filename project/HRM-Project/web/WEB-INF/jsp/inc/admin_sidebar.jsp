@@ -16,7 +16,7 @@
                             </span>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html">
+                            <a class="nav-link" href="approve_company">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Dashboard</span>
                             </a>
@@ -35,28 +35,20 @@
                                 </ul>
                             </div>
                         </li>-->
+                        
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="" aria-expanded="false" aria-controls="sidebar-layouts">
-                                <i class="mdi mdi-playlist-play menu-icon"></i>              
-                                <span class="menu-title">Company</span>
-                                <i class="menu-arrow"></i>
-                            </a>
-                            <div class="collapse" id="sidebar-layouts">
-                                <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="approve_company">Approve Company</a></li>
-                                    <!--<li class="nav-item"> <a class="nav-link" href="../layout/sidebar-collapsed.html">Icon menu</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-hidden.html">Sidebar Hidden</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-hidden-overlay.html">Sidebar Overlay</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../layout/sidebar-fixed.html">Sidebar Fixed</a></li>-->
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="Admin_View_Customer" aria-expanded="false" aria-controls="ui-basic">
-                                <i class="mdi mdi-texture menu-icon"></i>              
+                            <a class="nav-link" href="Admin_View_Customer">
+                                <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Candidate</span>
-                                <i class="menu-arrow"></i>
                             </a>
+                        </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="approve_company">
+                                <i class="mdi mdi-home-outline menu-icon"></i>              
+                                <span class="menu-title">Approve Company</span>
+                            </a>
+                        </li>
+                       
                             <!--<div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu">
                                     <li class="nav-item"> <a class="nav-link" href="../ui-features/accordions.html">Accordions</a></li>
@@ -277,14 +269,7 @@
                             </a>
                         </li>-->
                         <li class="nav-item sidebar-actions">
-                            <a class="nav-link" href="#">
-                                <i class="mdi mdi-circle-outline menu-icon text-danger"></i>
-                                Settings
-                            </a>
-                            <a class="nav-link" href="#">
-                                <i class="mdi mdi-circle-outline menu-icon text-danger"></i>
-                                Contact Support
-                            </a>
+                           
                             <span class="nav-link">
                                 &copy; 2018 hoWzzaT
                             </span>

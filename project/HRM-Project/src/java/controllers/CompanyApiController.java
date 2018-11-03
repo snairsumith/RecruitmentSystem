@@ -40,7 +40,7 @@ public class CompanyApiController {
         int i = stmt.executeUpdate(sql);
         int j = stmt.executeUpdate(sql1);
         if (i > 0 && j > 0) {
-            return "sucess";
+            return "success";
         } else {
             return "fail";
         }
@@ -64,7 +64,7 @@ public class CompanyApiController {
         int i = stmt.executeUpdate(sql);
 
         if (i > 0) {
-            return "sucess";
+            return "success";
         } else {
             return "fail";
         }
@@ -85,7 +85,7 @@ public class CompanyApiController {
         int i = stmt.executeUpdate(sql);
         int j = stmt.executeUpdate(sql1);
         if (i > 0 && j > 0) {
-            return "sucess";
+            return "success";
         } else {
             return "fail";
         }
@@ -93,14 +93,17 @@ public class CompanyApiController {
     @RequestMapping(value = "/jobpost", method = RequestMethod.GET)
         @ResponseBody
         public String jobpost(@RequestParam("Createdate")String Createdate,
-                                  @RequestParam("Jobname")String Jobname, 
+                                  @RequestParam("Jobpost")String Jobname,
+                                  @RequestParam("Jobtitle")String Jobtitle,
                                   @RequestParam("Salary")String Salary,
                                   @RequestParam("Industry")String Industry,
-                                  @RequestParam("Employetype")String Employetype,
+                                  
                                   @RequestParam("Jobdescription")String Jobdescription,
                                   @RequestParam("Remark")String Remark,
-                                  @RequestParam("Streetaddress")String Streetaddress,
-                                  
+                                  @RequestParam("Isactive")String Isactive,
+                                   @RequestParam("streetadd")String streetadd,
+                                   @RequestParam("City")String city,
+                                   
                                   @RequestParam("Postcode")String Postcode,
                                   @RequestParam("Contact")String Contact,
                                   @RequestParam("SecondaryContact") String SecondaryContact) throws SQLException, ClassNotFoundException {
@@ -108,10 +111,10 @@ public class CompanyApiController {
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm", "root", "");
         Statement stmt = con.createStatement();
-        String sql = "insert into jobpost (Createdate,Jobname,Salary,Industry,Employetype,Jobdescription,Remark,Streetaddress,Postcode,Contact,SecondaryContact)values('" + Createdate + "','" + Jobname + "','" + Salary + "','" + Industry + "','" + Employetype + "','" + Jobdescription + "','" + Remark + "','" + Streetaddress + "','" + Postcode + "','" + Contact + "','" + SecondaryContact + "')";
+        String sql = "insert into jobpost (CreatedDate,JobTitle,Jobpost,Salary,Industry,JobDescription,Remark,StreetName,JobLocationId,PostCode,Contact,SecondaryContact,IsActive)values('" + Createdate + "','" + Jobtitle + "','" + Jobname + "','" + Salary + "','" + Industry + "','" + Jobdescription + "','" + Remark + "','" + streetadd + "','" + 1 + "','" + Postcode + "','" + Contact + "','" + SecondaryContact + "','" + Isactive + "')";
         int i = stmt.executeUpdate(sql);
         if (i > 0) {
-            return "sucess";
+            return "success";
         } else {
             return "fail";
         }
@@ -130,7 +133,7 @@ public class CompanyApiController {
         String sql = "insert into exam (CompanyName,ExamName,DateofExam,TimeofExam,Remark)values('" + CompanyName + "','" + ExamName + "','" + DateofExam + "','" + TimeofExam + "','" + Remark + "')";
         int i = stmt.executeUpdate(sql);
         if (i > 0) {
-            return "sucess";
+            return "success";
         } else {
             return "fail";
         }

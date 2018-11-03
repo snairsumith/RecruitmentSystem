@@ -45,22 +45,33 @@
                                         
                                         
                                         <div class="row">
-                                            <div class="col-sm-12 col-md-6">
+                                            <div class="col-sm-12 col-md-4">
                                                 <div class="dataTables_length" id="order-listing_length">
-                                                    <label>Show <select name="order-listing_length" aria-controls="order-listing" class="form-control">
-                                                            <option value="5">5</option>
+                                                     <select name="order-listing_length" aria-controls="order-listing" class="form-control">
+                                                            <option value="5">Select Industry</option>
                                                             <option value="10">10</option>
                                                             <option value="15">15</option>
                                                             <option value="-1">All</option>
-                                                        </select> entries</label>
+                                                        </select> 
                                                 </div>
                                             </div>
-                                            <div class="col-sm-12 col-md-6">
-                                                <div id="order-listing_filter" class="dataTables_filter">
-                                                    <label><input type="search" class="form-control" placeholder="Search" aria-controls="order-listing">
-                                                    </label>
+                                            <div class="col-sm-12 col-md-4">
+                                                <div class="dataTables_length" id="order-listing_length">
+                                                    <select name="order-listing_length" aria-controls="order-listing" class="form-control">
+                                                            <option value="5">Select Location</option>
+                                                            <option value="10">10</option>
+                                                            <option value="15">15</option>
+                                                            <option value="-1">All</option>
+                                                        </select> 
                                                 </div>
+                                                
                                             </div>
+                                            <div class="col-sm-12 col-md-4">
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-gradient-primary mb-2"onclick="">Search</button>
+                                            </div>
+                                            </div>
+                                            
                                         </div>
                                         <div class="row">
                                             <div class="col-12">

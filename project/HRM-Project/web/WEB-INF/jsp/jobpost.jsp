@@ -6,207 +6,211 @@
 
 <%@ include file="inc/header.jsp" %>  
 
-    
-    <%@ include file="inc/top_company.jsp"%>
-    <div class="container-fluid page-body-wrapper">
-        <div id="settings-trigger"><i class="mdi mdi-format-color-fill"></i></div>
-                
+
+<%@ include file="inc/top_company.jsp"%>
+<div class="container-fluid page-body-wrapper">
+    <div id="settings-trigger"><i class="mdi mdi-format-color-fill"></i></div>
+
     <%@ include file="inc/company_sidebar.jsp"%> 
-                <div class="main-panel">        
-                    <div class="content-wrapper">
-                        <div class="page-header">
-                            <h3 class="page-title">
-                                Posting Job
-                            </h3>
+    <div class="main-panel">        
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title">
+                    Posting Job
+                </h3>
 
-                        </div>
-                        <div class="col-12 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Job Description</h4>
-                                    
-                                    <form class="forms-sample">
+            </div>
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Job Description</h4>
 
-                                        <div class="form-group">
-                                            <label for="exampleInputName1">Created Date</label>
-                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy" id="txtDate"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail3">Job Name/Role</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail3" placeholder="job name/role" id="txtJobname">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword4">Salary</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword4" placeholder="salary" id="txtSalary">
-                                        </div>
-                                        
-                                        
-                                       <div class="form-group">
-                                            <label for="exampleInputCity1">Industry/Functional Area</label>
-                                            <input type="text" class="form-control" id="exampleInputCity1" placeholder="industry/functional area" id="txtindustry">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputCity1">Employment Type</label>
-                                            <input type="text" class="form-control" id="exampleInputCity1" placeholder="employment type" id="txtEmotype">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleTextarea1">Job Description</label>
-                                            <textarea class="form-control" id="exampleTextarea1" rows="4" id="txtJobdescription"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleTextarea1">Remark</label>
-                                            <textarea class="form-control" id="exampleTextarea1" rows="4" id="txtRemark"></textarea>
-                                        </div>
-                                         <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Is Active</label>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
+                        <form class="forms-sample">
 
-                                                                    <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked="">
-                                                                    Yes
-                                                                    <i class="input-helper"></i></label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-5">
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
-                                                                    No
-                                                                    <i class="input-helper"></i></label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                       
-                                    </form>
-                                </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Created Date</label>
+                                <input type="date" class="form-control" placeholder="dd/mm/yyyy" id="txtDate"/>
                             </div>
-                        </div>
-                        <div class="row">
+                             <div class="form-group">
+                                <label for="exampleInputName1">Job Title</label>
+                                <input type="date" class="form-control" placeholder="dd/mm/yyyy" id="txtJobtitle"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleSelectGender">Job Post/Role</label>
+                                <select class="form-control" id="txtJobname">
+                                    <option>Manager</option>
+                                    <option>Developer</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword4">Salary</label>
+                                <input type="text" class="form-control" id="exampleInputPassword4" placeholder="salary" id="txtSalary">
+                            </div>
 
 
+                            <div class="form-group">
+                                <label for="exampleInputCity1">Industry/Functional Area</label>
+                                <input type="text" class="form-control" id="exampleInputCity1" placeholder="industry/functional area" id="txtindustry">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Job Description</label>
+                                <textarea class="form-control" id="exampleTextarea1" rows="4" id="txtJobdescription"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Remark</label>
+                                <textarea class="form-control" id="exampleTextarea1" rows="4" id="txtRemark"></textarea>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Is Active</label>
+                                <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
 
-
-
-
-
-                            <div class="col-12 grid-margin">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <!--  <h4 class="card-title">Horizontal Two column</h4>-->
-                                        <form class="form-sample">
-
-                                            <div class="row">
-                                                
-                                               
-
-                                            </div>
-                                            <h5 class="card-title">Location</h5>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Street Address</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="txtStreet"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Postcode</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="txtPostCode"/>
-                                                        </div>
-                                                        
-                                                       
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">City</label>
-                                                        
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="txtStreet"/>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">State</label>
-                                                      
-                                                         <div class="col-sm-9">
-                                                            <select class="form-control" id="selState">
-                                                                <option>Kerala</option>
-                                                                <option>TamilNadhu</option>
-                                                                <option>Karanadaka</option>
-                                                                <option>Delhi</option>
-                                                            </select> 
-
-                                                        </div>
-                         
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Country</label>
-                                                        <div class="col-sm-9">
-                                                            <select class="form-control" id="selCountry">
-                                                                <option>America</option>
-                                                                <option>Italy</option>
-                                                                <option>Russia</option>
-                                                                <option>Britain</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Contact</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="txtContact"/>
-                                                        </div>
-                                                        <label class="col-sm-3 col-form-label">Secondary Contact</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="txtSecondaryContact"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                      
-                                            
-
-                                            
-                                        </form>
+                                            <input type="radio" class="form-check-input" name="membershipRadios" id="rdactive" value="1" checked="">
+                                            Yes
+                                            <i class="input-helper"></i></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="membershipRadios" id="rdactive" value="o">
+                                            No
+                                            <i class="input-helper"></i></label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <!--<h4 class="card-title">Inline forms</h4>
-                  <p class="card-description">
-                    Use the <code>.form-inline</code> class to display a series of labels, form controls, and buttons on a single horizontal row
-                  </p>-->
-                  <form class="form-inline">
-                    
-                   
-                    <button type="button" class="btn btn-gradient-primary mr-2">Submit</button>
-                                        <button class="btn btn-light">Cancel</button>
-                  </form>
-                </div>
-              </div>
-            </div>
 
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+
+
+
+
+
+
+                <div class="col-12 grid-margin">
+                    <div class="card">
+                        <div class="card-body">
+                            <!--  <h4 class="card-title">Horizontal Two column</h4>-->
+                            <form class="form-sample">
+
+                                <div class="row">
+
+
+
+                                </div>
+                                <h5 class="card-title">Location</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Street Address</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="txtStreet"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Postcode</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="txtPostCode"/>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">City</label>
+
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="txtStreet"/>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">State</label>
+
+                                            <div class="col-sm-9">
+                                                <select class="form-control" id="selState">
+                                                    <option>Kerala</option>
+                                                    <option>TamilNadhu</option>
+                                                    <option>Karanadaka</option>
+                                                    <option>Delhi</option>
+                                                </select> 
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Country</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control" id="selCountry">
+                                                    <option>America</option>
+                                                    <option>Italy</option>
+                                                    <option>Russia</option>
+                                                    <option>Britain</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Contact</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="txtContact"/>
+                                            </div>
+                                            <label class="col-sm-3 col-form-label">Secondary Contact</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="txtSecondaryContact"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </form>
                         </div>
                     </div>
-                    <!-- content-wrapper ends -->
-                    <!-- partial:../../partials/_footer.html -->
-                  <%@ include file="inc/companyfooter.jsp"%>
-</html>
+                </div>
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <!--<h4 class="card-title">Inline forms</h4>
+                            <p class="card-description">
+                              Use the <code>.form-inline</code> class to display a series of labels, form controls, and buttons on a single horizontal row
+                            </p>-->
+                            <form class="form-inline">
+
+
+                                <button type="button" class="btn btn-gradient-primary mr-2">Submit</button>
+                                <button class="btn btn-light">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <%@ include file="inc/companyfooter.jsp"%>
+        </html>
 
