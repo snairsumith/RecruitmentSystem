@@ -33,4 +33,9 @@ public class AdminController {
         
         return "Admin_View_Customer_Profile";
     }
+    @RequestMapping(value="/AdminDashboard",method = RequestMethod.GET)
+    public String AdminDashboard(ModelMap modelMap) {
+        
+        return "AdminDashboard";
+    }
 }

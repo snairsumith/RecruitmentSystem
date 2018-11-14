@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/")
 public class CommonControler {
     
-    @RequestMapping(value="/login",method = RequestMethod.GET)
+    @RequestMapping(value="/",method = RequestMethod.GET)
     public String login(ModelMap modelMap) {
         
         return "login";

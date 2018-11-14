@@ -39,7 +39,8 @@ function company_registration() {
         var url = baseUrl + "companyapi/company_registration?Username=" + username + "&Email=" + email + "&Country=" + country + "&Password=" + password
         $.ajax({url: url, success: function (data) {
                 if (data == "success") {
-                    window.location.href = "login"
+                    alert("Registration Sucessfull");
+                    window.location.href = "/"
                 } else {
                     alert("incorrect username and passsword")
                 }
@@ -200,4 +201,8 @@ function send_exam_date() {
             }});
     }
 
+}
+
+function companyByUsername(){
+    var username = localStorage.getItem("username");
 }

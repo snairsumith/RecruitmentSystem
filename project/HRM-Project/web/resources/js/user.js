@@ -10,14 +10,17 @@ function login() {
     var role = $("#selrole").val();
     var url = baseUrl + "userapi/userlogin?username=" + username + "&password=" + password + "&role=" + role
     $.ajax({url: url, success: function (data) {
-            alert(data)
+           
             if (data != "fail") {
+                localStorage.setItem("username", username);
                 if (data == 1) {
-                    window.location.href = "Candidate/candidate_profile"
+                    window.location.href = "Admin/AdminDashboard"
+                    
                 } else if (data == 2) {
-                    window.location.href = "company/company_profile"
+                    window.location.href = "Candidate/candidate_profile"
+                    
                 } else if (data == 3) {
-                    window.location.href = "Admin/approve_company "
+                    window.location.href = "company/company_profile"
                 }
             } else {
                 alert("incorrect username or password")

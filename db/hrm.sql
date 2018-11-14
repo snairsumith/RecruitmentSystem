@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2018 at 09:03 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 5.6.37
+-- Generation Time: Nov 14, 2018 at 03:09 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -57,16 +57,26 @@ CREATE TABLE `company_job-post` (
 
 CREATE TABLE `company_reg` (
   `CompanyId` int(11) NOT NULL,
-  `CompanyName` varchar(50) NOT NULL,
-  `Address` varchar(50) NOT NULL,
-  `Country` varchar(50) NOT NULL,
-  `City` varchar(50) NOT NULL,
-  `Pin` int(11) NOT NULL,
-  `Contact` int(11) NOT NULL,
-  `SecondaryContact` int(11) NOT NULL,
-  `CompanyWebsite` varchar(50) NOT NULL,
-  `EstablishmentDate` timestamp NULL DEFAULT NULL
+  `CompanyName` varchar(50) DEFAULT NULL,
+  `UserName` varchar(50) DEFAULT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Address` varchar(50) DEFAULT NULL,
+  `Country` varchar(50) DEFAULT NULL,
+  `City` varchar(50) DEFAULT NULL,
+  `Pin` int(11) DEFAULT NULL,
+  `Contact` int(11) DEFAULT NULL,
+  `SecondaryContact` int(11) DEFAULT NULL,
+  `CompanyWebsite` varchar(50) DEFAULT NULL,
+  `EstablishmentDate` timestamp NULL DEFAULT NULL,
+  `CreatedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `company_reg`
+--
+
+INSERT INTO `company_reg` (`CompanyId`, `CompanyName`, `UserName`, `Email`, `Address`, `Country`, `City`, `Pin`, `Contact`, `SecondaryContact`, `CompanyWebsite`, `EstablishmentDate`, `CreatedDate`) VALUES
+(2, NULL, 'Company 1', 'company@gmail.com', NULL, 'India', NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-13 07:10:31');
 
 -- --------------------------------------------------------
 
@@ -220,7 +230,7 @@ CREATE TABLE `login_tbl` (
   `LoginId` int(11) NOT NULL,
   `UserName` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
-  `Role` int(11) NOT NULL,
+  `Role` int(11) NOT NULL COMMENT '1-Admin,2-Customer,3-Company',
   `Status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -229,8 +239,9 @@ CREATE TABLE `login_tbl` (
 --
 
 INSERT INTO `login_tbl` (`LoginId`, `UserName`, `Password`, `Role`, `Status`) VALUES
-(1, 'Admin', 'Admin', 1, '0'),
-(2, 'Admin', 'Admin', 1, '0');
+(1, 'Admin', 'Admin', 1, '1'),
+(3, 'sumith', '1234', 2, '1'),
+(4, 'Company 1', '123456789', 3, '0');
 
 -- --------------------------------------------------------
 
@@ -285,28 +296,35 @@ CREATE TABLE `skill_tbl` (
 
 CREATE TABLE `user_reg` (
   `UserId` int(11) NOT NULL,
-  `UserName` varchar(50) NOT NULL,
-  `FirstName` varchar(50) NOT NULL,
-  `LastName` varchar(50) NOT NULL,
-  `Gender` varchar(20) NOT NULL,
+  `UserName` varchar(50) DEFAULT NULL,
+  `FirstName` varchar(50) DEFAULT NULL,
+  `LastName` varchar(50) DEFAULT NULL,
+  `Gender` varchar(20) DEFAULT NULL,
   `Dob` timestamp NULL DEFAULT NULL,
-  `Email` varchar(30) NOT NULL,
-  `Country` varchar(25) NOT NULL,
-  `City` varchar(25) NOT NULL,
-  `Contact` int(11) NOT NULL,
-  `Experience` varchar(25) NOT NULL,
-  `HigherQualification` varchar(50) NOT NULL,
-  `Marks` int(11) NOT NULL,
-  `University` varchar(50) NOT NULL,
-  `RegDate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `Email` varchar(30) DEFAULT NULL,
+  `Country` varchar(25) DEFAULT NULL,
+  `City` varchar(25) DEFAULT NULL,
+  `Contact` int(11) DEFAULT NULL,
+  `Experience` varchar(25) DEFAULT NULL,
+  `HigherQualification` varchar(50) DEFAULT NULL,
+  `Marks` int(11) DEFAULT NULL,
+  `University` varchar(50) DEFAULT NULL,
+  `RegDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `RegTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `ProfileNotification` varchar(50) NOT NULL,
-  `EmailNotification` varchar(50) NOT NULL,
-  `Photo` varchar(50) NOT NULL,
-  `Cv` varchar(50) NOT NULL,
-  `MarkList` varchar(50) NOT NULL,
-  `IdProof` varchar(50) NOT NULL
+  `ProfileNotification` varchar(50) DEFAULT NULL,
+  `EmailNotification` varchar(50) DEFAULT NULL,
+  `Photo` varchar(50) DEFAULT NULL,
+  `Cv` varchar(50) DEFAULT NULL,
+  `MarkList` varchar(50) DEFAULT NULL,
+  `IdProof` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_reg`
+--
+
+INSERT INTO `user_reg` (`UserId`, `UserName`, `FirstName`, `LastName`, `Gender`, `Dob`, `Email`, `Country`, `City`, `Contact`, `Experience`, `HigherQualification`, `Marks`, `University`, `RegDate`, `RegTime`, `ProfileNotification`, `EmailNotification`, `Photo`, `Cv`, `MarkList`, `IdProof`) VALUES
+(1, 'sumith', NULL, NULL, NULL, NULL, 'sumith@gmail.com', 'India', NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-06 18:30:00', '2018-11-13 07:24:17', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -435,7 +453,7 @@ ALTER TABLE `company_job-post`
 -- AUTO_INCREMENT for table `company_reg`
 --
 ALTER TABLE `company_reg`
-  MODIFY `CompanyId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `CompanyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `exam`
@@ -477,7 +495,7 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `login_tbl`
 --
 ALTER TABLE `login_tbl`
-  MODIFY `LoginId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `LoginId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `notification_tbl`
@@ -501,7 +519,7 @@ ALTER TABLE `skill_tbl`
 -- AUTO_INCREMENT for table `user_reg`
 --
 ALTER TABLE `user_reg`
-  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user_skill_tbl`

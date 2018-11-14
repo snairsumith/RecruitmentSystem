@@ -10,13 +10,13 @@
 <html lang="en">
 
 
-<!-- Mirrored from www.urbanui.com/gleam/pages/samples/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 07:45:44 GMT -->
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Login Page</title>
-  <!-- plugins:css -->
+ 
   
   <spring:url value="/resources/vendors/iconfonts/mdi/css/materialdesignicons.min.css" var="materialdesigniconsCss" />
   <spring:url value="/resources/vendors/css/vendor.bundle.base.css" var="baseCss" />

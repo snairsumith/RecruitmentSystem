@@ -21,4 +21,5 @@
             <span class="mdi mdi-menu"></span>
         </button>
     </div>
+    <input type="hidden" value="" id="hd_username"/>
 </nav>

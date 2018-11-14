@@ -14,7 +14,7 @@
                             </span>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html">
+                            <a class="nav-link" href="#">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Dashboard</span>
                             </a>
@@ -51,15 +51,7 @@
                             <div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu">
                                     <li class="nav-item"> <a class="nav-link" href="jobpost">JobPost</a></li>
-                                    <!--<li class="nav-item"> <a class="nav-link" href="../ui-features/buttons.html">Buttons</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/badges.html">Badges</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/breadcrumbs.html">Breadcrumbs</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/dropdowns.html">Dropdowns</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/modals.html">Modals</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/progress.html">Progress bar</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/pagination.html">Pagination</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/tabs.html">Tabs</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="../ui-features/typography.html">Typography</a></li>-->
+                                   
                                 </ul>
                             </div>
                         </li>

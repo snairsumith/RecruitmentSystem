@@ -24,7 +24,7 @@
 <spring:url value="/resources/js/misc.js" var="miscJS" />
 <spring:url value="/resources/js/settings.js" var="settingsJS" />
 <spring:url value="/resources/js/todolist.js" var="todolistJS" />
-
+<spring:url value="/resources/js/Admin.js" var="AdminJS" />
 <script src="${baseJS}"></script>
 <script src="${addonsJS}" ></script>
 <script src="${canvasJS}" ></script>
@@ -32,5 +32,6 @@
 <script src="${miscJS}" ></script>
 <script src="${settingsJS}" ></script>
 <script src="${todolistJS}" ></script>
+<script src="${AdminJS}" ></script>
 
 </body>

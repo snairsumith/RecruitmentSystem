@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import LiibraryFunction.DBFunctions;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -25,6 +26,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("companyapi/")
 public class CompanyApiController {
 
+    DBFunctions db = new DBFunctions();
+
     @RequestMapping(value = "/company_registration", method = RequestMethod.GET)
     @ResponseBody
     public String company_registration(@RequestParam("Username") String Username,
@@ -36,7 +39,7 @@ public class CompanyApiController {
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm", "root", "");
         Statement stmt = con.createStatement();
         String sql = "insert into company_reg (UserName,Email,Country)values('" + Username + "','" + Email + "','" + Country + "')";
-        String sql1 = "insert into login_tbl (UserName,Password,Role,Status)values('" + Username + "','" + Password + "','2','0')";
+        String sql1 = "insert into login_tbl (UserName,Password,Role,Status)values('" + Username + "','" + Password + "','3','0')";
         int i = stmt.executeUpdate(sql);
         int j = stmt.executeUpdate(sql1);
         if (i > 0 && j > 0) {
@@ -90,23 +93,22 @@ public class CompanyApiController {
             return "fail";
         }
     }
+
     @RequestMapping(value = "/jobpost", method = RequestMethod.GET)
-        @ResponseBody
-        public String jobpost(@RequestParam("Createdate")String Createdate,
-                                  @RequestParam("Jobpost")String Jobname,
-                                  @RequestParam("Jobtitle")String Jobtitle,
-                                  @RequestParam("Salary")String Salary,
-                                  @RequestParam("Industry")String Industry,
-                                  
-                                  @RequestParam("Jobdescription")String Jobdescription,
-                                  @RequestParam("Remark")String Remark,
-                                  @RequestParam("Isactive")String Isactive,
-                                   @RequestParam("streetadd")String streetadd,
-                                   @RequestParam("City")String city,
-                                   
-                                  @RequestParam("Postcode")String Postcode,
-                                  @RequestParam("Contact")String Contact,
-                                  @RequestParam("SecondaryContact") String SecondaryContact) throws SQLException, ClassNotFoundException {
+    @ResponseBody
+    public String jobpost(@RequestParam("Createdate") String Createdate,
+            @RequestParam("Jobpost") String Jobname,
+            @RequestParam("Jobtitle") String Jobtitle,
+            @RequestParam("Salary") String Salary,
+            @RequestParam("Industry") String Industry,
+            @RequestParam("Jobdescription") String Jobdescription,
+            @RequestParam("Remark") String Remark,
+            @RequestParam("Isactive") String Isactive,
+            @RequestParam("streetadd") String streetadd,
+            @RequestParam("City") String city,
+            @RequestParam("Postcode") String Postcode,
+            @RequestParam("Contact") String Contact,
+            @RequestParam("SecondaryContact") String SecondaryContact) throws SQLException, ClassNotFoundException {
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm", "root", "");
@@ -119,13 +121,14 @@ public class CompanyApiController {
             return "fail";
         }
     }
-         @RequestMapping(value = "/send_exam_date", method = RequestMethod.GET)
-        @ResponseBody
-        public String send_exam_date(@RequestParam("CompanyName")String CompanyName,
-                                  @RequestParam("ExamName")String ExamName, 
-                                  @RequestParam("DateofExam")String DateofExam,
-                                  @RequestParam("TimeofExam")String TimeofExam,
-                                  @RequestParam("Remark")String Remark) throws SQLException, ClassNotFoundException {
+
+    @RequestMapping(value = "/send_exam_date", method = RequestMethod.GET)
+    @ResponseBody
+    public String send_exam_date(@RequestParam("CompanyName") String CompanyName,
+            @RequestParam("ExamName") String ExamName,
+            @RequestParam("DateofExam") String DateofExam,
+            @RequestParam("TimeofExam") String TimeofExam,
+            @RequestParam("Remark") String Remark) throws SQLException, ClassNotFoundException {
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm", "root", "");
@@ -138,12 +141,29 @@ public class CompanyApiController {
             return "fail";
         }
     }
+
+    @RequestMapping(value = "/company_approve", method = RequestMethod.GET)
+    @ResponseBody
+    public String company_approve(@RequestParam("comapnayUserName") String comapnayUserName,
+            @RequestParam("type") int type) throws SQLException, ClassNotFoundException {
+        String sql = "";
+        if (type == 1) {
+            sql = "update login_tbl set status=1 where UserName='" + comapnayUserName + "'";
+        } else {
+            sql = "delete from company_reg where UserName='" + comapnayUserName + "'";
+        }
+        int i = db.InsetQuery(sql);
+
+        if (i > 0) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
+    
+       @RequestMapping(value = "/company_deatils", method = RequestMethod.GET)
+    @ResponseBody
+    public String company_approve(@RequestParam("comapnayUserName") String comapnayUserName) throws SQLException, ClassNotFoundException {
+       return "haii";
+    }
 }
-
-
-
-
-
-
-
-

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -25,8 +26,9 @@ public class UserApiController {
     @RequestMapping(value = "/userlogin", method = RequestMethod.GET)
     @ResponseBody
     public String userlogin(@RequestParam("username") String username,
-            @RequestParam("password") String password) throws SQLException, ClassNotFoundException {
-
+            @RequestParam("password") String password,
+            HttpSession session) throws SQLException, ClassNotFoundException {
+        
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm", "root", "");
         Statement stmt = con.createStatement();
@@ -34,6 +36,7 @@ public class UserApiController {
         ResultSet rs = stmt.executeQuery(sql);
         if (rs.next()) {
             
+            session.setAttribute("username", username);
             return rs.getString("Role");
         } else {
             return "fail";
@@ -51,7 +54,7 @@ public class UserApiController {
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm", "root", "");
         Statement stmt = con.createStatement();
         String sql = "insert into user_reg (UserName,Email,Country)values('" + username + "','" + Email + "','" + Country + "')";
-        String sql1 = "insert into login_tbl (UserName,Password,Role,Status)values('" + username + "','" + Password + "','1','1')";
+        String sql1 = "insert into login_tbl (UserName,Password,Role,Status)values('" + username + "','" + Password + "','2','1')";
         int i = stmt.executeUpdate(sql);
         int j = stmt.executeUpdate(sql1);
         if (i > 0 && j > 0) {
