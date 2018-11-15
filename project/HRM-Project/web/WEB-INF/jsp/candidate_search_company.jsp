@@ -46,47 +46,109 @@
 
 
                                 <div class="row">
+
                                     <div class="col-sm-12 col-md-4">
                                         <div class="dataTables_length" id="order-listing_length">
-                                            <select name="order-listing_length" aria-controls="order-listing" class="form-control" id="cmbComapny" onchange="getCompanyById()">
-                                                <option value="5">Select Industry</option>
 
-                                            <%
-                                                String sql1 = "select * from  company_reg";
-                                                DBFunctions db = new DBFunctions();
-                                                ResultSet rs1 = db.SelectQuery(sql1);
-                                                while (rs1.next()) {
-                                            %>
-                                            <option value=<%= rs1.getString("CompanyId")%>><%= rs1.getString("UserName")%></option>
-                                            <%
-                                                }
-                                            %>
-                                        </select> 
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-4">
-                                    <div class="dataTables_length" id="order-listing_length">
-                                        <select name="order-listing_length" aria-controls="order-listing" class="form-control" id="cmbLocation" onchange="getCompanyByLocation()">
-                                            <option value="5">Select Location</option>
-                                            <%
-                            String sql2 = "select distinct Country,CompanyId from  company_reg";
-                         
-                            ResultSet rs2 = db.SelectQuery(sql2);
-                            while (rs2.next()) {
-                                            %>
-                                            <option value=<%= rs2.getString("Country")%>><%= rs2.getString("Country")%></option>
-                                            <%
-                                                }
-                                            %>
-                                        </select> 
+                                        </div>
                                     </div>
 
-                                </div>
-                                <div class="col-sm-12 col-md-4">
-                                    <div class="form-group">
-                                        <button type="button" class="btn btn-gradient-primary mb-2"onclick="">Search</button>
+                                    <div class="col-12 grid-margin">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <!--  <h4 class="card-title">Horizontal Two column</h4>-->
+                                                <form class="form-sample">
+
+                                                    <div class="row">
+
+
+
+                                                    </div>
+                                                    <h5 class="card-title">Location</h5>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group row">
+
+                                                                <div class="col-sm-12">
+                                                                    <select name="order-listing_length" aria-controls="order-listing" class="form-control" id="cmbComapny" onchange="getCompanyById()">
+                                                                        <option value="5">Select Industry</option>
+
+                                                                    <%
+                                                                        String sql1 = "select * from  company_reg";
+                                                                        DBFunctions db = new DBFunctions();
+                                                                        ResultSet rs1 = db.SelectQuery(sql1);
+                                                                        while (rs1.next()) {
+                                                                    %>
+                                                                    <option value="<%= rs1.getString("UserName")%>"><%= rs1.getString("UserName")%></option>
+                                                                    <%
+                                                                        }
+                                                                    %>
+                                                                </select> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+
+                                                            <div class="col-sm-12">
+                                                                <select class="form-control" id="selCountry" onchange="getallocation()">
+                                                                    <option>Select Country</option>
+                                                                    <%
+                                                         String sql11 = "select * from location where ParentId=0";
+                                        
+                                                         ResultSet rs11 = db.SelectQuery(sql11);
+                                                         while (rs11.next()) {
+                                                                    %>
+                                                                    <option value=<%= rs11.getString("LocationId")%>><%= rs11.getString("LocationName")%></option>
+                                                                    <%
+                                                                        }
+                                                                    %>
+                                                                </select>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+
+                                                            <div class="col-sm-12">
+                                                                <select class="form-control" id="selState" onchange="getallCity()">
+                                                                    <option value="0">Select State</option>
+                                                                </select> 
+                                                            </div>
+
+
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+
+                                                            <div class="col-sm-12">
+                                                                <select class="form-control" id="selCity" onchange="getCompanyByLocation()">
+                                                                    <option value="0">Select City</option>
+                                                                </select> 
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                
+
+
+
+
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
+
 
                             </div>
                             <div class="row">
@@ -95,29 +157,40 @@
                                         <table id="order-listing" class="table">
                                             <thead>
                                                 <tr class="bg-primary text-white">
-                                                    <th>Company Id</th>
+
                                                     <th>Company Name</th>
                                                     <th>Email</th>
+
+                                                    <th>Job Title</th>
+                                                    <th>Job Post</th>
+                                                    <th>Description</th>
+                                                    <th>Remark</th>
+                                                    <th>Salary</th>
                                                     <th>Contact</th>
-                                                    <th>Official Site</th>
+                                                    <th>Industury</th>
+                                                    <th></th>
 
                                                 </tr>
                                             </thead>
                                             <tbody id="tbody_companylist">
                                                 <%
                                    
-                                            String sql = "SELECT * FROM `company_reg`";
+                                            String sql = "select  jobpost.*,company_reg.*,job_type_tbl.* from  jobpost inner join company_reg on company_reg.UserName=jobpost.CompanyId  inner join job_type_tbl on job_type_tbl.TypeId=jobpost.JobTypeId";
                                             ResultSet rs = db.SelectQuery(sql);
                                             while (rs.next()) {
                                                 %>
                                                 <tr>
-                                                    <td><%= rs.getString("CompanyId")%></td>
-                                                    <td><%= rs.getString("CompanyName")%></td>
-                                                    <td><%= rs.getString("Email")%></td>
-                                                    <td><%= rs.getString("Contact")%></td>
-                                                    <td><%= rs.getString("CompanyWebsite")%></td>
+                                                    <td><%= rs.getString("companyName")%></td>
+                                                    <td><%= rs.getString("email")%></td>
+                                                    <td><%= rs.getString("jobTitle")%></td>
+                                                    <td><%= rs.getString("jobTypeId")%></td>
+                                                    <td><%= rs.getString("jobDescription")%></td>
+                                                    <td><%= rs.getString("remark")%></td>
+                                                    <td><%= rs.getString("salary")%></td>
+                                                    <td><%= rs.getString("contact")%></td>
+                                                    <td><%= rs.getString("industry")%></td>
 
-                                                    <td></td>
+                                                    <td><a href="" onclick="applyJob(<%= rs.getString("jobPostId")%>)">Apply </a></td>
                                                 </tr>
                                                 <%
                                                     }

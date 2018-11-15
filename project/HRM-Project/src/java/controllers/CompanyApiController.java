@@ -111,12 +111,16 @@ public class CompanyApiController {
             @RequestParam("City") String city,
             @RequestParam("Postcode") String Postcode,
             @RequestParam("Contact") String Contact,
-            @RequestParam("SecondaryContact") String SecondaryContact) throws SQLException, ClassNotFoundException {
+            @RequestParam("SecondaryContact") String SecondaryContact,
+            @RequestParam("userName") String userName,
+            @RequestParam("JobLocationId") String JobLocationId) throws SQLException, ClassNotFoundException {
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm", "root", "");
         Statement stmt = con.createStatement();
-        String sql = "insert into jobpost (CreatedDate,JobTitle,Jobpost,Salary,Industry,JobDescription,Remark,StreetName,JobLocationId,PostCode,Contact,SecondaryContact,IsActive)values('" + Createdate + "','" + Jobtitle + "','" + Jobname + "','" + Salary + "','" + Industry + "','" + Jobdescription + "','" + Remark + "','" + streetadd + "','" + 1 + "','" + Postcode + "','" + Contact + "','" + SecondaryContact + "','" + Isactive + "')";
+        String sql = "insert into jobpost (CreatedDate,JobTitle,JobTypeId,Salary,Industry,JobDescription,Remark,StreetName,JobLocationId,PostCode,Contact,SecondaryContact,IsActive,CompanyId)"
+                + ""
+                + "values('" + Createdate + "','" + Jobtitle + "','" + Jobname + "','" + Salary + "','" + Industry + "','" + Jobdescription + "','" + Remark + "','" + streetadd + "','" + JobLocationId + "','" + Postcode + "','" + Contact + "','" + SecondaryContact + "','" + Isactive + "','"+userName+"')";
         int i = stmt.executeUpdate(sql);
         if (i > 0) {
             return "success";
@@ -181,6 +185,8 @@ public class CompanyApiController {
         return sup;
 
     }
+    
+    
     
     
 }

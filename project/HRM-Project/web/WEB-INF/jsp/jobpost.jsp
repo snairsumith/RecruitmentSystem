@@ -158,11 +158,8 @@
                                             <label class="col-sm-3 col-form-label">State</label>
 
                                             <div class="col-sm-9">
-                                                <select class="form-control" id="selState">
-                                                    <option>Kerala</option>
-                                                    <option>TamilNadhu</option>
-                                                    <option>Karanadaka</option>
-                                                    <option>Delhi</option>
+                                                <select class="form-control" id="selState" onchange="getallCity()">
+                                                    <option value="0">Select State</option>
                                                 </select> 
 
                                             </div>
@@ -187,11 +184,8 @@
                                             <label class="col-sm-3 col-form-label">City</label>
 
                                             <div class="col-sm-9">
-                                                <select class="form-control" id="selState">
-                                                    <option>Kerala</option>
-                                                    <option>TamilNadhu</option>
-                                                    <option>Karanadaka</option>
-                                                    <option>Delhi</option>
+                                                <select class="form-control" id="selCity">
+                                                    <option value="0">Select City</option>
                                                 </select> 
 
                                             </div>

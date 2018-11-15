@@ -221,6 +221,7 @@ function companyByUsername(){
 }
 
 function job_post() {
+    var username = localStorage.getItem("username");
     var createdate = $("#txtDate").val();
     var jobname = $("#txtJobname").val();
     var jobtitle = $("#txtJobtitle").val();
@@ -229,7 +230,7 @@ function job_post() {
     var isactive=$("#rdactive").val();
     var streetadd=$("#txtStreet").val();
     var remark = $("#txtRemark").val();
-    var city = $("#txtcity").val();
+    var city = $("#selCity").val();
     
     var postcode = $("#txtPostCode").val();
     var contact = $("#txtContact").val();
@@ -238,9 +239,10 @@ function job_post() {
     var isValid = true;
 
     if (isValid) {
-        var url = baseUrl + "companyapi/jobpost?Createddate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&PostCode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&Streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&Isactive=" + isactive;
+        var url = baseUrl + "companyapi/jobpost?Createdate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&Postcode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&Isactive=" + isactive+"&userName="+username+"&JobLocationId="+city;
         $.ajax({url: url, success: function (data) {
-                if (data == "sucess") {
+                if (data == "success") {
+                    alert("Job Posted Sucess");
                     window.location.href = "company_profile"
                 } else {
                     alert("ERROR JOBPOST")
@@ -250,13 +252,30 @@ function job_post() {
 
 }
 function getallocation() {
-    var parentid = $("#txtShopOwnerdistrict").val();
-    var url = commonurl + "/getalllocation?ParentId=" + parentid;
-    $('#txtShopOwnerlocation')
+    var parentid = $("#selCountry").val();
+    var url = baseUrl + "/userapi/getalllocation?ParentId=" + parentid;
+    $('#selState')
             .empty()
     $.ajax({url: url, success: function (result) {
             $.each(result, function (key, val) {
-                $('#txtShopOwnerlocation')
+                $('#selState')
+                        .append($("<option></option>")
+                                .attr("value", val.locationId)
+                                .text(val.locationName));
+
+            });
+        }});
+
+}
+
+function getallCity() {
+    var parentid = $("#selState").val();
+    var url = baseUrl + "/userapi/getalllocation?ParentId=" + parentid;
+    $('#selCity')
+            .empty()
+    $.ajax({url: url, success: function (result) {
+            $.each(result, function (key, val) {
+                $('#selCity')
                         .append($("<option></option>")
                                 .attr("value", val.locationId)
                                 .text(val.locationName));

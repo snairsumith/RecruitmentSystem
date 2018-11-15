@@ -252,7 +252,7 @@ function getCompanyById(){
     $.ajax({url: url, success: function (data) {
             $.each(data, function (key, val) {
 
-                $("#tbody_companylist").append("<tr><td>" + val.companyId + "</td><td>" + val.email + "</td><td>" + val.contact + "</td><td>" + val.companyWebsite + "</td></tr>");
+                $("#tbody_companylist").append("<tr><td>"+val.companyName+"</td><td>"+val.email+"</td><td>"+val.jobTitle+"</td><td>"+val.jobTypeId+"</td><td>"+val.jobDescription+"</td><td>"+val.remark+"</td><td>"+val.salary+"</td><td>"+val.contact+"</td><td>"+val.industry+"</td></tr>");
 
 
             });
@@ -262,17 +262,78 @@ function getCompanyById(){
 function getCompanyByLocation(){
 
     $("#tbody_companylist").html("");
-    var id = $("#cmbLocation").val();
+    var id = $("#selCity").val();
     var url = baseUrl + "userapi/comapny_deatils_by_location?location=" + id;
     $.ajax({url: url, success: function (data) {
             $.each(data, function (key, val) {
 
-                $("#tbody_companylist").append("<tr><td>" + val.companyId + "</td><td>" + val.email + "</td><td>" + val.contact + "</td><td>" + val.companyWebsite + "</td></tr>");
+                 $("#tbody_companylist").append("<tr><td>"+val.companyName+"</td><td>"+val.email+"</td><td>"+val.jobTitle+"</td><td>"+val.jobTypeId+"</td><td>"+val.jobDescription+"</td><td>"+val.remark+"</td><td>"+val.salary+"</td><td>"+val.contact+"</td><td>"+val.industry+"</td></tr>");
 
 
             });
         }});
 
+}
+function getJobExpe(){
+
+    $("#tbody_companylist").html("");
+    var id = $("#selExperaince").val();
+    var url = baseUrl + "userapi/comapny_deatils_by_location?location=" + id;
+    $.ajax({url: url, success: function (data) {
+            $.each(data, function (key, val) {
+
+                 $("#tbody_companylist").append("<tr><td>"+val.companyName+"</td><td>"+val.email+"</td><td>"+val.jobTitle+"</td><td>"+val.jobTypeId+"</td><td>"+val.jobDescription+"</td><td>"+val.remark+"</td><td>"+val.salary+"</td><td>"+val.contact+"</td><td>"+val.industry+"</td></tr>");
+
+
+            });
+        }});
+
+}
+function getallocation() {
+    var parentid = $("#selCountry").val();
+    var url = baseUrl + "/userapi/getalllocation?ParentId=" + parentid;
+    $('#selState')
+            .empty()
+    $.ajax({url: url, success: function (result) {
+            $.each(result, function (key, val) {
+                $('#selState')
+                        .append($("<option></option>")
+                                .attr("value", val.locationId)
+                                .text(val.locationName));
+
+            });
+        }});
+
+}
+
+function getallCity() {
+    var parentid = $("#selState").val();
+    var url = baseUrl + "/userapi/getalllocation?ParentId=" + parentid;
+    $('#selCity')
+            .empty()
+    $.ajax({url: url, success: function (result) {
+            $.each(result, function (key, val) {
+                $('#selCity')
+                        .append($("<option></option>")
+                                .attr("value", val.locationId)
+                                .text(val.locationName));
+
+            });
+        }});
+
+}
+
+function applyJob(jobId){
+     var username = localStorage.getItem("username");
+     var url = baseUrl + "/userapi/apply_job?JobId=" + jobId+"&UserName="+username;
+       $.ajax({url: url, success: function (data) {
+          if (data == "sucess") {
+              alert("Job Applied Sucessfully");
+                    window.location.reload();
+                } else {
+                    alert("incorrect username and passsword")
+                }
+        }});
 }
 function emailValidation(email) {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;

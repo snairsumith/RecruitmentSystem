@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 import models.CompanyModel;
+import models.JobModel;
+import models.LocationModel;
 import models.UserModel;
 
 /**
@@ -27,7 +29,7 @@ import models.UserModel;
 @Controller
 @RequestMapping("/userapi")
 public class UserApiController {
-
+    DBFunctions db=new DBFunctions();
     @RequestMapping(value = "/userlogin", method = RequestMethod.GET)
     @ResponseBody
     public String userlogin(@RequestParam("username") String username,
@@ -122,16 +124,17 @@ public class UserApiController {
 
     @RequestMapping(value = "/comapny_deatils_byid", method = RequestMethod.GET)
     public @ResponseBody
-    List<CompanyModel> getallSupplier(
-            @RequestParam("id") int id) throws SQLException {
-        List<CompanyModel> sup = new ArrayList<CompanyModel>();
+    List<JobModel> getAllJobByid(
+            @RequestParam("id") String id) throws SQLException {
+        List<JobModel> sup = new ArrayList<JobModel>();
 
-        String sql = "select * from company_reg where CompanyId=" + id + "";
+        String sql = "select  jobpost.*,company_reg.*,job_type_tbl.* from  jobpost inner join company_reg on company_reg.UserName=jobpost.CompanyId  inner join job_type_tbl on job_type_tbl.TypeId=jobpost.JobTypeId where jobpost.CompanyId='" + id + "'";
+        System.out.println(sql);
         DBFunctions db = new DBFunctions();
         ResultSet rs = db.SelectQuery(sql);
         while (rs.next()) {
 
-            sup.add(new CompanyModel(rs.getInt("CompanyId"), rs.getString("CompanyName"), rs.getString("Email"), rs.getString("Address"), rs.getString("Country"), rs.getString("City"), rs.getString("Contact"), rs.getString("CompanyWebsite")));
+            sup.add(new JobModel( rs.getString("JobPostId"),rs.getString("TypeName"),rs.getString("CompanyId"),rs.getString("CreatedDate"),rs.getString("JobTitle"),rs.getString("Salary"),rs.getString("Industry"),rs.getString("JobDescription"),rs.getString("Remark"),rs.getString("StreetName"),rs.getString("JobLocationId"),rs.getString("PostCode"),rs.getString("Contact"),rs.getString("SecondaryContact"),rs.getString("IsActive"),rs.getString("CompanyName"),rs.getString("Email"),rs.getString("Address")));
         }
 
         return sup;
@@ -140,19 +143,72 @@ public class UserApiController {
 
     @RequestMapping(value = "/comapny_deatils_by_location", method = RequestMethod.GET)
     public @ResponseBody
-    List<CompanyModel> getComapyByLocation(
-            @RequestParam("location") String location) throws SQLException {
-        List<CompanyModel> sup = new ArrayList<CompanyModel>();
+    List<JobModel> getComapyByLocation(
+            @RequestParam("location") int location) throws SQLException {
+        List<JobModel> sup = new ArrayList<JobModel>();
 
-        String sql = "select * from company_reg where Country='" + location + "'";
+        String sql = "select  jobpost.*,company_reg.*,job_type_tbl.* from  jobpost inner join company_reg on company_reg.UserName=jobpost.CompanyId  inner join job_type_tbl on job_type_tbl.TypeId=jobpost.JobTypeId where jobpost.JobLocationId='" + location + "'";
         DBFunctions db = new DBFunctions();
         ResultSet rs = db.SelectQuery(sql);
         while (rs.next()) {
 
-            sup.add(new CompanyModel(rs.getInt("CompanyId"), rs.getString("CompanyName"), rs.getString("Email"), rs.getString("Address"), rs.getString("Country"), rs.getString("City"), rs.getString("Contact"), rs.getString("CompanyWebsite")));
+           sup.add(new JobModel( rs.getString("JobPostId"),rs.getString("TypeName"),rs.getString("CompanyId"),rs.getString("CreatedDate"),rs.getString("JobTitle"),rs.getString("Salary"),rs.getString("Industry"),rs.getString("JobDescription"),rs.getString("Remark"),rs.getString("StreetName"),rs.getString("JobLocationId"),rs.getString("PostCode"),rs.getString("Contact"),rs.getString("SecondaryContact"),rs.getString("IsActive"),rs.getString("CompanyName"),rs.getString("Email"),rs.getString("Address")));
         }
 
         return sup;
 
+    }
+      @RequestMapping(value = "/comapny_deatils_by_exp", method = RequestMethod.GET)
+    public @ResponseBody
+    List<JobModel> getComapyByExpe(
+            @RequestParam("location") int location) throws SQLException {
+        List<JobModel> sup = new ArrayList<JobModel>();
+
+        String sql = "select  jobpost.*,company_reg.*,job_type_tbl.* from  jobpost inner join company_reg on company_reg.UserName=jobpost.CompanyId  inner join job_type_tbl on job_type_tbl.TypeId=jobpost.JobTypeId where jobpost.JobLocationId='" + location + "'";
+        DBFunctions db = new DBFunctions();
+        ResultSet rs = db.SelectQuery(sql);
+        while (rs.next()) {
+
+           sup.add(new JobModel( rs.getString("JobPostId"),rs.getString("TypeName"),rs.getString("CompanyId"),rs.getString("CreatedDate"),rs.getString("JobTitle"),rs.getString("Salary"),rs.getString("Industry"),rs.getString("JobDescription"),rs.getString("Remark"),rs.getString("StreetName"),rs.getString("JobLocationId"),rs.getString("PostCode"),rs.getString("Contact"),rs.getString("SecondaryContact"),rs.getString("IsActive"),rs.getString("CompanyName"),rs.getString("Email"),rs.getString("Address")));
+        }
+
+        return sup;
+
+    }
+    
+        @RequestMapping(value = "/getalllocation", method = RequestMethod.GET)
+    public @ResponseBody
+    List<LocationModel> getAllLocation(
+            @RequestParam("ParentId") int ParentId) throws SQLException {
+        List<LocationModel> loc = new ArrayList<LocationModel>();
+
+        String sql = "select * from location where ParentId=" + ParentId;
+        DBFunctions db = new DBFunctions();
+        ResultSet rs = db.SelectQuery(sql);
+        while (rs.next()) {
+
+            loc.add(new LocationModel(rs.getInt("LocationId"), rs.getString("LocationName")));
+        }
+
+        return loc;
+
+    }
+    
+    @RequestMapping(value = "/apply_job", method = RequestMethod.GET)
+    @ResponseBody
+    public String JobApply(@RequestParam("JobId") int JobId,
+            @RequestParam("UserName") String UserName
+            ) throws SQLException, ClassNotFoundException {
+
+       
+        String sql = "INSERT INTO `jobpost_activity` (`UserId`, `JobId`) VALUES ('"+UserName+"', "+JobId+")";
+
+        int i = db.InsetQuery(sql);
+
+        if (i > 0) {
+            return "sucess";
+        } else {
+            return "fail";
+        }
     }
 }

@@ -29,8 +29,8 @@
                             </a>
                             <div class="collapse" id="sidebar-layouts">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="candidate_search_company">Company</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="candidate_view_job">Job</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="candidate_search_company">Job</a></li>
+                                    
                                     
                                 </ul>
                             </div>
