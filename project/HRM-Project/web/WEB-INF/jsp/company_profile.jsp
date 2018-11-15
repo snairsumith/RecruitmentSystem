@@ -7,13 +7,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="LiibraryFunction.DBFunctions"%>
 <%@ include file="inc/header.jsp" %>  
-<%
-    String username=sessionScope.username;
-                                  DBFunctions db = new DBFunctions();
-                                  String sql = "SELECT * FROM `company_reg` where UserName='"+username+"'";
-                                  ResultSet rs = db.SelectQuery(sql);
-                                  
-%>
+
 
 <%@ include file="inc/top_company.jsp"%>
 <div class="container-fluid page-body-wrapper">
@@ -27,7 +21,7 @@
                 <h3 class="page-title">
                     Company Profille${sessionScope.username }
                 </h3>
-
+             
             </div>
             <div class="row">
 

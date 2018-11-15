@@ -11,6 +11,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import models.CompanyModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -161,9 +164,21 @@ public class CompanyApiController {
         }
     }
     
-       @RequestMapping(value = "/company_deatils", method = RequestMethod.GET)
-    @ResponseBody
-    public String company_approve(@RequestParam("comapnayUserName") String comapnayUserName) throws SQLException, ClassNotFoundException {
-       return "haii";
+    @RequestMapping(value = "/company_deatils", method = RequestMethod.GET)
+        public @ResponseBody
+    List<CompanyModel> getallSupplier(
+            @RequestParam("comapnayUserName") String supplierid) throws SQLException {
+        List<CompanyModel> sup = new ArrayList<CompanyModel>();
+
+        String sql = "select * from company_reg where UserName='" + supplierid+"'";
+        DBFunctions db = new DBFunctions();
+        ResultSet rs = db.SelectQuery(sql);
+        while (rs.next()) {
+
+            sup.add(new CompanyModel(rs.getInt("CompanyId"), rs.getString("CompanyName"), rs.getString("Email"), rs.getString("Address"),rs.getString("Country"), rs.getString("City"), rs.getString("Contact"),rs.getString("CompanyWebsite")));
+        }
+
+        return sup;
+
     }
 }

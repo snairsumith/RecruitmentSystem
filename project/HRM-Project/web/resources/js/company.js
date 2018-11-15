@@ -205,4 +205,13 @@ function send_exam_date() {
 
 function companyByUsername(){
     var username = localStorage.getItem("username");
+    var url = baseUrl + "companyapi/company_deatils?comapnayUserName="+username;
+        $.ajax({url: url, success: function (data) {
+                if (data == "success") {
+                    window.location.href = "company_profile"
+                } else {
+                    alert("ERROR DETAILS")
+                }
+            }});
+    
 }
