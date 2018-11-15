@@ -17,7 +17,8 @@
         <link href="${addonsCss}" rel="stylesheet" />
         <link href="${baseCss}" rel="stylesheet" />
         <link href="${materialdesigniconsCss}" rel="stylesheet" />
-        
+        <spring:url value="/resources/js/user.js" var="userJS" />
+        <script src="${userJS}" ></script>
     </head>
     <body>
         

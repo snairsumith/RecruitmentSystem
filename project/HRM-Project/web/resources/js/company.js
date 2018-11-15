@@ -207,11 +207,61 @@ function companyByUsername(){
     var username = localStorage.getItem("username");
     var url = baseUrl + "companyapi/company_deatils?comapnayUserName="+username;
         $.ajax({url: url, success: function (data) {
-                if (data == "success") {
-                    window.location.href = "company_profile"
-                } else {
-                    alert("ERROR DETAILS")
-                }
+              $.each(data, function (key, val) {
+                $("#txtCompanyName").val(val.companyName);
+                $("#txtCity").val(val.city);
+                $("#txtSecondaryContact").val(val.contact);
+                $("#txtName").val(val.companyWebsite);
+                $("#txtContact").val(val.email);
+                
+               
+            });
             }});
     
+}
+
+function job_post() {
+    var createdate = $("#txtDate").val();
+    var jobname = $("#txtJobname").val();
+    var jobtitle = $("#txtJobtitle").val();
+    var salary = $("#txtsal").val();
+    var industry = $("#txtInd").val();
+    var isactive=$("#rdactive").val();
+    var streetadd=$("#txtStreet").val();
+    var remark = $("#txtRemark").val();
+    var city = $("#txtcity").val();
+    
+    var postcode = $("#txtPostCode").val();
+    var contact = $("#txtContact").val();
+    var secondarycontact = $("#txtSecondaryContact").val();
+    var jobdescription = $("#txtJobdescription").val();
+    var isValid = true;
+
+    if (isValid) {
+        var url = baseUrl + "companyapi/jobpost?Createddate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&PostCode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&Streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&Isactive=" + isactive;
+        $.ajax({url: url, success: function (data) {
+                if (data == "sucess") {
+                    window.location.href = "company_profile"
+                } else {
+                    alert("ERROR JOBPOST")
+                }
+            }});
+    }
+
+}
+function getallocation() {
+    var parentid = $("#txtShopOwnerdistrict").val();
+    var url = commonurl + "/getalllocation?ParentId=" + parentid;
+    $('#txtShopOwnerlocation')
+            .empty()
+    $.ajax({url: url, success: function (result) {
+            $.each(result, function (key, val) {
+                $('#txtShopOwnerlocation')
+                        .append($("<option></option>")
+                                .attr("value", val.locationId)
+                                .text(val.locationName));
+
+            });
+        }});
+
 }

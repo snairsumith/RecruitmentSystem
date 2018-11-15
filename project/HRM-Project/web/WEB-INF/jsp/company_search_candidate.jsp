@@ -3,7 +3,8 @@
     Created on : Sep 21, 2018, 3:09:20 PM
     Author     : HP
 --%>
-
+<%@page import="java.sql.ResultSet"%>
+<%@page import="LiibraryFunction.DBFunctions"%>
 <%@ include file="inc/header.jsp" %>  
 
 
@@ -60,33 +61,42 @@
                                                     <table id="order-listing" class="table">
                                                         <thead>
                                                             <tr class="bg-primary text-white">
-                                                                <th>Candidate</th>
+                                                                <th>Candidate Id</th>
                                                                 <th>Candidate Name</th>
                                                                 <th>Email</th>
                                                                 <th>Qualification</th>
                                                                 <th>Contact</th>
-                                                                <th>Status</th>
+                                                                <th>Register Date</th>
                                                                 <th>Profile</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
-                                                           <tr>
-                                                            <td>WD-62</td>
-                                                            <td>Doe</td>
-                                                            <td>Brazil</td>
-                                                            <td>$4500</td>
-                                                            <td>$7500</td>
-                                                            <td>
-                                                                <label class="badge badge-danger">Active</label>
-                                                            </td>
-                                                            <td class="text-right">
+                                                         <tbody>
+                                        <%
+                                    DBFunctions db = new DBFunctions();
+                                    String sql = "SELECT * FROM `user_reg`";
+                                    ResultSet rs = db.SelectQuery(sql);
+                                    while (rs.next()) {
+                                        %>
+                                        <tr>
+                                            <td><%= rs.getString("UserId")%></td>
+                                            <td><%= rs.getString("UserName")%></td>
+                                            <td><%= rs.getString("Email")%></td>
+                                            <td><%= rs.getString("HigherQualification")%></td>
+                                            <td><%= rs.getString("Contact")%></td>
+                                            <td><%= rs.getString("RegDate")%></td>
+
+                                             <td class="text-right">
                                                                 <button class="btn btn-light">
                                                                     <i class="mdi mdi-eye text-primary"></i>View
                                                                 </button>
                                                                 
                                                             </td>
-                                                        </tr>
-                                                        </tbody>
+                                        </tr>
+                                        <%
+                                            }
+                                        %>
+                                    </tbody>
+                                                     
                                                     </table>
                             
                             

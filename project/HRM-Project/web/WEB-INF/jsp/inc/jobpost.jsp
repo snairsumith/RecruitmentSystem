@@ -3,8 +3,7 @@
     Created on : Aug 31, 2018, 1:20:51 PM
     Author     : HP
 --%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="LiibraryFunction.DBFunctions"%>
+
 <%@ include file="inc/header.jsp" %>  
 
 
@@ -32,7 +31,7 @@
                                 <label for="exampleInputName1">Created Date</label>
                                 <input type="date" class="form-control" placeholder="dd/mm/yyyy" id="txtDate"/>
                             </div>
-                            <div class="form-group">
+                             <div class="form-group">
                                 <label for="exampleInputName1">Job Title</label>
                                 <input type="text" class="form-control" placeholder="Type" id="txtJobtitle"/>
                             </div>
@@ -40,16 +39,8 @@
                             <div class="form-group">
                                 <label for="exampleSelectGender">Job Post/Role</label>
                                 <select class="form-control" id="txtJobname">
-                                    <%
-                                                 String sql1 = "select * from  job_type_tbl";
-                                                 DBFunctions db = new DBFunctions();
-                                                 ResultSet rs1 = db.SelectQuery(sql1);
-                                                 while (rs1.next()) {
-                                    %>
-                                    <option value=<%= rs1.getString("TypeId")%>><%= rs1.getString("TypeName")%></option>
-                                    <%
-                                        }
-                                    %>
+                                    <option>Manager</option>
+                                    <option>Developer</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -60,7 +51,7 @@
                                 <label for="exampleInputName1">Industry/Functional Area</label>
                                 <input type="text" class="form-control" placeholder="Type" id="txtInd"/>
                             </div>
-
+                           
                             <div class="form-group">
                                 <label for="exampleTextarea1">Job Description</label>
                                 <textarea class="form-control" rows="4" id="txtJobdescription"></textarea>
@@ -134,27 +125,19 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Country</label>
+                                            <label class="col-sm-3 col-form-label">City</label>
+
                                             <div class="col-sm-9">
-                                                <select class="form-control" id="selCountry" onchange="getallocation()">
-                                                    <option>Select District</option>
-                                                    <%
-                                         String sql = "select * from location where ParentId=0";
-                                        
-                                         ResultSet rs = db.SelectQuery(sql);
-                                         while (rs.next()) {
-                                                    %>
-                                                    <option value=<%= rs.getString("LocationId")%>><%= rs.getString("LocationName")%></option>
-                                                    <%
-                                                        }
-                                                    %>
-                                                </select>
+                                                <input type="text" class="form-control" id="txtcity"/>
                                             </div>
 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">State</label>
 
                                             <div class="col-sm-9">
@@ -165,6 +148,23 @@
                                                     <option>Delhi</option>
                                                 </select> 
 
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Country</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control" id="selCountry">
+                                                    <option>America</option>
+                                                    <option>Italy</option>
+                                                    <option>Russia</option>
+                                                    <option>Britain</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -178,31 +178,6 @@
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" id="txtSecondaryContact"/>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">City</label>
-
-                                            <div class="col-sm-9">
-                                                <select class="form-control" id="selState">
-                                                    <option>Kerala</option>
-                                                    <option>TamilNadhu</option>
-                                                    <option>Karanadaka</option>
-                                                    <option>Delhi</option>
-                                                </select> 
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-
-
-
                                         </div>
                                     </div>
                                 </div>
@@ -225,7 +200,7 @@
 
 
                                 <button type="submit" class="btn btn-gradient-primary mr-2" onclick="job_post()">Submit</button>
-
+                                
                             </form>
                         </div>
                     </div>

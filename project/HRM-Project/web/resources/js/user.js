@@ -10,17 +10,17 @@ function login() {
     var role = $("#selrole").val();
     var url = baseUrl + "userapi/userlogin?username=" + username + "&password=" + password + "&role=" + role
     $.ajax({url: url, success: function (data) {
-           
+
             if (data != "fail") {
                 localStorage.setItem("username", username);
                 if (data == 1) {
-                    window.location.href = baseUrl+"Admin/AdminDashboard"
-                    
+                    window.location.href = baseUrl + "Admin/AdminDashboard"
+
                 } else if (data == 2) {
-                    window.location.href = baseUrl+"Candidate/candidate_profile"
-                    
+                    window.location.href = baseUrl + "Candidate/candidate_profile"
+
                 } else if (data == 3) {
-                    window.location.href = baseUrl+"company/company_profile"
+                    window.location.href = baseUrl + "company/company_profile"
                 }
             } else {
                 alert("incorrect username or password")
@@ -30,6 +30,7 @@ function login() {
 
 }
 function user_profile_update() {
+    var username = localStorage.getItem("username");
     var Firstname = $("#txtFirstName").val();
     var Lastname = $("#txtLastName").val();
     var Gender = $("#selGender").val();
@@ -43,12 +44,12 @@ function user_profile_update() {
     var Mark = $("#txtMark").val();
     var University = $("#txtUniversity").val();
     var Experience = $("#txtYearofExperience").val();
-    var ProfileNotification= document.getElementById("chkProfile").checked;
-    var EmailNotification= document.getElementById("chkEmail").checked;
-   
+    var ProfileNotification = document.getElementById("chkProfile").checked;
+    var EmailNotification = document.getElementById("chkEmail").checked;
+
     var isValid = true;
-    
-        
+
+
     if (Firstname.isNaN) {
         $("#err_fname").text("Enter valid Name");
         isValid = false;
@@ -56,7 +57,7 @@ function user_profile_update() {
         $("#err_fname").text("");
         isValid = true;
     }
-    if (Firstname=="") {
+    if (Firstname == "") {
         $("#err_fn").text("Enter First Name");
         isValid = false;
     } else {
@@ -70,7 +71,7 @@ function user_profile_update() {
         $("#err_lname").text("");
         isValid = true;
     }
-    if (Lastname=="") {
+    if (Lastname == "") {
         $("#err_ln").text("Enter Last Name");
         isValid = false;
     } else {
@@ -98,7 +99,7 @@ function user_profile_update() {
         $("#err_state").text("");
         isValid = true;
     }
-    if (City== "") {
+    if (City == "") {
         $("#err_city").text("City required");
         isValid = false;
     } else {
@@ -106,49 +107,43 @@ function user_profile_update() {
         isValid = true;
     }
 
-    if (PostCode=="") {
+    if (PostCode == "") {
         $("#err_postcode").text("PostCode Required ");
         isValid = false;
     } else {
         $("#err_postcode").text("");
         isValid = true;
     }
-    if (Contact=="") {
+    if (Contact == "") {
         $("#err_con").text("blank");
         isValid = false;
     } else {
         $("#err_con").text("");
         isValid = true;
     }
-    if (Contact.length>12) {
+    if (Contact.length > 12) {
         $("#err_contact").text("length");
         isValid = false;
     } else {
         $("#err_contact").text("");
         isValid = true;
     }
-    if (!Contact.isNaN) {
-        $("#err_c").text("nan");
-        isValid = false;
-    } else {
-        $("#err_c").text("");
-        isValid = true;
-    }
-    if (HigherQualification=="") {
+
+    if (HigherQualification == "") {
         $("#err_HQ").text("Higher Qualification Required");
         isValid = false;
     } else {
         $("#err_HQ").text("");
         isValid = true;
     }
-    if (Mark=="") {
+    if (Mark == "") {
         $("#err_mark").text("Higher Qualification Required");
         isValid = false;
     } else {
         $("#err_mark").text("");
         isValid = true;
     }
-    if (University=="") {
+    if (University == "") {
         $("#err_university").text("University Required");
         isValid = false;
     } else {
@@ -156,7 +151,7 @@ function user_profile_update() {
         isValid = true;
     }
     if (isValid) {
-        var url = baseUrl + "userapi/user_profile_updation?FirstName=" + Firstname + "&LastName=" + Lastname + "&Gender=" + Gender + "&DateofBirth=" + DateofBirth + "&Home=" + Home + "&State=" + State + "&City=" + City + "&PostCode="+ PostCode +"&Contact=" + Contact + "&Experience=" + Experience + "&HigherQualification=" + HigherQualification + "&Mark=" + Mark + "&University=" + University + "&ProfileNotification=" + ProfileNotification + "&EmailNotification=" + EmailNotification
+        var url = baseUrl + "userapi/user_profile_updation?FirstName=" + Firstname + "&LastName=" + Lastname + "&Gender=" + Gender + "&DateofBirth=" + DateofBirth + "&Home=" + Home + "&State=" + State + "&City=" + City + "&PostCode=" + PostCode + "&Contact=" + Contact + "&Experience=" + Experience + "&HigherQualification=" + HigherQualification + "&Mark=" + Mark + "&University=" + University + "&ProfileNotification=" + ProfileNotification + "&EmailNotification=" + EmailNotification + "&username=" + username;
         $.ajax({url: url, success: function (data) {
                 if (data == "sucess") {
                     window.location.href = "uploads"
@@ -221,6 +216,63 @@ function user_reg() {
     } else {
         // alert("Please Fill the blank filed");
     }
+}
+
+function userByUsername() {
+    var username = localStorage.getItem("username");
+    var url = baseUrl + "userapi/user_deatils?UserName=" + username;
+    $.ajax({url: url, success: function (data) {
+            $.each(data, function (key, val) {
+
+                $("#txtFirstName").val(val.firstName);
+                $("#txtLastName").val(val.lastName);
+                $("#txtDateofBirth").val(val.dob);
+                $("#txtHome").val(val.home);
+                $("#txtState").val(val.state);
+                $("#txtCity").val(val.city);
+                $("#txtPostCode").val(val.postCode);
+                $("#txtContact").val(val.contact);
+                $("#txtHigherQualification").val(val.higherQualification);
+                $("#txtMark").val(val.marks);
+                $("#txtUniversity").val(val.university);
+                $("#txtYearofExperience").val(val.experience);
+
+
+
+            });
+        }});
+
+}
+
+function getCompanyById(){
+
+    $("#tbody_companylist").html("");
+    var id = $("#cmbComapny").val();
+    var url = baseUrl + "userapi/comapny_deatils_byid?id=" + id;
+    $.ajax({url: url, success: function (data) {
+            $.each(data, function (key, val) {
+
+                $("#tbody_companylist").append("<tr><td>" + val.companyId + "</td><td>" + val.email + "</td><td>" + val.contact + "</td><td>" + val.companyWebsite + "</td></tr>");
+
+
+            });
+        }});
+
+}
+function getCompanyByLocation(){
+
+    $("#tbody_companylist").html("");
+    var id = $("#cmbLocation").val();
+    var url = baseUrl + "userapi/comapny_deatils_by_location?location=" + id;
+    $.ajax({url: url, success: function (data) {
+            $.each(data, function (key, val) {
+
+                $("#tbody_companylist").append("<tr><td>" + val.companyId + "</td><td>" + val.email + "</td><td>" + val.contact + "</td><td>" + val.companyWebsite + "</td></tr>");
+
+
+            });
+        }});
+
 }
 function emailValidation(email) {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;

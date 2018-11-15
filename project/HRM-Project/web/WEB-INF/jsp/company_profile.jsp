@@ -1,18 +1,19 @@
-<%-- 
-    Document   : company_profile
-    Created on : Aug 30, 2018, 2:30:21 PM
-    Author     : Gayathri
---%>
+
 
 <%@page import="java.sql.ResultSet"%>
 <%@page import="LiibraryFunction.DBFunctions"%>
 <%@ include file="inc/header.jsp" %>  
 
 
-<%@ include file="inc/top_company.jsp"%>
+<%@ include file="inc/top_company.jsp" %>
+
+
 <div class="container-fluid page-body-wrapper">
     <div id="settings-trigger"><i class="mdi mdi-format-color-fill"></i></div>
-
+    
+        
+     
+     
     <%@ include file="inc/company_sidebar.jsp"%> 
     <!-- partial -->
     <div class="main-panel">        
@@ -97,7 +98,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Contact</label>
+                                            <label class="col-sm-3 col-form-label">Email</label>
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" id="txtContact"/>
                                             </div>
@@ -158,3 +159,6 @@
         <%@ include file="inc/companyfooter.jsp"%>
         </html>
 
+<script>
+    companyByUsername();
+</script>

@@ -235,5 +235,9 @@
                         </div>
                     </div>
                    <%@ include file="inc/candidatefooter.jsp" %> 
+                    <script>
+        userByUsername();
+        
+    </script>
 </html>
 
