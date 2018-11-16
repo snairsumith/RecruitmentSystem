@@ -224,7 +224,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-gradient-primary mb-2"onclick="user_profile_update()">Submit</button>
+                                    <button type="button" class="btn btn-gradient-primary mb-2"onclick="user_profile_update()">Update</button>
                                 </div>
 
                             </form>

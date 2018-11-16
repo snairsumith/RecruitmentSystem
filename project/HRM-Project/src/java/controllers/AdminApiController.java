@@ -25,7 +25,22 @@ public class AdminApiController {
     DBFunctions db=new DBFunctions();
     
     
-    
+    @RequestMapping(value = "/candidate_change_password", method = RequestMethod.GET)
+    @ResponseBody
+    public String company_change_password(@RequestParam("Password") String Password) throws SQLException, ClassNotFoundException {
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm", "root", "");
+        Statement stmt = con.createStatement();
+        String sql = "update lgin_tbl set Password='" + Password + "' where Username='tcs'";
+        int i = stmt.executeUpdate(sql);
+
+        if (i > 0) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
 
     
 }

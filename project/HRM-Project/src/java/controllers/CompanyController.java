@@ -72,4 +72,10 @@ public class CompanyController {
         return "company_search_candidate";
         
     }
+    @RequestMapping(value="/company_change_password",method = RequestMethod.GET)
+    public String company_change_password(ModelMap modelMap) {
+        
+        return "company_change_password";
+        
+    }
 }

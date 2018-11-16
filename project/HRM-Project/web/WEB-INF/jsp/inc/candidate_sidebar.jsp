@@ -52,7 +52,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html">
+                            <a class="nav-link" href="candidate_change_password">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Change Password</span>
                             </a>

@@ -38,4 +38,9 @@ public class AdminController {
         
         return "AdminDashboard";
     }
+     @RequestMapping(value="/admin_change_password",method = RequestMethod.GET)
+    public String admin_change_password(ModelMap modelMap) {
+        
+        return "admin_change_password";
+    }
 }

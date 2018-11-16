@@ -17,10 +17,10 @@ function login() {
                     window.location.href = baseUrl + "Admin/AdminDashboard"
 
                 } else if (data == 2) {
-                    window.location.href = baseUrl + "Candidate/candidate_profile"
+                    window.location.href = baseUrl + "Candidate/candidate_update_profile"
 
                 } else if (data == 3) {
-                    window.location.href = baseUrl + "company/company_profile"
+                    window.location.href = baseUrl + "company/company_update_profile"
                 }
             } else {
                 alert("incorrect username or password")
@@ -338,6 +338,76 @@ function applyJob(jobId){
 function emailValidation(email) {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
+}
+function getallCity() {
+    var parentid = $("#selState").val();
+    var url = baseUrl + "/userapi/getalllocation?ParentId=" + parentid;
+    $('#selCity')
+            .empty()
+    $.ajax({url: url, success: function (result) {
+            $.each(result, function (key, val) {
+                $('#selCity')
+                        .append($("<option></option>")
+                                .attr("value", val.locationId)
+                                .text(val.locationName));
+
+            });
+        }});
+
+}
+function change_password() {
+    var CurrentPassword = $("#txtCrntpass").val();
+    var Newpassword = $("#txtnewpass").val();
+    var ConfirmPassword = $("#txtcnfmpass").val();
+    
+
+    var isValid = true;
+     if (CurrentPassword == "") {
+        $("#err_crntpass").text("Current Password Required ");
+        isValid = false;
+    } else {
+        $("#err_crntpass").text("");
+        isValid = true;
+    }
+    if (Newpassword == "") {
+        $("#err_newpass").text("New password Required ");
+        isValid = false;
+    } else {
+        $("#err_newpass").text("");
+        isValid = true;
+    }
+    if (Newpassword.length < 8) {
+        $("#er_newpass").text("minimum 8 charecters needed ");
+        isValid = false;
+    } else {
+        $("#er_newpass").text("");
+        isValid = true;
+    }
+    if (ConfirmPassword == "") {
+        $("#err_cnfmpass").text("Re-Enter New Password ");
+        isValid = false;
+    } else {
+        $("#err_cnfmpass").text("");
+        isValid = true;
+    }
+    if (ConfirmPassword == Newpassword) {
+        $("#er_cnfmpass").text("Password does not match ");
+        isValid = false;
+    } else {
+        $("#er_cnfmpass").text("");
+        isValid = true;
+    }
+    if (isValid) {
+        var url = baseUrl + "companyapi/change_password?Password=" + Newpassword 
+        $.ajax({url: url, success: function (data) {
+                if (data == "success") {
+                    alert("Passwoord Updated")
+                } else {
+                    alert("ERROR DETAILS")
+                }
+            }});
+    }
+
 }
 
 

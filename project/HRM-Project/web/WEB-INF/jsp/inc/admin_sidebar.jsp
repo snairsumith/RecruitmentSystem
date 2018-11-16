@@ -36,15 +36,16 @@
                             </a>
                         </li>
                        
-                           
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
-                                <i class="mdi mdi-vector-arrange-above menu-icon"></i>              
+                           </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="admin_change_password">
+                                <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Change Password</span>
-                                
                             </a>
                         </li>
+
+                        
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="../">
                                 <i class="mdi mdi-lightbulb-outline menu-icon"></i>              

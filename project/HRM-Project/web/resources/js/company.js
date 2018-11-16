@@ -284,3 +284,51 @@ function getallCity() {
         }});
 
 }
+function change_password() {
+    var CurrentPassword = $("#txtCrntpass").val();
+    var Newpassword = $("#txtnewpass").val();
+    var ConfirmPassword = $("#txtcnfmpass").val();
+    
+
+    var isValid = true;
+     if (CurrentPassword == "") {
+        $("#err_crntpass").text("Current Password Required ");
+        isValid = false;
+    } else {
+        $("#err_crntpass").text("");
+        isValid = true;
+    }
+    if (Newpassword == "") {
+        $("#err_newpass").text("New password Required ");
+        isValid = false;
+    } else {
+        $("#err_newpass").text("");
+        isValid = true;
+    }
+    if (Newpassword.length < 8) {
+        $("#er_newpass").text("minimum 8 charecters needed ");
+        isValid = false;
+    } else {
+        $("#er_newpass").text("");
+        isValid = true;
+    }
+    if (ConfirmPassword == "") {
+        $("#err_cnfmpass").text("Re-Enter New Password ");
+        isValid = false;
+    } else {
+        $("#err_cnfmpass").text("");
+        isValid = true;
+    }
+   
+    if (isValid) {
+        var url = baseUrl + "companyapi/change_password?Password=" + Newpassword 
+        $.ajax({url: url, success: function (data) {
+                if (data == "success") {
+                    alert("Passwoord Updated")
+                } else {
+                    alert("ERROR DETAILS")
+                }
+            }});
+    }
+
+}

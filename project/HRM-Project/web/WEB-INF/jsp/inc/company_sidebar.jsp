@@ -56,7 +56,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="company_change_password">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Change Password</span>
                             </a>
