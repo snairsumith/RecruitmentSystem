@@ -57,4 +57,9 @@ public class CustomerController {
         
         return "candidate_change_password";
     }
+    @RequestMapping(value="/candidate_candidate_profile",method = RequestMethod.GET)
+    public String candidate_candidate_profile(ModelMap modelMap) {
+        
+        return "candidate_candidate_profile";
+    }
 }

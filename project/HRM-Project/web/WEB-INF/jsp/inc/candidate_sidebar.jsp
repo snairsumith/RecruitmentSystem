@@ -14,7 +14,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="candidate_update_profile">
+                            <a class="nav-link" href="candidate_candidate_profile">
                                 <i class="mdi mdi-apps menu-icon"></i>              
                                 <span class="menu-title">Profile</span>
                                 <i class="menu-arrow"></i>
