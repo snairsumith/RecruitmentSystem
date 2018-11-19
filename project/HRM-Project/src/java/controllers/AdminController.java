@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -42,5 +43,21 @@ public class AdminController {
     public String admin_change_password(ModelMap modelMap) {
         
         return "admin_change_password";
+    }
+    
+     @RequestMapping(value="/view_companys",method = RequestMethod.GET)
+    public String admin_view_companys(ModelMap modelMap) {
+        
+        return "AdminViewCompanyProfile";
+    }
+    @RequestMapping(value="/view_companys_single",method = RequestMethod.GET)
+    public String admin_view_company_single(@RequestParam("Username") String Username) {
+        
+        return "AdminViewComapnyProfileViewSingle";
+    }
+    @RequestMapping(value="/view_candiadate_single",method = RequestMethod.GET)
+    public String view_candiadate_single(@RequestParam("Username") String Username) {
+        
+        return "Admin_View_Customer_Profile";
     }
 }

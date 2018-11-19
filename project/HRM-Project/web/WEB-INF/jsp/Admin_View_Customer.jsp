@@ -71,7 +71,7 @@
                                             <td><%= rs.getString("Country")%></td>
                                             <td><%= rs.getString("RegDate")%></td>
 
-                                            <td></td>
+                                            <td><a href="view_candiadate_single?Username=<%= rs.getString("UserName")%>">View Deatils</a></td>
                                         </tr>
                                         <%
                                             }

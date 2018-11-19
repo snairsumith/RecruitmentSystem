@@ -17,18 +17,7 @@ function approveRejectCompany(type,username){
                 }
             }});
 }
-function change_password(type,username){
-    alert(type+"--"+username);
-    var url = baseUrl + "companyapi/company_approve?comapnayUserName=" + username + "&type=" + type ;
-        $.ajax({url: url, success: function (data) {
-                if (data == "success") {
-                    alert("Update Comapany Status")
-                    window.location.reload();
-                } else {
-                    alert("error occured");
-                }
-            }});
-}
+
 function change_password() {
     var CurrentPassword = $("#txtCrntpass").val();
     var Newpassword = $("#txtnewpass").val();
@@ -64,7 +53,7 @@ function change_password() {
         $("#err_cnfmpass").text("");
         isValid = true;
     }
-    if (ConfirmPassword===Newpassword) {
+    if (ConfirmPassword!=Newpassword) {
         $("#er_cnfmpass").text("Password does not match ");
         isValid = false;
     } else {
@@ -73,7 +62,8 @@ function change_password() {
     }
     
     if (isValid) {
-        var url = baseUrl + "companyapi/change_password?Password=" + Newpassword 
+        var username = localStorage.getItem("username");
+        var url = baseUrl + "companyapi/admin_change_password?Password=" + Newpassword +"&username="+username
         $.ajax({url: url, success: function (data) {
                 if (data == "success") {
                     alert("Passwoord Updated")

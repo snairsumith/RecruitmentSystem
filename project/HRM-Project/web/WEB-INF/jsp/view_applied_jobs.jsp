@@ -3,7 +3,8 @@
     Created on : Sep 21, 2018, 1:24:24 PM
     Author     : Gayathri
 --%>
-
+<%@page import="java.sql.ResultSet"%>
+<%@page import="LiibraryFunction.DBFunctions"%>
 <%@ include file="inc/header.jsp" %>  
 
 
@@ -12,6 +13,7 @@
     <div id="settings-trigger"><i class="mdi mdi-format-color-fill"></i></div>
 
     <%@ include file="inc/candidate_sidebar.jsp"%> 
+
     <!-- partial -->
     <div class="main-panel">
         <div class="content-wrapper">
@@ -21,26 +23,35 @@
                 </h3>
 
             </div>
+                     <%
+                                    DBFunctions db = new DBFunctions();
+                                    String CompanyId=request.getParameter("uname");
+                                    String sql = "SELECT company_reg.CompanyName,jobpost.*,jobpost_activity.ApplyDate,jobpost_activity.JobPostId as postActivityId FROM `jobpost` inner join jobpost_activity on jobpost_activity.JobId=jobpost.JobPostId inner join company_reg on company_reg.UserName=jobpost.CompanyId  where jobpost_activity.UserId='"+CompanyId+"'";
+                                    ResultSet rs = db.SelectQuery(sql);
+                                    while(rs.next()){
+                                        
+                                    
+                                    %>
             <div class="col-12 grid-margin stretch-card d-none d-md-flex">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Company Name</h4>
+                        <h4 class="card-title"><%= rs.getString("CompanyName")%></h4>
 
                         <div class="row">
                             <div class="col-3">
                                 <ul class="nav nav-tabs nav-tabs-vertical-custom" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab-custom" data-toggle="tab" href="#home-3" role="tab" aria-controls="home-3" aria-selected="true">
+                                        <a class="nav-link active" id="home-tab-custom" data-toggle="tab" href="#home-3<%= rs.getString("postActivityId")%>" role="tab" aria-controls="home-3" aria-selected="true">
                                             Job Description
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab-custom" data-toggle="tab" href="#profile-3" role="tab" aria-controls="profile-3" aria-selected="false">
+                                        <a class="nav-link" id="profile-tab-custom" data-toggle="tab" href="#profile-3<%= rs.getString("postActivityId")%>" role="tab" aria-controls="profile-3" aria-selected="false">
                                             Status And Notifications
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="contact-tab-custom" data-toggle="tab" href="#contact-3" role="tab" aria-controls="contact-3" aria-selected="false">
+                                        <a class="nav-link" id="contact-tab-custom" data-toggle="tab" href="#contact-3<%= rs.getString("postActivityId")%>" role="tab" aria-controls="contact-3" aria-selected="false">
                                             Rank List
                                         </a>
                                     </li>
@@ -48,20 +59,15 @@
                             </div>
                             <div class="col-9 col-lg-6">
                                 <div class="tab-content tab-content-vertical tab-content-vertical-custom">
-                                    <div class="tab-pane fade show active" id="home-3" role="tabpanel" aria-labelledby="home-tab-custom">
-                                        <h6 class="font-weight-normal">Profiles Of The Powerful Advertising Exec Steve Grasse</h6>
-                                        <h3 class="font-weight-normal">How To Write Better Advertising Copy</h3>
-                                        <div class="d-flex mt-4">
-                                            <img src="/HRM-Project/resources/images/carousel/banner_8.jpg" class="w-25 h-100 rounded" alt="image"/>
-                                            <img src="/HRM-Project/resources/images/carousel/banner_9.jpg" class="w-25 h-100 ml-2 rounded" alt="image"/>                              
-                                        </div>
+                                    <div class="tab-pane fade show active" id="home-3<%= rs.getString("postActivityId")%>" role="tabpanel" aria-labelledby="home-tab-custom">
+                                       
+                                        <h3 class="font-weight-normal"><%= rs.getString("JobTitle")%></h3>
+                                       
                                         <p class="mt-4">
-                                            The key to victory is discipline, and that means a well made bed. You will practice until you can make 
-                                            your bed in your sleep. You don't know how to do any of those. Then throw her in the laundry room, which 
-                                            will hereafter be referred to as "the brig".
+                                           <%= rs.getString("JobDescription")%>
                                         </p>
                                     </div>
-                                    <div class="tab-pane fade" id="profile-3" role="tabpanel" aria-labelledby="profile-tab-custom">
+                                    <div class="tab-pane fade" id="profile-3<%= rs.getString("postActivityId")%>" role="tabpanel" aria-labelledby="profile-tab-custom">
                                         <div class="media">
                                             <img class="align-self-center mr-3 w-25 rounded" src="../../images/samples/300x300/15.jpg" alt="sample image">
                                             <div class="media-body">
@@ -81,7 +87,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="contact-3" role="tabpanel" aria-labelledby="contact-tab-custom">
+                                    <div class="tab-pane fade" id="contact-3<%= rs.getString("postActivityId")%>" role="tabpanel" aria-labelledby="contact-tab-custom">
                                         <div class="media">
                                             <div class="media-body">
                                                 <h5 class="mt-0 mb-1">You've swallowed a planet!</h5>
@@ -97,6 +103,10 @@
                     </div>
                 </div>
             </div>
+                                    <%
+                                        
+}
+                                        %>
 
         </div>
         <%@ include file="inc/candidatefooter.jsp" %>

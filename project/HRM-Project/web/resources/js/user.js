@@ -17,10 +17,10 @@ function login() {
                     window.location.href = baseUrl + "Admin/AdminDashboard"
 
                 } else if (data == 2) {
-                    window.location.href = baseUrl + "Candidate/candidate_update_profile"
+                    window.location.href = baseUrl + "Candidate/candidate_update_profile?uname="+username
 
                 } else if (data == 3) {
-                    window.location.href = baseUrl + "company/company_update_profile"
+                    window.location.href = baseUrl + "company/company_update_profile?uname="+username
                 }
             } else {
                 alert("incorrect username or password")
@@ -390,15 +390,17 @@ function change_password() {
         $("#err_cnfmpass").text("");
         isValid = true;
     }
-    if (ConfirmPassword == Newpassword) {
+    if (ConfirmPassword!=Newpassword) {
         $("#er_cnfmpass").text("Password does not match ");
         isValid = false;
     } else {
         $("#er_cnfmpass").text("");
         isValid = true;
     }
+    
     if (isValid) {
-        var url = baseUrl + "companyapi/change_password?Password=" + Newpassword 
+        var username = localStorage.getItem("username");
+        var url = baseUrl + "companyapi/admin_change_password?Password=" + Newpassword +"&username="+username
         $.ajax({url: url, success: function (data) {
                 if (data == "success") {
                     alert("Passwoord Updated")

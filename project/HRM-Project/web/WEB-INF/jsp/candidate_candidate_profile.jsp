@@ -1,3 +1,5 @@
+    <%@page import="java.sql.ResultSet"%>
+<%@page import="LiibraryFunction.DBFunctions"%>
 <%@ include file="inc/header.jsp" %>  
 
     
@@ -6,6 +8,15 @@
         <div id="settings-trigger"><i class="mdi mdi-format-color-fill"></i></div>
                 
     <%@ include file="inc/candidate_sidebar.jsp"%> 
+     <%
+                                    DBFunctions db = new DBFunctions();
+                                    String CompanyId=request.getParameter("uname");
+                                    String sql = "SELECT * FROM `user_reg` where UserName='"+CompanyId+"'";
+                                    ResultSet rs = db.SelectQuery(sql);
+                                    if(rs.next()){
+                                        
+                                    
+                                    %>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -13,12 +24,7 @@
             <h3 class="page-title">
               Profile
             </h3>
-           <!-- <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Sample Pages</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Profile</li>
-              </ol>
-            </nav>-->
+          
           </div>
           <div class="row">
             <div class="col-12">
@@ -27,11 +33,10 @@
                   <div class="row">
                     <div class="col-lg-4">
                       <div class="border-bottom text-center pb-4">
-                        <img src="../../images/faces/face12.jpg" alt="profile" class="img-lg rounded-circle mb-3"/>
-                        <p>Bureau Oberhaeuser is a design bureau focused on Information- and Interface Design. </p>
+                        <img src="/HRM-Project/resources/images/faces/face1.jpg" alt="profile" class="img-lg rounded-circle mb-3"/>
+                        <p><%= rs.getString("FirstName")%> </p>
                         <div class="d-flex justify-content-between">
-                          <a class="btn btn-gradient-success" href="candidate_update_profile">Edit</a>
-                           
+                          <button class="btn btn-gradient-success">Hire Me</button>
                           
                         </div>
                       </div>
@@ -45,18 +50,7 @@
                           <label class="badge badge-outline-dark">Web Design</label>  
                         </div>                                                               
                       </div>
-                      <div class="border-bottom py-4">
-                        <div class="d-flex mb-3">
-                          <div class="progress progress-md flex-grow">
-                            <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="55" style="width: 55%" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                        <div class="d-flex">
-                          <div class="progress progress-md flex-grow">
-                            <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="75" style="width: 75%" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
+                      
                       <div class="py-4">
                         <p class="clearfix">
                           <span class="float-left">
@@ -71,7 +65,7 @@
                             Phone
                           </span>
                           <span class="float-right text-muted">
-                            006 3435 22
+                            <%= rs.getString("Contact")%>
                           </span>
                         </p>
                         <p class="clearfix">
@@ -79,18 +73,20 @@
                             Mail
                           </span>
                           <span class="float-right text-muted">
-                            Jacod@testmail.com
+                            <%= rs.getString("Email")%>
                           </span>
                         </p>
                         
                       </div>
-                      <button class="btn btn-gradient-primary btn-block">Preview</button>
+                    
                     </div>
                     <div class="col-lg-8">
                       <div class="d-flex justify-content-between">
                         <div>
-                          <h3>Documents</h3>
-                         
+                          <h3><%= rs.getString("FirstName")%>  <%= rs.getString("LastName")%> </h3>
+                         <div class="d-flex align-items-center">
+                            <h5 class="mb-0 mr-2 text-muted"><%= rs.getString("Country")%>,<%= rs.getString("City")%></h5>
+                                                     </div>
                         </div>
                         <div>
                           <button class="btn btn-outline-secondary btn-icon">
@@ -205,7 +201,11 @@
             </div>
           </div>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        <%@ include file="inc/candidatefooter.jsp" %>
+      </div>
+                          
+      <%
+         }
+          %>
+    </div>
+        <%@ include file="inc/candidatefooter.jsp"%> 
 

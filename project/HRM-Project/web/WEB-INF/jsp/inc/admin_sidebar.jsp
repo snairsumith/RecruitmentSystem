@@ -29,6 +29,12 @@
                                 <span class="menu-title">Candidate</span>
                             </a>
                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="view_companys">
+                                <i class="mdi mdi-home-outline menu-icon"></i>              
+                                <span class="menu-title">Company's</span>
+                            </a>
+                        </li>
                             <li class="nav-item">
                             <a class="nav-link" href="approve_company">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              

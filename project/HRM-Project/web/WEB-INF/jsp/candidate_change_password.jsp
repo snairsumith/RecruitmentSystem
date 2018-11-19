@@ -12,7 +12,7 @@
         <div id="settings-trigger"><i class="mdi mdi-format-color-fill"></i></div>
                 
     <%@ include file="inc/candidate_sidebar.jsp"%> 
-                <div class="container-fluid page-body-wrapper full-page-wrapper">
+               <div class="container-fluid page-body-wrapper full-page-wrapper">
                 <div class="content-wrapper d-flex align-items-center auth">
                     <div class="row w-100">
                         <div class="col-lg-4 mx-auto">
@@ -50,7 +50,6 @@
                 </div>
                 <!-- content-wrapper ends -->
             </div>
-            <!-- page-body-wrapper ends -->
        </div>
                     
                    <%@ include file="inc/candidatefooter.jsp" %> 

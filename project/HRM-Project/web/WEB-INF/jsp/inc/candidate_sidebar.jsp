@@ -8,13 +8,13 @@
                             </span>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html">
+                            <a class="nav-link" href="#">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="candidate_candidate_profile">
+                            <a class="nav-link" href="candidate_candidate_profile?uname=<%= request.getParameter("uname") %>">
                                 <i class="mdi mdi-apps menu-icon"></i>              
                                 <span class="menu-title">Profile</span>
                                 <i class="menu-arrow"></i>
@@ -29,14 +29,14 @@
                             </a>
                             <div class="collapse" id="sidebar-layouts">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="candidate_search_company">Job</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="candidate_search_company?uname=<%= request.getParameter("uname") %>">Job</a></li>
                                     
                                     
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="view_applied_jobs">
+                            <a class="nav-link" href="view_applied_jobs?uname=<%= request.getParameter("uname") %>">
                                 <i class="mdi mdi-texture menu-icon"></i>              
                                 <span class="menu-title">Requested Jobs</span>
                                 
@@ -45,20 +45,20 @@
                         </li>
                           
                         <li class="nav-item">
-                            <a class="nav-link" href="../ui-features/notifications.html">
+                            <a class="nav-link" href="#">
                                 <i class="mdi mdi-backup-restore menu-icon"></i>              
                                 <span class="menu-title">Notifications</span>
                                 <span class="badge badge-gradient-success badge-pill">9</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="candidate_change_password">
+                            <a class="nav-link" href="candidate_change_password?uname=<%= request.getParameter("uname") %>">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Change Password</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../login">
+                            <a class="nav-link" href="../">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Logout</span>
                             </a>

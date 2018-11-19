@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -28,7 +29,7 @@ public class CustomerController {
         return "candidate_view_job";
     }
     @RequestMapping(value="/candidate_update_profile",method = RequestMethod.GET)
-    public String candidate_update_profile(ModelMap modelMap) {
+    public String candidate_update_profile(@RequestParam("uname") String uname) {
         
         return "candidate_update_profile";
     }

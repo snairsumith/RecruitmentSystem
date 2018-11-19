@@ -15,7 +15,7 @@
                         </li>
                        
                         <li class="nav-item">
-                            <a class="nav-link" href="company_update_profile">
+                            <a class="nav-link" href="company_update_profile?uname=<%= request.getParameter("uname") %>">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Profile</span>
                             </a>
@@ -29,8 +29,8 @@
                             </a>
                             <div class="collapse" id="sidebar-layouts">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="company_search_candidate">Candidate</a></li>
-                                    <li class="nav-item"> <a class="nav-link" href="company_view_appliedcandidate">Applied Candidate</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="company_search_candidate?uname=<%= request.getParameter("uname") %>">Candidate</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="company_view_appliedcandidate?uname=<%= request.getParameter("uname") %>">Applied Candidate</a></li>
                                      </ul>
                             </div>
                         </li>
@@ -42,7 +42,7 @@
                             </a>
                             <div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"> <a class="nav-link" href="jobpost">JobPost</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="jobpost?uname=<%= request.getParameter("uname") %>">JobPost</a></li>
                                    
                                 </ul>
                             </div>
@@ -56,7 +56,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="company_change_password">
+                            <a class="nav-link" href="company_change_password?uname=<%= request.getParameter("uname") %>">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Change Password</span>
                             </a>

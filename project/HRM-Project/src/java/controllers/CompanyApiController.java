@@ -202,6 +202,24 @@ public class CompanyApiController {
         }
     }
     
+        @RequestMapping(value = "admin_change_password", method = RequestMethod.GET)
+    @ResponseBody
+    public String admin_change_password(
+            @RequestParam("username") String Username,
+            @RequestParam("Password") String Password) throws SQLException, ClassNotFoundException {
+
+       
+        String sql = "update login_tbl set Password='" + Password + "' where Username='"+Username+"'";
+        int i = db.InsetQuery(sql);
+
+        if (i > 0) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
+
+    
     
     
 }

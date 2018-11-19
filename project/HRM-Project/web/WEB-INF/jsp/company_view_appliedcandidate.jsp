@@ -71,8 +71,7 @@
                             
                         </div>
                     </div>
-                    <!-- content-wrapper ends -->
-                    <!-- partial:../../partials/_footer.html -->
+                   
                     <%@ include file="inc/companyfooter.jsp"%> 
-</html>
-
+                </div>
+</div>
