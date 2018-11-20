@@ -79,4 +79,10 @@ public class CompanyController {
         return "company_change_password";
         
     }
+    @RequestMapping(value="/company_userprofile",method = RequestMethod.GET)
+    public String company_userprofile(@RequestParam("uname") String uname) {
+        
+        return "CompanyUserProfile";
+        
+    }
 }

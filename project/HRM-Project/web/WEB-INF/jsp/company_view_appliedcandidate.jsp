@@ -12,66 +12,77 @@
     <div id="settings-trigger"><i class="mdi mdi-format-color-fill"></i></div>
 
     <%@ include file="inc/company_sidebar.jsp"%> 
-                <!-- partial -->
-                <div class="main-panel">
-                    <div class="content-wrapper">
-                        <div class="page-header">
-                            <h3 class="page-title">
-                                View Applied Candidate...
-                            </h3>
-                            
-                        </div>
-                        <div class="row">
-                            
-                            <div class="col-lg-12 grid-margin stretch-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                        
-                                        
-                                        <div class="table-responsive">
-                                            <table class="table table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th>
-                                                            Candidate
-                                                        </th>
-                                                        <th>
-                                                            Candidate Name
-                                                        </th>
-                                                       <th>
-                                                            Job Title
-                                                        </th>
-                                                        <th>
-                                                            Contact
-                                                        </th>
-                                                         <th>
-                                                            Email
-                                                        </th>
-                                                        
-                                                        <th>
-                                                            Profile
-                                                        </th>
-                                                        <th>
-                                                            Send Exam Date
-                                                        </th>
-                                                        <th>
-                                                            Send Exam Link
-                                                        </th>
-                                                        
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
+    <!-- partial -->
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title">
+                    View Applied Candidate...
+                </h3>
 
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+
+
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th>
+                                                Candidate Name
+                                            </th>
+                                            <th>
+                                                Job Title
+                                            </th>
+                                            <th>
+                                                Contact
+                                            </th>
+                                            <th>
+                                                Email
+                                            </th>
+
+                                            <th>
+                                                Profile
+                                            </th>
+                                            <th>
+                                                Send Exam Date
+                                            </th>
+                                            <th>
+                                                Send Exam Link
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <%
+                      DBFunctions db = new DBFunctions();
+                      String CompanyId=request.getParameter("uname");
+                      String sql = "SELECT * FROM `user_reg` where UserName='"+CompanyId+"'";
+                      ResultSet rs = db.SelectQuery(sql);
+                      while(rs.next()){
+                                        
+                                    
+                                    %>
+                                    <tbody>
+
+                                    </tbody>
+                                    <%
+                                        }
+                                    %>
+
+                                </table>
                             </div>
-                            
                         </div>
                     </div>
-                   
-                    <%@ include file="inc/companyfooter.jsp"%> 
                 </div>
+
+            </div>
+        </div>
+
+        <%@ include file="inc/companyfooter.jsp"%> 
+    </div>
 </div>

@@ -86,9 +86,9 @@
                                             <td><%= rs.getString("RegDate")%></td>
 
                                              <td class="text-right">
-                                                                <button class="btn btn-light">
+                                                 <a class="btn btn-light" href="company_userprofile?uname=<%= rs.getString("UserName")%>">
                                                                     <i class="mdi mdi-eye text-primary"></i>View
-                                                                </button>
+                                                                </a>
                                                                 
                                                             </td>
                                         </tr>
@@ -110,8 +110,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- content-wrapper ends -->
-                <!-- partial:../../partials/_footer.html -->
+    </div>
+</div>
                 <%@ include file="inc/companyfooter.jsp" %>
-</html>
+
 
