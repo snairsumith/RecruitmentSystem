@@ -45,16 +45,22 @@
                         </li>
                           
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="UserNotification?uname=<%= request.getParameter("uname") %>">
                                 <i class="mdi mdi-backup-restore menu-icon"></i>              
                                 <span class="menu-title">Notifications</span>
-                                <span class="badge badge-gradient-success badge-pill">9</span>
+                                
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="candidate_change_password?uname=<%= request.getParameter("uname") %>">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Change Password</span>
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="examAttend?uname=<%= request.getParameter("uname") %>">
+                                <i class="mdi mdi-home-outline menu-icon"></i>              
+                                <span class="menu-title">Exam</span>
                             </a>
                         </li>
                         <li class="nav-item">

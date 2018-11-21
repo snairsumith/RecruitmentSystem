@@ -120,7 +120,7 @@ public class CompanyApiController {
         Statement stmt = con.createStatement();
         String sql = "insert into jobpost (CreatedDate,JobTitle,JobTypeId,Salary,Industry,JobDescription,Remark,StreetName,JobLocationId,PostCode,Contact,SecondaryContact,IsActive,CompanyId)"
                 + ""
-                + "values('" + Createdate + "','" + Jobtitle + "','" + Jobname + "','" + Salary + "','" + Industry + "','" + Jobdescription + "','" + Remark + "','" + streetadd + "','" + JobLocationId + "','" + Postcode + "','" + Contact + "','" + SecondaryContact + "','" + Isactive + "','"+userName+"')";
+                + "values('" + Createdate + "','" + Jobtitle + "','" + Jobname + "','" + Salary + "','" + Industry + "','" + Jobdescription + "','" + Remark + "','" + streetadd + "','" + JobLocationId + "','" + Postcode + "','" + Contact + "','" + SecondaryContact + "','" + Isactive + "','" + userName + "')";
         int i = stmt.executeUpdate(sql);
         if (i > 0) {
             return "success";
@@ -167,25 +167,26 @@ public class CompanyApiController {
             return "fail";
         }
     }
-    
+
     @RequestMapping(value = "/company_deatils", method = RequestMethod.GET)
-        public @ResponseBody
+    public @ResponseBody
     List<CompanyModel> getallSupplier(
             @RequestParam("comapnayUserName") String supplierid) throws SQLException {
         List<CompanyModel> sup = new ArrayList<CompanyModel>();
 
-        String sql = "select * from company_reg where UserName='" + supplierid+"'";
+        String sql = "select * from company_reg where UserName='" + supplierid + "'";
         DBFunctions db = new DBFunctions();
         ResultSet rs = db.SelectQuery(sql);
         while (rs.next()) {
 
-            sup.add(new CompanyModel(rs.getInt("CompanyId"), rs.getString("CompanyName"), rs.getString("Email"), rs.getString("Address"),rs.getString("Country"), rs.getString("City"), rs.getString("Contact"),rs.getString("CompanyWebsite")));
+            sup.add(new CompanyModel(rs.getInt("CompanyId"), rs.getString("CompanyName"), rs.getString("Email"), rs.getString("Address"), rs.getString("Country"), rs.getString("City"), rs.getString("Contact"), rs.getString("CompanyWebsite")));
         }
 
         return sup;
 
     }
-     @RequestMapping(value = "/company_change_password", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/company_change_password", method = RequestMethod.GET)
     @ResponseBody
     public String company_change_password(@RequestParam("Password") String Password) throws SQLException, ClassNotFoundException {
 
@@ -201,15 +202,14 @@ public class CompanyApiController {
             return "fail";
         }
     }
-    
-        @RequestMapping(value = "admin_change_password", method = RequestMethod.GET)
+
+    @RequestMapping(value = "admin_change_password", method = RequestMethod.GET)
     @ResponseBody
     public String admin_change_password(
             @RequestParam("username") String Username,
             @RequestParam("Password") String Password) throws SQLException, ClassNotFoundException {
 
-       
-        String sql = "update login_tbl set Password='" + Password + "' where Username='"+Username+"'";
+        String sql = "update login_tbl set Password='" + Password + "' where Username='" + Username + "'";
         int i = db.InsetQuery(sql);
 
         if (i > 0) {
@@ -218,8 +218,8 @@ public class CompanyApiController {
             return "fail";
         }
     }
-    
-     @RequestMapping(value = "sendNotification", method = RequestMethod.GET)
+
+    @RequestMapping(value = "sendNotification", method = RequestMethod.GET)
     @ResponseBody
     public String sendNotification(
             @RequestParam("Title") String Title,
@@ -229,10 +229,9 @@ public class CompanyApiController {
             @RequestParam("Type") String Type,
             @RequestParam("ReciverType") String ReciverType) throws SQLException, ClassNotFoundException {
 
-       
         String sql = "INSERT INTO `notification_tbl` (`NotificationType`, `NotificationTitle`, `NotificationDescription`, `SenderId`, `ReceiverId`, `ReceiverType`)"
                 + ""
-                + " VALUES ('"+Type+"', '"+Title+"','"+Desc+"', '"+SenderId+"', '"+ReciverId+"', '"+ReciverType+"');";
+                + " VALUES ('" + Type + "', '" + Title + "','" + Desc + "', '" + SenderId + "', '" + ReciverId + "', '" + ReciverType + "');";
         int i = db.InsetQuery(sql);
 
         if (i > 0) {
@@ -242,7 +241,4 @@ public class CompanyApiController {
         }
     }
 
-    
-    
-    
 }
