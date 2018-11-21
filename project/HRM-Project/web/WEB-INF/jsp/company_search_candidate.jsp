@@ -86,7 +86,7 @@
                                             <td><%= rs.getString("RegDate")%></td>
 
                                              <td class="text-right">
-                                                 <a class="btn btn-light" href="company_userprofile?uname=<%= rs.getString("UserName")%>">
+                                                 <a class="btn btn-light" href="company_userprofile?useruname=<%= rs.getString("UserName")%>&uname=<%= request.getParameter("uname")%>">
                                                                     <i class="mdi mdi-eye text-primary"></i>View
                                                                 </a>
                                                                 

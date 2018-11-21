@@ -15,7 +15,7 @@
             <%@ include file="inc/company_sidebar.jsp"%> 
           <%
                                     DBFunctions db = new DBFunctions();
-                                    String CompanyId=request.getParameter("uname");
+                                    String CompanyId=request.getParameter("useruname");
                                     String sql = "SELECT * FROM `user_reg` where UserName='"+CompanyId+"'";
                                     ResultSet rs = db.SelectQuery(sql);
                                     if(rs.next()){

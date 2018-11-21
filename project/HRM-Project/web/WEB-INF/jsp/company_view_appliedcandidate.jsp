@@ -3,7 +3,8 @@
     Created on : Sep 20, 2018, 12:48:00 PM
     Author     : HP
 --%>
-
+    <%@page import="java.sql.ResultSet"%>
+<%@page import="LiibraryFunction.DBFunctions"%>
 <%@ include file="inc/header.jsp" %>  
 
 
@@ -46,12 +47,7 @@
                                                 Email
                                             </th>
 
-                                            <th>
-                                                Profile
-                                            </th>
-                                            <th>
-                                                Send Exam Date
-                                            </th>
+                                           
                                             <th>
                                                 Send Exam Link
                                             </th>
@@ -61,14 +57,28 @@
                                     <%
                       DBFunctions db = new DBFunctions();
                       String CompanyId=request.getParameter("uname");
-                      String sql = "SELECT * FROM `user_reg` where UserName='"+CompanyId+"'";
+                      String sql = "SELECT user_reg.Username as User_Name,user_reg.Contact as User_Contact,user_reg.Email as User_Email,jobpost.*,company_reg.* FROM `jobpost` inner join jobpost_activity on jobpost.JobPostId=jobpost_activity.JobId inner join user_reg on user_reg.UserName=jobpost_activity.UserId inner join company_reg on jobpost.CompanyId=company_reg.UserName where company_reg.UserName='"+request.getParameter("uname")+"'";
                       ResultSet rs = db.SelectQuery(sql);
                       while(rs.next()){
                                         
                                     
                                     %>
                                     <tbody>
-
+                                    <td>
+                                        <%= rs.getString("User_Name")%>
+                                    </td>
+                                    <td>
+                                        <%= rs.getString("JobTitle")%>
+                                    </td>
+                                     <td>
+                                        <%= rs.getString("User_Contact")%>
+                                    </td>
+                                    <td>
+                                        <%= rs.getString("User_Contact")%>
+                                    </td>
+                                    <td>
+                                        <a href="#" onclick="ExamLinkSend('<%= request.getParameter("uname") %>','<%= rs.getString("User_Name")%>')">Send</a>
+                                    </td>
                                     </tbody>
                                     <%
                                         }

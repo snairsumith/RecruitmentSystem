@@ -80,7 +80,8 @@ public class CompanyController {
         
     }
     @RequestMapping(value="/company_userprofile",method = RequestMethod.GET)
-    public String company_userprofile(@RequestParam("uname") String uname) {
+    public String company_userprofile(@RequestParam("uname") String uname,
+            @RequestParam("useruname") String useruname) {
         
         return "CompanyUserProfile";
         

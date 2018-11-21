@@ -218,6 +218,29 @@ public class CompanyApiController {
             return "fail";
         }
     }
+    
+     @RequestMapping(value = "sendNotification", method = RequestMethod.GET)
+    @ResponseBody
+    public String sendNotification(
+            @RequestParam("Title") String Title,
+            @RequestParam("Desc") String Desc,
+            @RequestParam("SenderId") String SenderId,
+            @RequestParam("ReciverId") String ReciverId,
+            @RequestParam("Type") String Type,
+            @RequestParam("ReciverType") String ReciverType) throws SQLException, ClassNotFoundException {
+
+       
+        String sql = "INSERT INTO `notification_tbl` (`NotificationType`, `NotificationTitle`, `NotificationDescription`, `SenderId`, `ReceiverId`, `ReceiverType`)"
+                + ""
+                + " VALUES ('"+Type+"', '"+Title+"','"+Desc+"', '"+SenderId+"', '"+ReciverId+"', '"+ReciverType+"');";
+        int i = db.InsetQuery(sql);
+
+        if (i > 0) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
 
     
     

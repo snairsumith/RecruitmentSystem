@@ -340,3 +340,19 @@ function change_password() {
     }
 
 }
+
+function ExamLinkSend(senderId,ReciverId){
+    var Title="Exam Link";
+    var Desc="Your Exam Link:www.exam.com";
+    var NotificationType="Exam Link";
+    var url = baseUrl + "companyapi/sendNotification?Title=" + Title +"&Desc="+Desc+"&SenderId="+senderId+"&ReciverId="+ReciverId+"&Type="+NotificationType+"&ReciverType=user";
+        $.ajax({url: url, success: function (data) {
+                if (data == "success") {
+                    alert("Notification Send")
+                } else {
+                    alert("ERROR DETAILS")
+                }
+            }});
+    
+    
+}
