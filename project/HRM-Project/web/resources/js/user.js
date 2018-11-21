@@ -413,3 +413,29 @@ function change_password() {
 }
 
 
+function ExamAnswerSubmit(Qid,Answer){
+     var username = $("#hdUsername").val();
+     var OptionName="option"+Qid;
+     var DivId="#divQuest"+Qid;
+     var Result=0;
+     var SelectedAnswer=$("input[name='"+OptionName+"']:checked").val();
+     var JobPostId=$("#hdjobPostId").val();
+     if(SelectedAnswer==null){
+         alert("Select Any Answer");
+     }else{
+         if(SelectedAnswer==Answer){
+             Result=1;
+         }
+     }
+     var url = baseUrl + "userapi/exam_insert?qid=" + Qid +"&result="+Result+"&UserName="+username+"&answer="+Answer+"&jobPostId="+JobPostId;
+        $.ajax({url: url, success: function (data) {
+                if (data == "sucess") {
+                    $(DivId).hide();
+                    alert("Exam ");
+                } else {
+                    alert("ERROR DETAILS")
+                }
+            }});
+}
+
+

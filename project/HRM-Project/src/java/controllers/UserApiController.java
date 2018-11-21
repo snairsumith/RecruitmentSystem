@@ -226,4 +226,25 @@ public class UserApiController {
             return "fail";
         }
     }
+    
+    @RequestMapping(value = "/exam_insert", method = RequestMethod.GET)
+    @ResponseBody
+    public String exam_insert(@RequestParam("qid") int qid,
+            @RequestParam("result") int result,
+            @RequestParam("UserName") String UserName,
+            @RequestParam("answer") String answer,
+            @RequestParam("jobPostId") int jobPostId
+            ) throws SQLException, ClassNotFoundException {
+
+       
+        String sql = "INSERT INTO `exam_attend` (`UserId`, `QuestionId`, `Answer`, `Result`,`jobPostId`) VALUES ('"+UserName+"', "+qid+", '"+answer+"', "+result+","+jobPostId+");";
+
+        int i = db.InsetQuery(sql);
+
+        if (i > 0) {
+            return "sucess";
+        } else {
+            return "fail";
+        }
+    }
 }

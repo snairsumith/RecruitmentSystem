@@ -30,7 +30,9 @@
 
 
                 %>
-                <div class="col-12 grid-margin">
+                <input type="hidden" value="<%= request.getParameter("uname")%>" id="hdUsername"/>
+                <input type="hidden" value="<%= request.getParameter("jobPostId")%>" id="hdjobPostId"/>
+                <div class="col-12 grid-margin" id="divQuest<%= rs.getString("id")%>">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title text-primary"><%= rs.getString("Question")%></h4>
@@ -38,7 +40,7 @@
                             <div class="d-flex align-items-start border-bottom py-4">
                                 <div class="form-check my-0">
                                     <label class="form-check-label">
-                                        <input type="radio" name="option" class="form-check-input">
+                                        <input type="radio" name="option<%= rs.getString("id")%>" value="<%= rs.getString("Option1")%>" class="form-check-input">
                                         <i class="input-helper"></i></label>
                                 </div>
                                 <div class="flex-grow-1">
@@ -53,7 +55,7 @@
                             <div class="d-flex align-items-start border-bottom py-4">
                                 <div class="form-check my-0">
                                     <label class="form-check-label">
-                                        <input type="radio" name="option" class="form-check-input">
+                                        <input type="radio" name="option<%= rs.getString("id")%>" value="<%= rs.getString("Option2")%>" class="form-check-input">
                                         <i class="input-helper"></i></label>
                                 </div>
                                 <div class="flex-grow-1">
@@ -67,7 +69,7 @@
                             <div class="d-flex align-items-start border-bottom py-4">
                                 <div class="form-check my-0">
                                     <label class="form-check-label">
-                                        <input type="radio" name="option" class="form-check-input">
+                                        <input type="radio" name="option<%= rs.getString("id")%>" value="<%= rs.getString("Option3")%>" class="form-check-input">
                                         <i class="input-helper"></i></label>
                                 </div>
                                 <div class="flex-grow-1">
@@ -78,7 +80,7 @@
                                 </div>
 
                             </div>
-                                    <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
+                            <button type="submit" onclick="ExamAnswerSubmit(<%= rs.getString("id")%>, '<%= rs.getString("Answer")%>')" class="btn btn-gradient-primary mr-2">Submit</button>
                         </div>
                     </div>
                 </div>

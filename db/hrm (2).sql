@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2018 at 03:09 PM
+-- Generation Time: Nov 21, 2018 at 12:22 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -76,7 +76,7 @@ CREATE TABLE `company_reg` (
 --
 
 INSERT INTO `company_reg` (`CompanyId`, `CompanyName`, `UserName`, `Email`, `Address`, `Country`, `City`, `Pin`, `Contact`, `SecondaryContact`, `CompanyWebsite`, `EstablishmentDate`, `CreatedDate`) VALUES
-(2, NULL, 'Company 1', 'company@gmail.com', NULL, 'India', NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-13 07:10:31');
+(2, 'HCL', 'Company 1', 'company@gmail.com', NULL, 'India', NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-13 07:10:31');
 
 -- --------------------------------------------------------
 
@@ -131,11 +131,29 @@ CREATE TABLE `exam_assign_tbl` (
 --
 
 CREATE TABLE `exam_attend` (
-  `UserId` int(11) NOT NULL,
-  `ExamId` int(11) NOT NULL,
+  `Id` int(11) NOT NULL,
+  `UserId` varchar(50) NOT NULL,
   `QuestionId` int(11) NOT NULL,
-  `Answer` varchar(15) NOT NULL
+  `Answer` varchar(15) NOT NULL,
+  `Result` int(10) NOT NULL,
+  `jobPostId` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `exam_attend`
+--
+
+INSERT INTO `exam_attend` (`Id`, `UserId`, `QuestionId`, `Answer`, `Result`, `jobPostId`) VALUES
+(1, '', 0, '', 0, 0),
+(2, 'afsal@gmail.com', 1, '63', 0, 0),
+(3, 'afsal@gmail.com', 1, '63', 0, 0),
+(4, 'sumith', 1, '63', 0, 0),
+(5, 'sumith', 1, '63', 0, 0),
+(6, 'sumith', 2, 'int 3_a', 0, 0),
+(7, 'sumith', 1, '63', 0, 0),
+(8, 'sumith', 2, 'int 3_a', 0, 0),
+(9, 'sumith', 3, 'LowerCase', 0, 0),
+(10, 'sumith', 1, '63', 0, 2);
 
 -- --------------------------------------------------------
 
@@ -177,12 +195,28 @@ CREATE TABLE `joblocationtable` (
 CREATE TABLE `jobpost` (
   `JobPostId` int(11) NOT NULL,
   `JobTypeId` int(11) NOT NULL,
-  `CompanyId` int(11) NOT NULL,
-  `CreatedDate` timestamp NULL DEFAULT NULL,
+  `CompanyId` varchar(50) NOT NULL,
+  `CreatedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `JobTitle` varchar(50) NOT NULL,
+  `Salary` varchar(50) NOT NULL,
+  `Industry` varchar(50) NOT NULL,
   `JobDescription` varchar(50) NOT NULL,
-  `JobLocation` varchar(50) NOT NULL,
+  `Remark` varchar(50) NOT NULL,
+  `StreetName` varchar(50) NOT NULL,
+  `JobLocationId` varchar(50) NOT NULL,
+  `PostCode` int(11) NOT NULL,
+  `Contact` varchar(50) NOT NULL,
+  `SecondaryContact` varchar(50) NOT NULL,
   `IsActive` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jobpost`
+--
+
+INSERT INTO `jobpost` (`JobPostId`, `JobTypeId`, `CompanyId`, `CreatedDate`, `JobTitle`, `Salary`, `Industry`, `JobDescription`, `Remark`, `StreetName`, `JobLocationId`, `PostCode`, `Contact`, `SecondaryContact`, `IsActive`) VALUES
+(1, 2, 'Company 1', '2018-11-19 14:12:51', 'Job Title ', '5000', 'QWQWQ', 'QWWQ', 'QWWQWQ', 'Karukaparambil Building', '9', 682019, '9656761101', 'WQ', '1'),
+(2, 2, 'Company 1', '2018-11-19 14:12:57', 'Job Title 2', '4000', 'sad', 'aq', 'asas', 'Karukaparambil Building', '9', 682019, '9526909898', '1313', '1');
 
 -- --------------------------------------------------------
 
@@ -191,11 +225,24 @@ CREATE TABLE `jobpost` (
 --
 
 CREATE TABLE `jobpost_activity` (
-  `UserId` int(11) NOT NULL,
+  `UserId` varchar(50) NOT NULL,
+  `JobId` int(11) NOT NULL,
   `JobPostId` int(11) NOT NULL,
-  `ApplyDate` timestamp NULL DEFAULT NULL,
-  `Skill` varchar(50) NOT NULL
+  `ApplyDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `ExamActive` int(11) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jobpost_activity`
+--
+
+INSERT INTO `jobpost_activity` (`UserId`, `JobId`, `JobPostId`, `ApplyDate`, `ExamActive`) VALUES
+('sumith', 1, 2, '2018-11-15 11:00:48', 1),
+('sumith', 2, 3, '2018-11-15 11:01:03', 0),
+('sumith', 1, 4, '2018-11-15 11:01:20', 0),
+('sumith', 1, 5, '2018-11-19 14:09:56', 0),
+('sumith', 2, 6, '2018-11-19 15:10:14', 0),
+('sumith', 1, 7, '2018-11-19 15:10:29', 0);
 
 -- --------------------------------------------------------
 
@@ -208,6 +255,14 @@ CREATE TABLE `job_type_tbl` (
   `TypeName` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `job_type_tbl`
+--
+
+INSERT INTO `job_type_tbl` (`TypeId`, `TypeName`) VALUES
+(1, 'Developer'),
+(2, 'Tester');
+
 -- --------------------------------------------------------
 
 --
@@ -219,6 +274,28 @@ CREATE TABLE `location` (
   `LocationName` varchar(50) NOT NULL,
   `ParentId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `location`
+--
+
+INSERT INTO `location` (`LocationId`, `LocationName`, `ParentId`) VALUES
+(4, 'Pazhamthottam', 12),
+(7, 'Vaikom', 11),
+(8, 'Kaduthuruthy', 11),
+(9, 'Tripunithura', 12),
+(10, 'Vytilla', 12),
+(11, 'Kottayam', 21),
+(12, 'Ernakulam', 21),
+(13, 'Iduki', 21),
+(14, 'Thodupuzha', 13),
+(15, 'Kattapana', 13),
+(16, 'Wayanad', 21),
+(17, 'Kalpatta', 16),
+(18, 'Thrissur', 21),
+(19, 'Guruvayoor', 18),
+(20, 'Chalakkudy', 18),
+(21, 'India', 0);
 
 -- --------------------------------------------------------
 
@@ -240,7 +317,7 @@ CREATE TABLE `login_tbl` (
 
 INSERT INTO `login_tbl` (`LoginId`, `UserName`, `Password`, `Role`, `Status`) VALUES
 (1, 'Admin', 'Admin', 1, '1'),
-(3, 'sumith', '1234', 2, '1'),
+(3, 'sumith', '123456789', 2, '1'),
 (4, 'Company 1', '123456789', 3, '0');
 
 -- --------------------------------------------------------
@@ -255,10 +332,19 @@ CREATE TABLE `notification_tbl` (
   `NotificationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `NotificationTitle` varchar(50) NOT NULL,
   `NotificationDescription` varchar(50) NOT NULL,
-  `SenderId` int(11) NOT NULL,
-  `ReceiverId` int(11) NOT NULL,
+  `SenderId` varchar(100) NOT NULL,
+  `ReceiverId` varchar(100) NOT NULL,
   `ReceiverType` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notification_tbl`
+--
+
+INSERT INTO `notification_tbl` (`NotificatioId`, `NotificationType`, `NotificationDate`, `NotificationTitle`, `NotificationDescription`, `SenderId`, `ReceiverId`, `ReceiverType`) VALUES
+(1, '', '2018-11-21 02:37:09', '', '', '0', '0', ''),
+(2, 'Exam Link', '2018-11-21 02:51:38', 'Exam Link', 'Your Exam Link:www.exam.com', 'Company 1', 'sumith', 'user'),
+(3, 'Exam Link', '2018-11-21 07:01:41', 'Exam Link', 'Your Exam Link:www.exam.com', 'Company 1', 'sumith', 'user');
 
 -- --------------------------------------------------------
 
@@ -276,6 +362,30 @@ CREATE TABLE `question` (
   `CompanyId` int(11) NOT NULL,
   `MarkType` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `question_tbl`
+--
+
+CREATE TABLE `question_tbl` (
+  `id` int(11) NOT NULL,
+  `Question` varchar(500) NOT NULL,
+  `Option1` varchar(100) NOT NULL,
+  `Option2` varchar(100) NOT NULL,
+  `Option3` varchar(50) NOT NULL,
+  `Answer` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `question_tbl`
+--
+
+INSERT INTO `question_tbl` (`id`, `Question`, `Option1`, `Option2`, `Option3`, `Answer`) VALUES
+(1, 'C99 standard guarantees uniqueness of ____ characters for internal names.', '31', '63', ' 12', '63'),
+(2, 'Which of the following is not a valid variable name declaration?.', 'int _a3;', ' int a_3', '  int 3_a;', 'int 3_a'),
+(3, 'All keywords in C are in ____________.', 'LowerCase letters', ' UpperCase letters', '  CamelCase letters', 'LowerCase ');
 
 -- --------------------------------------------------------
 
@@ -304,7 +414,7 @@ CREATE TABLE `user_reg` (
   `Email` varchar(30) DEFAULT NULL,
   `Country` varchar(25) DEFAULT NULL,
   `City` varchar(25) DEFAULT NULL,
-  `Contact` int(11) DEFAULT NULL,
+  `Contact` varchar(11) DEFAULT NULL,
   `Experience` varchar(25) DEFAULT NULL,
   `HigherQualification` varchar(50) DEFAULT NULL,
   `Marks` int(11) DEFAULT NULL,
@@ -316,15 +426,19 @@ CREATE TABLE `user_reg` (
   `Photo` varchar(50) DEFAULT NULL,
   `Cv` varchar(50) DEFAULT NULL,
   `MarkList` varchar(50) DEFAULT NULL,
-  `IdProof` varchar(50) DEFAULT NULL
+  `IdProof` varchar(50) DEFAULT NULL,
+  `Home` varchar(50) NOT NULL,
+  `State` varchar(50) NOT NULL,
+  `PostCode` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_reg`
 --
 
-INSERT INTO `user_reg` (`UserId`, `UserName`, `FirstName`, `LastName`, `Gender`, `Dob`, `Email`, `Country`, `City`, `Contact`, `Experience`, `HigherQualification`, `Marks`, `University`, `RegDate`, `RegTime`, `ProfileNotification`, `EmailNotification`, `Photo`, `Cv`, `MarkList`, `IdProof`) VALUES
-(1, 'sumith', NULL, NULL, NULL, NULL, 'sumith@gmail.com', 'India', NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-06 18:30:00', '2018-11-13 07:24:17', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `user_reg` (`UserId`, `UserName`, `FirstName`, `LastName`, `Gender`, `Dob`, `Email`, `Country`, `City`, `Contact`, `Experience`, `HigherQualification`, `Marks`, `University`, `RegDate`, `RegTime`, `ProfileNotification`, `EmailNotification`, `Photo`, `Cv`, `MarkList`, `IdProof`, `Home`, `State`, `PostCode`) VALUES
+(1, 'sumith', 'sda', 'ad', 'Male', '2018-11-14 18:30:00', 'sumith@gmail.com', 'India', 'Vytilla', '9656761101', '4', 'MCA', 234, 'df', '2018-11-06 18:30:00', '2018-11-15 08:08:05', 'false', 'true', NULL, NULL, NULL, NULL, 'ad', 'Kerala', '682019 '),
+(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-15 08:19:18', '2018-11-15 08:19:18', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -365,6 +479,12 @@ ALTER TABLE `company_reg`
 --
 ALTER TABLE `exam`
   ADD PRIMARY KEY (`ExamId`);
+
+--
+-- Indexes for table `exam_attend`
+--
+ALTER TABLE `exam_attend`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `joblocationtable`
@@ -415,6 +535,12 @@ ALTER TABLE `question`
   ADD PRIMARY KEY (`QuestionId`);
 
 --
+-- Indexes for table `question_tbl`
+--
+ALTER TABLE `question_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `skill_tbl`
 --
 ALTER TABLE `skill_tbl`
@@ -462,6 +588,12 @@ ALTER TABLE `exam`
   MODIFY `ExamId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `exam_attend`
+--
+ALTER TABLE `exam_attend`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `joblocationtable`
 --
 ALTER TABLE `joblocationtable`
@@ -471,25 +603,25 @@ ALTER TABLE `joblocationtable`
 -- AUTO_INCREMENT for table `jobpost`
 --
 ALTER TABLE `jobpost`
-  MODIFY `JobPostId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `JobPostId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jobpost_activity`
 --
 ALTER TABLE `jobpost_activity`
-  MODIFY `JobPostId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `JobPostId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `job_type_tbl`
 --
 ALTER TABLE `job_type_tbl`
-  MODIFY `TypeId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TypeId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `location`
 --
 ALTER TABLE `location`
-  MODIFY `LocationId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `LocationId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `login_tbl`
@@ -501,13 +633,19 @@ ALTER TABLE `login_tbl`
 -- AUTO_INCREMENT for table `notification_tbl`
 --
 ALTER TABLE `notification_tbl`
-  MODIFY `NotificatioId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `NotificatioId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
   MODIFY `QuestionId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `question_tbl`
+--
+ALTER TABLE `question_tbl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `skill_tbl`
@@ -519,7 +657,7 @@ ALTER TABLE `skill_tbl`
 -- AUTO_INCREMENT for table `user_reg`
 --
 ALTER TABLE `user_reg`
-  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_skill_tbl`

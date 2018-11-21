@@ -74,7 +74,3 @@ function change_password() {
     }
 
 }
-
-function ExamAnswerSubmit(Qid,){
-     var username = localStorage.getItem("username");
-}

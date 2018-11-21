@@ -26,7 +26,7 @@
                      <%
                                     DBFunctions db = new DBFunctions();
                                     String CompanyId=request.getParameter("uname");
-                                    String sql = "SELECT company_reg.CompanyName,jobpost.*,jobpost_activity.ApplyDate,jobpost_activity.JobPostId as postActivityId FROM `jobpost` inner join jobpost_activity on jobpost_activity.JobId=jobpost.JobPostId inner join company_reg on company_reg.UserName=jobpost.CompanyId  where jobpost_activity.UserId='"+CompanyId+"'";
+                                    String sql = "SELECT company_reg.CompanyName,jobpost.*,jobpost_activity.ApplyDate,jobpost_activity.JobPostId as postActivityId ,jobpost_activity.ExamActive FROM `jobpost` inner join jobpost_activity on jobpost_activity.JobId=jobpost.JobPostId inner join company_reg on company_reg.UserName=jobpost.CompanyId  where jobpost_activity.UserId='"+CompanyId+"'";
                                     ResultSet rs = db.SelectQuery(sql);
                                     while(rs.next()){
                                         
@@ -69,21 +69,21 @@
                                     </div>
                                     <div class="tab-pane fade" id="profile-3<%= rs.getString("postActivityId")%>" role="tabpanel" aria-labelledby="profile-tab-custom">
                                         <div class="media">
-                                            <img class="align-self-center mr-3 w-25 rounded" src="../../images/samples/300x300/15.jpg" alt="sample image">
+                                           
                                             <div class="media-body">
-                                                <p>
-                                                    And until then, I can never die? I'm a thing. Fry, you can't just sit here in the dark listening to 
-                                                    classical music. Is today's hectic lifestyle making you tense and impatient? Is today's hectic lifestyle 
-                                                    making you tense and impatient?
-                                                </p>
-                                                <p>
-                                                    Robot 1-X, save my friends! And Zoidberg! Aww, it's true. I've been hiding it for so long. Fry, we have a 
-                                                    crate to deliver. Yes! In your face, Gandhi! Interesting. No, wait, the other thing: tedious.
-                                                </p>
-                                                <p>
-                                                    Five hours? Aw, man! Couldn't you just get me the death penalty? Yes! In your face, Gandhi! We're rescuing 
-                                                    ya. Yeah, I do that with my stupidness. With gusto.
-                                                </p>
+                                                <%
+                                                    int Status=rs.getInt("ExamActive");
+                                                    if(Status==1){
+                                                        %>
+                                                        <a href="examAttend?uname=<%= request.getParameter("uname") %>&jobPostId=<%= rs.getString("postActivityId")%>">Attend Exam</a>
+                                                        <%
+                                                            }else{ %>
+                                                            <h1>Wait For Compnay Approvel</h1>
+                                                            <%
+}
+%>
+                                                        
+                                                   
                                             </div>
                                         </div>
                                     </div>

@@ -80,7 +80,8 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/examAttend", method = RequestMethod.GET)
-    public String examAttend(@RequestParam("uname") String uname) {
+    public String examAttend(@RequestParam("uname") String uname,
+            @RequestParam("jobPostId") String jobPostId) {
         return "Exam";
     }
 

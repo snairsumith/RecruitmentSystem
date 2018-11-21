@@ -57,12 +57,12 @@
                                 <span class="menu-title">Change Password</span>
                             </a>
                         </li>
-                         <li class="nav-item">
+<!--                         <li class="nav-item">
                             <a class="nav-link" href="examAttend?uname=<%= request.getParameter("uname") %>">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
                                 <span class="menu-title">Exam</span>
                             </a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link" href="../">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
