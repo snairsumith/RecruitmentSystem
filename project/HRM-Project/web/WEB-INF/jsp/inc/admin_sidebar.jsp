@@ -53,7 +53,7 @@
                         
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="../">
+                            <a class="nav-link" href="/HRM-Project/login">
                                 <i class="mdi mdi-lightbulb-outline menu-icon"></i>              
                                 <span class="menu-title">Logout</span>
                                 
