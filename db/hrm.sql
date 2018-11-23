@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2018 at 12:22 PM
+-- Generation Time: Nov 23, 2018 at 09:05 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -153,7 +153,10 @@ INSERT INTO `exam_attend` (`Id`, `UserId`, `QuestionId`, `Answer`, `Result`, `jo
 (7, 'sumith', 1, '63', 0, 0),
 (8, 'sumith', 2, 'int 3_a', 0, 0),
 (9, 'sumith', 3, 'LowerCase', 0, 0),
-(10, 'sumith', 1, '63', 0, 2);
+(10, 'sumith', 1, '63', 0, 2),
+(11, 'sumith', 1, '63', 0, 2),
+(12, 'sumith', 2, 'int 3_a', 0, 2),
+(13, 'sumith', 3, 'LowerCase ', 0, 2);
 
 -- --------------------------------------------------------
 
@@ -591,7 +594,7 @@ ALTER TABLE `exam`
 -- AUTO_INCREMENT for table `exam_attend`
 --
 ALTER TABLE `exam_attend`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `joblocationtable`
