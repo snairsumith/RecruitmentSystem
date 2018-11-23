@@ -61,12 +61,13 @@ public class CompanyApiController {
             @RequestParam("PostCode") String PostCode,
             @RequestParam("Contact") String Contact,
             @RequestParam("SecondaryContact") String SecondaryContact,
-            @RequestParam("CompanyWebsite") String CompanyWebsite) throws SQLException, ClassNotFoundException {
+            @RequestParam("CompanyWebsite") String CompanyWebsite,
+    @RequestParam("Username") String Username) throws SQLException, ClassNotFoundException {
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm", "root", "");
         Statement stmt = con.createStatement();
-        String sql = "update company_reg set CompanyName='" + CompanyName + "',EstablishmentDate='" + EstablishmentDate + "',City='" + City + "',State='" + State + "',PostCode='" + PostCode + "',Contact='" + Contact + "',SecondaryContact='" + SecondaryContact + "',CompanyWebsite='" + CompanyWebsite + "'  where Username='tcs'";
+        String sql = "update company_reg set CompanyName='" + CompanyName + "',EstablishmentDate='" + EstablishmentDate + "',City='" + City + "',State='" + State + "',Pin='" + PostCode + "',Contact='" + Contact + "',SecondaryContact='" + SecondaryContact + "',CompanyWebsite='" + CompanyWebsite + "'  where Username='"+Username+"'";
         int i = stmt.executeUpdate(sql);
 
         if (i > 0) {
@@ -218,7 +219,38 @@ public class CompanyApiController {
             return "fail";
         }
     }
+    
+    @RequestMapping(value = "activeexamlink", method = RequestMethod.GET)
+    @ResponseBody
+    public String activeexamlink(
+            
+            @RequestParam("JobPostId") String JobPostId) throws SQLException, ClassNotFoundException {
 
+        String sql = "update jobpost_activity set ExamActive=1 where JobPostId='JobPostId'";
+        int i = db.InsetQuery(sql);
+
+        if (i > 0) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
+     @RequestMapping(value = "send_iterview_notification", method = RequestMethod.GET)
+    @ResponseBody
+    public String send_iterview_notification(
+            
+            @RequestParam("username") String username,
+    @RequestParam("details") String details) throws SQLException, ClassNotFoundException {
+
+        String sql = "insert into exam (CompanyName,Details)values('" + username + "','" + details + "')";
+        int i = db.InsetQuery(sql);
+
+        if (i > 0) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
     @RequestMapping(value = "sendNotification", method = RequestMethod.GET)
     @ResponseBody
     public String sendNotification(

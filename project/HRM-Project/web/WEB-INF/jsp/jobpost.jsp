@@ -69,26 +69,7 @@
                                 <label for="exampleTextarea1">Remark</label>
                                 <textarea class="form-control" rows="4" id="txtRemark"></textarea>
                             </div>
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Is Active</label>
-                                <div class="col-sm-4">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-
-                                            <input type="radio" class="form-check-input" name="membershipRadios" id="rdactive" value="1" checked="">
-                                            Yes
-                                            <i class="input-helper"></i></label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-5">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="membershipRadios" id="rdactive" value="o">
-                                            No
-                                            <i class="input-helper"></i></label>
-                                    </div>
-                                </div>
-                            </div>
+                            
 
                         </form>
                     </div>
@@ -141,7 +122,7 @@
                                             <label class="col-sm-3 col-form-label">Country</label>
                                             <div class="col-sm-9">
                                                 <select class="form-control" id="selCountry" onchange="getallocation()">
-                                                    <option>Select District</option>
+                                                    <option>Select Country</option>
                                                     <%
                                          String sql = "select * from location where ParentId=0";
                                         

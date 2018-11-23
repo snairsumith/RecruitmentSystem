@@ -67,7 +67,19 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Date of Birth</label>
                                             <div class="col-sm-9">
-                                                <input type="date" class="form-control" placeholder="dd/mm/yyyy" id="txtDateofBirth"/>
+                                                <select class="form-control" id="selCountry" onchange="getallocation()">
+                                                                    <option>Select Country</option>
+                                                                    <%
+                                                         String sql11 = "select * from location where ParentId=0";
+                                        
+                                                         ResultSet rs11 = db.SelectQuery(sql11);
+                                                         while (rs11.next()) {
+                                                                    %>
+                                                                    <option value=<%= rs11.getString("LocationId")%>><%= rs11.getString("LocationName")%></option>
+                                                                    <%
+                                                                        }
+                                                                    %>
+                                                                </select>
                                                 <label id="err_DOB" class="text-danger"></label>
                                             </div>
                                         </div>

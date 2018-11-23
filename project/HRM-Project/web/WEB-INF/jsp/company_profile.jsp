@@ -20,7 +20,7 @@
         <div class="content-wrapper">
             <div class="page-header">
                 <h3 class="page-title">
-                    Company Profille${sessionScope.username }
+                    Company Profille
                 </h3>
              
             </div>
@@ -50,6 +50,7 @@
                                             <label class="col-sm-3 col-form-label">Establishment Date</label>
                                             <div class="col-sm-9">
                                                 <input type="date" class="form-control" placeholder="dd/mm/yyyy" id="txtEstablishmentDate"/>
+                                                
                                             </div>
                                             <label class="text-danger" id="err_establishementdate"></label>
                                         </div>

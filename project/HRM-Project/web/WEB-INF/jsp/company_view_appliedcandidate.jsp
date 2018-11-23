@@ -51,7 +51,9 @@
                                             <th>
                                                 Send Exam Link
                                             </th>
-
+                                            <th>
+                                                Active Exam Link
+                                            </th>
                                         </tr>
                                     </thead>
                                     <%
@@ -78,6 +80,9 @@
                                     </td>
                                     <td>
                                         <a href="#" onclick="ExamLinkSend('<%= request.getParameter("uname") %>','<%= rs.getString("User_Name")%>')">Send</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" onclick="ExamLinkSend('<%= request.getParameter("uname") %>','<%= rs.getString("User_Name")%>')">Active</a>
                                     </td>
                                     </tbody>
                                     <%
