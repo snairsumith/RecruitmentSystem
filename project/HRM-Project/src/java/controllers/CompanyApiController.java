@@ -36,13 +36,14 @@ public class CompanyApiController {
     public String company_registration(@RequestParam("Username") String Username,
             @RequestParam("Email") String Email,
             @RequestParam("Country") String Country,
-            @RequestParam("Password") String Password) throws SQLException, ClassNotFoundException {
+            @RequestParam("Password") String Password,
+            @RequestParam("name") String name) throws SQLException, ClassNotFoundException {
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrm", "root", "");
         Statement stmt = con.createStatement();
         String sql = "insert into company_reg (UserName,Email,Country)values('" + Username + "','" + Email + "','" + Country + "')";
-        String sql1 = "insert into login_tbl (UserName,Password,Role,Status)values('" + Username + "','" + Password + "','3','0')";
+        String sql1 = "insert into login_tbl (CompanyName,UserName,Password,Role,Status)values('"+name+"'," + Username + "','" + Password + "','3','0')";
         int i = stmt.executeUpdate(sql);
         int j = stmt.executeUpdate(sql1);
         if (i > 0 && j > 0) {
