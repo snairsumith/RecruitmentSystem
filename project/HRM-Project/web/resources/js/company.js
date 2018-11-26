@@ -4,6 +4,7 @@ function company_registration() {
     var email = $("#txtEmail").val();
     var country = $("#selCountry").val();
     var password = $("#txtPassword").val();
+    var name=$("#txtName").val();
     var isValid = true;
     if (username == "") {
         $("#err_username").text("Username required");
@@ -36,7 +37,7 @@ function company_registration() {
     }
 
     if (isValid) {
-        var url = baseUrl + "companyapi/company_registration?Username=" + username + "&Email=" + email + "&Country=" + country + "&Password=" + password
+        var url = baseUrl + "companyapi/company_registration?Username=" + username + "&Email=" + email + "&Country=" + country + "&Password=" + password+"&name="+name
         $.ajax({url: url, success: function (data) {
                 if (data == "success") {
                     alert("Registration Sucessfull");
