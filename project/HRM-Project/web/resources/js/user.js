@@ -259,6 +259,17 @@ function getCompanyById(){
         }});
 
 }
+
+function getJobPostByCompnay(){
+    var ComapanyUsername=$("#cmbComapny").val();
+    window.location.href = "candidate_search_company?uname="+localStorage.getItem("username")+"&compName="+ComapanyUsername;
+    
+}
+function getJobPostByLocation(){
+    var ComapanyUsername=$("#selCity").val();
+    window.location.href = "candidate_search_company?uname="+localStorage.getItem("username")+"&locName="+ComapanyUsername;
+    
+}
 function getCompanyByLocation(){
 
     $("#tbody_companylist").html("");

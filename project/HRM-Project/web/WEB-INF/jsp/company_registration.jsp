@@ -45,6 +45,18 @@
                             <h4>New here?</h4>
                             <h6 class="font-weight-light">Join us today! It takes only few steps</h6>
                             <form class="pt-3">
+<div class="form-group">
+                                    <label>Name</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent">
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-account-outline text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control form-control-lg border-left-0" id="txtName" placeholder="Username">
+                                   </div>
+                                    <label class="text-danger" id="err_username"></label>
+                                </div>
                                 <div class="form-group">
                                     <label>Username</label>
                                     <div class="input-group">

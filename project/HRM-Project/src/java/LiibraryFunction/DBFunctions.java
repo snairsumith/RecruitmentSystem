@@ -25,7 +25,7 @@ public class DBFunctions {
             "jdbc:mysql://localhost:3306/hrm", "root", "");
         Statement st=con.createStatement();
         rs=st.executeQuery(sql);
-        
+            System.err.println("Sql:"+sql);
         }catch(Exception ex){
             
         }
@@ -40,8 +40,10 @@ public class DBFunctions {
             "jdbc:mysql://localhost:3306/hrm", "root", "");
         Statement st=con.createStatement();
         returnInt=st.executeUpdate(sql);
+         System.err.println("Sql:"+sql);
         }catch(Exception ex){
             System.out.print(ex.getMessage());
+             System.err.println("Erro:"+ex.getMessage());
         }
        return returnInt;
         

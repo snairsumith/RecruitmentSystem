@@ -64,13 +64,13 @@
 
 
                                                     </div>
-                                                    <h5 class="card-title">Location</h5>
+                                                    <h5 class="card-title">Search Filter</h5>
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group row">
 
                                                                 <div class="col-sm-12">
-                                                                    <select name="order-listing_length" aria-controls="order-listing" class="form-control" id="cmbComapny" onchange="getCompanyById()">
+                                                                    <select name="order-listing_length" aria-controls="order-listing" class="form-control" id="cmbComapny" onchange="getJobPostByCompnay()">
                                                                         <option value="5">Select Industry</option>
 
                                                                     <%
@@ -79,7 +79,7 @@
                                                                         ResultSet rs1 = db.SelectQuery(sql1);
                                                                         while (rs1.next()) {
                                                                     %>
-                                                                    <option value="<%= rs1.getString("UserName")%>"><%= rs1.getString("UserName")%></option>
+                                                                    <option value="<%= rs1.getString("UserName")%>"><%= rs1.getString("CompanyName")%></option>
                                                                     <%
                                                                         }
                                                                     %>
@@ -130,7 +130,7 @@
                                                         <div class="form-group row">
 
                                                             <div class="col-sm-12">
-                                                                <select class="form-control" id="selCity" onchange="getCompanyByLocation()">
+                                                                <select class="form-control" id="selCity" onchange="getJobPostByLocation()">
                                                                     <option value="0">Select City</option>
                                                                 </select> 
                                                             </div>
@@ -174,8 +174,17 @@
                                             </thead>
                                             <tbody id="tbody_companylist">
                                                 <%
-                                   
-                                            String sql = "select  jobpost.*,company_reg.*,job_type_tbl.* from  jobpost inner join company_reg on company_reg.UserName=jobpost.CompanyId  inner join job_type_tbl on job_type_tbl.TypeId=jobpost.JobTypeId";
+                                                   
+                                                    String sql="";
+                                            if(request.getParameter("compName")!=null){
+                                                sql= "select  jobpost.*,company_reg.*,job_type_tbl.* from  jobpost inner join company_reg on company_reg.UserName=jobpost.CompanyId  inner join job_type_tbl on job_type_tbl.TypeId=jobpost.JobTypeId where jobpost.CompanyId='"+request.getParameter("compName")+"'";
+                                                
+                                            }else if(request.getParameter("locName")!=null){
+                                                sql= "select  jobpost.*,company_reg.*,job_type_tbl.* from  jobpost inner join company_reg on company_reg.UserName=jobpost.CompanyId  inner join job_type_tbl on job_type_tbl.TypeId=jobpost.JobTypeId where jobpost.JobLocationId='"+request.getParameter("locName")+"'";
+                                            }
+                                            else{        
+                                                sql= "select  jobpost.*,company_reg.*,job_type_tbl.* from  jobpost inner join company_reg on company_reg.UserName=jobpost.CompanyId  inner join job_type_tbl on job_type_tbl.TypeId=jobpost.JobTypeId";
+                                            }
                                             ResultSet rs = db.SelectQuery(sql);
                                             while (rs.next()) {
                                                 %>

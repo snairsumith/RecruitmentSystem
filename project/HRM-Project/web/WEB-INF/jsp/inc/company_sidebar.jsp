@@ -49,13 +49,13 @@
                         </li>
                         >
                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="mdi mdi-lightbulb-outline menu-icon"></i>              
-                                <span class="menu-title">Notification</span>
-                                <span class="badge badge-gradient-primary badge-pill">3</span>
-                            </a>
-                        </li>
+    <!--                        <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="mdi mdi-lightbulb-outline menu-icon"></i>              
+                                    <span class="menu-title">Notification</span>
+                                    <span class="badge badge-gradient-primary badge-pill">3</span>
+                                </a>
+                            </li>-->
                         <li class="nav-item">
                             <a class="nav-link" href="company_change_password?uname=<%= request.getParameter("uname") %>">
                                 <i class="mdi mdi-home-outline menu-icon"></i>              
