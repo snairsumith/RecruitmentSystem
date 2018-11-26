@@ -43,7 +43,7 @@
                             <div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu">
                                     <li class="nav-item"> <a class="nav-link" href="jobpost?uname=<%= request.getParameter("uname") %>">JobPost</a></li>
-                                   <li class="nav-item"> <a class="nav-link" href="send_interview_notification?uname=<%= request.getParameter("uname") %>">Interview</a></li>
+                                   
                                 </ul>
                             </div>
                         </li>

@@ -59,7 +59,7 @@
                                     <%
                       DBFunctions db = new DBFunctions();
                       String CompanyId=request.getParameter("uname");
-                      String sql = "SELECT user_reg.Username as User_Name,user_reg.Contact as User_Contact,user_reg.Email as User_Email,jobpost.*,company_reg.* FROM `jobpost` inner join jobpost_activity on jobpost.JobPostId=jobpost_activity.JobId inner join user_reg on user_reg.UserName=jobpost_activity.UserId inner join company_reg on jobpost.CompanyId=company_reg.UserName where company_reg.UserName='"+request.getParameter("uname")+"'";
+                      String sql = "SELECT jobpost_activity.JobPostId,jobpost_activity.ExamActive,jobpost_activity.IsNotificationSend,user_reg.Username as User_Name,user_reg.Contact as User_Contact,user_reg.Email as User_Email,jobpost.*,company_reg.* FROM `jobpost` inner join jobpost_activity on jobpost.JobPostId=jobpost_activity.JobId inner join user_reg on user_reg.UserName=jobpost_activity.UserId inner join company_reg on jobpost.CompanyId=company_reg.UserName where company_reg.UserName='"+request.getParameter("uname")+"'";
                       ResultSet rs = db.SelectQuery(sql);
                       while(rs.next()){
                                         
@@ -78,12 +78,24 @@
                                     <td>
                                         <%= rs.getString("User_Contact")%>
                                     </td>
+                                   
                                     <td>
-                                        <a href="#" onclick="ExamLinkSend('<%= request.getParameter("uname") %>','<%= rs.getString("User_Name")%>')">Send</a>
+                                         <% if(rs.getInt("IsNotificationSend")==0){ %>
+                                        <a href="#" onclick="ExamLinkSend('<%= request.getParameter("uname") %>','<%= rs.getString("User_Name")%>',<%= rs.getString("JobPostId")%>)">Send</a>
+                                         <% }else{ %>
+                                          Link Send
+                                           <% } %>
                                     </td>
+                                  
+                                    
                                     <td>
-                                        <a href="#" onclick="ExamLinkSend('<%= request.getParameter("uname") %>','<%= rs.getString("User_Name")%>')">Active</a>
+                                         <% if(rs.getInt("ExamActive")==0){ %>
+                                        <a href="#" onclick="ActiveExam(<%= request.getParameter("JobPostId") %>)">Active</a>
+                                         <% }else{ %>
+                                          Exam Activated
+                                           <% } %>
                                     </td>
+                                    
                                     </tbody>
                                     <%
                                         }

@@ -40,13 +40,20 @@
                   
                   <form class="forms-sample">
                    
-                    
+                   
+                       <div class="form-group">
+                     
+                           <input type="hidden" id="txtReciverId" value="<%= request.getParameter("ReciverId") %>"/>
+                           <input type="hidden"  id="SenderId" value="<%= request.getParameter("SenderId") %>"/>
+                           <input type="hidden"  id="JobActiveId" value="<%= request.getParameter("JobActiveId") %>"/>
+                           
+                    </div>
                     
                     <div class="form-group">
                      
                       <textarea class="form-control" id="txtdetails" rows="4"></textarea>
                     </div>
-                      <button type="submit" class="btn btn-gradient-primary mr-2" onclick="send_iterview_notification()">Send</button>
+                           <button type="button" class="btn btn-gradient-primary mr-2" onclick="send_iterview_notification()">Send</button>
                     
                   </form>
                 </div>

@@ -225,9 +225,9 @@ public class CompanyApiController {
     @ResponseBody
     public String activeexamlink(
             
-            @RequestParam("JobPostId") String JobPostId) throws SQLException, ClassNotFoundException {
+            @RequestParam("JobPostId") int JobPostId) throws SQLException, ClassNotFoundException {
 
-        String sql = "update jobpost_activity set ExamActive=1 where JobPostId='JobPostId'";
+        String sql = "update jobpost_activity set ExamActive=1 where JobPostId="+JobPostId+"";
         int i = db.InsetQuery(sql);
 
         if (i > 0) {
@@ -240,10 +240,10 @@ public class CompanyApiController {
     @ResponseBody
     public String send_iterview_notification(
             
-            @RequestParam("username") String username,
+            @RequestParam("JobActiveId") int JobActiveId,
     @RequestParam("details") String details) throws SQLException, ClassNotFoundException {
 
-        String sql = "insert into exam (CompanyName,Details)values('" + username + "','" + details + "')";
+        String sql = "update jobpost_activity set JobDeatilsFromComp='"+details+"',IsNotificationSend=1 where JobPostId='"+JobActiveId+"'";
         int i = db.InsetQuery(sql);
 
         if (i > 0) {

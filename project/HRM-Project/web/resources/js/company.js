@@ -181,7 +181,7 @@ function job_post() {
     var isValid = true;
 
     if (isValid) {
-        var url = baseUrl + "companyapi/jobpost?Createddate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&PostCode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&Streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&Isactive=" + isactive+ "&username=" + username;
+        var url = baseUrl + "companyapi/jobpost?Createddate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&PostCode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&Streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&Isactive=" + isactive+ "&username=" + username+"&Isactive=1";
         $.ajax({url: url, success: function (data) {
                 if (data == "sucess") {
                     window.location.href = "company_profile"
@@ -232,24 +232,7 @@ function companyByUsername(){
             }});
     
 }
-function send_iterview_notification() {
-    var username = localStorage.getItem("username");
-    var details = $("#txtdetails").val();
-     var isValid = true;
 
-    if (isValid) {
-        var url = baseUrl + "companyapi/send_iterview_notification?details=" + details+ "&userName="+username;
-        $.ajax({url: url, success: function (data) {
-                if (data == "success") {
-                    alert("Interview Notification Sucess");
-                    window.location.href = "company_profile"
-                } else {
-                    alert("ERROR JOBPOST")
-                }
-            }});
-    }
-
-}
 
 function job_post() {
     var username = localStorage.getItem("username");
@@ -270,11 +253,11 @@ function job_post() {
     var isValid = true;
 
     if (isValid) {
-        var url = baseUrl + "companyapi/jobpost?Createdate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&Postcode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&userName="+username+"&JobLocationId="+city;
+        var url = baseUrl + "companyapi/jobpost?Createdate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&Postcode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&userName="+username+"&JobLocationId="+city+"&Isactive=1";
         $.ajax({url: url, success: function (data) {
                 if (data == "success") {
                     alert("Job Posted Sucess");
-                    window.location.href = "company_profile"
+                    window.location.href = "company_profile?uname="+username;
                 } else {
                     alert("ERROR JOBPOST")
                 }
@@ -371,19 +354,53 @@ function change_password() {
     }
 
 }
-
-function ExamLinkSend(senderId,ReciverId){
+function ActiveExam(JobPostId){
+      var url = baseUrl + "companyapi/activeexamlink?JobPostId=" + JobPostId
+        $.ajax({url: url, success: function (data) {
+                if (data == "success") {
+                    alert("Exam Activated");
+                    window.location.reload();
+                } else {
+                    alert("ERROR DETAILS")
+                }
+            }});
+}
+function ExamLinkSend(senderId,ReciverId,JobActivId){
+    
+   
     var Title="Exam Link";
-    var Desc="Your Exam Link:www.exam.com";
+    var Desc="Company will active link .You can acces from status page";
     var NotificationType="Exam Link";
     var url = baseUrl + "companyapi/sendNotification?Title=" + Title +"&Desc="+Desc+"&SenderId="+senderId+"&ReciverId="+ReciverId+"&Type="+NotificationType+"&ReciverType=user";
         $.ajax({url: url, success: function (data) {
                 if (data == "success") {
-                    alert("Notification Send")
+                     window.location.href="send_interview_notification?uname=Company%201&SenderId="+senderId+"&ReciverId="+ReciverId+"&JobActiveId="+JobActivId;
                 } else {
                     alert("ERROR DETAILS")
                 }
             }});
     
     
+}
+
+
+function send_iterview_notification() {
+    var S = localStorage.getItem("username");
+    var details = $("#txtdetails").val();
+    var PostId=$("#JobActiveId").val();
+    
+     var isValid = true;
+
+    if (isValid) {
+        var url = baseUrl + "companyapi/send_iterview_notification?details=" + details+ "&JobActiveId="+PostId;
+        $.ajax({url: url, success: function (data) {
+                if (data == "success") {
+                    alert("Interview Notification Sucess");
+                    window.location.href = "company_view_appliedcandidate?uname="+S;
+                } else {
+                    alert("ERROR JOBPOST")
+                }
+            }});
+    }
+
 }

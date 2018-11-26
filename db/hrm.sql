@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2018 at 12:58 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 5.6.37
+-- Generation Time: Nov 26, 2018 at 09:37 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -60,13 +60,12 @@ CREATE TABLE `company_reg` (
   `CompanyName` varchar(50) DEFAULT NULL,
   `UserName` varchar(50) DEFAULT NULL,
   `Email` varchar(50) NOT NULL,
+  `Address` varchar(50) DEFAULT NULL,
   `Country` varchar(50) DEFAULT NULL,
   `City` varchar(50) DEFAULT NULL,
-  `State` varchar(50) DEFAULT NULL,
-  `Pin` varchar(50) DEFAULT NULL,
-  `Contact` varchar(50) DEFAULT NULL,
-  `Address` varchar(100) DEFAULT NULL,
-  `SecondaryContact` varchar(50) DEFAULT NULL,
+  `Pin` int(11) DEFAULT NULL,
+  `Contact` int(11) DEFAULT NULL,
+  `SecondaryContact` int(11) DEFAULT NULL,
   `CompanyWebsite` varchar(50) DEFAULT NULL,
   `EstablishmentDate` timestamp NULL DEFAULT NULL,
   `CreatedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -76,13 +75,8 @@ CREATE TABLE `company_reg` (
 -- Dumping data for table `company_reg`
 --
 
-INSERT INTO `company_reg` (`CompanyId`, `CompanyName`, `UserName`, `Email`, `Country`, `City`, `State`, `Pin`, `Contact`, `Address`, `SecondaryContact`, `CompanyWebsite`, `EstablishmentDate`, `CreatedDate`) VALUES
-(2, 'HCL', 'Company 1', 'company@gmail.com', 'India', '14', '13', '7485', '74185296330', '', '7418529630', 'company@gmail.com', '2018-11-05 18:30:00', '2018-11-13 07:10:31'),
-(3, NULL, 'Expo', 'expo@yahoo.com', 'India', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '2018-11-23 08:23:54'),
-(4, NULL, 'TCS', 'tcs@gmail.com', 'United Kingdom', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '2018-11-23 08:27:38'),
-(5, NULL, 'ABC', 'abc@yahoo.com', 'United States of America', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '2018-11-23 08:29:20'),
-(6, NULL, 'si', 's@s.com', 'India', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '2018-11-23 08:30:39'),
-(7, NULL, 'hari', 'h@h.com', 'United States of America', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '2018-11-23 08:32:25');
+INSERT INTO `company_reg` (`CompanyId`, `CompanyName`, `UserName`, `Email`, `Address`, `Country`, `City`, `Pin`, `Contact`, `SecondaryContact`, `CompanyWebsite`, `EstablishmentDate`, `CreatedDate`) VALUES
+(2, 'HCL', 'Company 1', 'company@gmail.com', NULL, 'India', NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-13 07:10:31');
 
 -- --------------------------------------------------------
 
@@ -161,7 +155,7 @@ INSERT INTO `exam_attend` (`Id`, `UserId`, `QuestionId`, `Answer`, `Result`, `jo
 (9, 'sumith', 3, 'LowerCase', 0, 0),
 (10, 'sumith', 1, '63', 0, 2),
 (11, 'sumith', 1, '63', 0, 2),
-(12, 'sumith', 2, 'int 3_a', 0, 2),
+(12, 'sumith', 2, 'int 3_a', 1, 2),
 (13, 'sumith', 3, 'LowerCase ', 0, 2);
 
 -- --------------------------------------------------------
@@ -179,18 +173,6 @@ CREATE TABLE `experience_details` (
   `StartingDate` timestamp NULL DEFAULT NULL,
   `EndingDate` timestamp NULL DEFAULT NULL,
   `Description` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `interview`
---
-
-CREATE TABLE `interview` (
-  `InterviewId` int(11) NOT NULL,
-  `CompanyName` varchar(50) NOT NULL,
-  `Details` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -237,7 +219,9 @@ CREATE TABLE `jobpost` (
 
 INSERT INTO `jobpost` (`JobPostId`, `JobTypeId`, `CompanyId`, `CreatedDate`, `JobTitle`, `Salary`, `Industry`, `JobDescription`, `Remark`, `StreetName`, `JobLocationId`, `PostCode`, `Contact`, `SecondaryContact`, `IsActive`) VALUES
 (1, 2, 'Company 1', '2018-11-19 14:12:51', 'Job Title ', '5000', 'QWQWQ', 'QWWQ', 'QWWQWQ', 'Karukaparambil Building', '9', 682019, '9656761101', 'WQ', '1'),
-(2, 2, 'Company 1', '2018-11-19 14:12:57', 'Job Title 2', '4000', 'sad', 'aq', 'asas', 'Karukaparambil Building', '9', 682019, '9526909898', '1313', '1');
+(2, 2, 'Company 1', '2018-11-19 14:12:57', 'Job Title 2', '4000', 'sad', 'aq', 'asas', 'Karukaparambil Building', '9', 682019, '9526909898', '1313', '1'),
+(3, 1, 'Company 1', '2018-11-25 18:30:00', 'ASP.net Developer', '50000', 'IT', 'Asp.net Developer with 4.5 year exp', 'Asp.net Developer with 4.5 year exp', 'Karukaparambil Building', '9', 682019, '9656761101', '9656761101', '1'),
+(4, 1, 'Company 1', '2018-11-25 18:30:00', 'Terst', '545454', '5kh', 'khkh', 'hhh', 'Karukaparambil Building', '9', 682019, '34434343', '344343', '1');
 
 -- --------------------------------------------------------
 
@@ -250,20 +234,22 @@ CREATE TABLE `jobpost_activity` (
   `JobId` int(11) NOT NULL,
   `JobPostId` int(11) NOT NULL,
   `ApplyDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `ExamActive` int(11) DEFAULT '0'
+  `ExamActive` int(11) DEFAULT '0',
+  `JobDeatilsFromComp` varchar(200) NOT NULL,
+  `IsNotificationSend` int(10) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `jobpost_activity`
 --
 
-INSERT INTO `jobpost_activity` (`UserId`, `JobId`, `JobPostId`, `ApplyDate`, `ExamActive`) VALUES
-('sumith', 1, 2, '2018-11-15 11:00:48', 1),
-('sumith', 2, 3, '2018-11-15 11:01:03', 0),
-('sumith', 1, 4, '2018-11-15 11:01:20', 0),
-('sumith', 1, 5, '2018-11-19 14:09:56', 0),
-('sumith', 2, 6, '2018-11-19 15:10:14', 0),
-('sumith', 1, 7, '2018-11-19 15:10:29', 0);
+INSERT INTO `jobpost_activity` (`UserId`, `JobId`, `JobPostId`, `ApplyDate`, `ExamActive`, `JobDeatilsFromComp`, `IsNotificationSend`) VALUES
+('sumith', 1, 2, '2018-11-15 11:00:48', 1, 'sdds', 1),
+('sumith', 2, 3, '2018-11-15 11:01:03', 0, 'assa', 1),
+('sumith', 1, 4, '2018-11-15 11:01:20', 0, '', 0),
+('sumith', 1, 5, '2018-11-19 14:09:56', 0, '', 0),
+('sumith', 2, 6, '2018-11-19 15:10:14', 0, '', 0),
+('sumith', 1, 7, '2018-11-19 15:10:29', 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -339,14 +325,7 @@ CREATE TABLE `login_tbl` (
 INSERT INTO `login_tbl` (`LoginId`, `UserName`, `Password`, `Role`, `Status`) VALUES
 (1, 'Admin', 'Admin', 1, '1'),
 (3, 'sumith', '123456789', 2, '1'),
-(4, 'Company 1', '123456789', 3, '0'),
-(5, 'Anjana', 'anjana123', 2, '1'),
-(6, 'Athira', 'athira123', 2, '1'),
-(7, 'Expo', 'epoepo', 3, '0'),
-(8, 'TCS', 'tcs12345', 3, '0'),
-(9, 'ABC', 'abc12345', 3, '0'),
-(10, 'si', '56565656', 3, '0'),
-(11, 'hari', '123456789', 3, '0');
+(4, 'Company 1', '123456789', 3, '0');
 
 -- --------------------------------------------------------
 
@@ -359,7 +338,7 @@ CREATE TABLE `notification_tbl` (
   `NotificationType` varchar(50) NOT NULL,
   `NotificationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `NotificationTitle` varchar(50) NOT NULL,
-  `NotificationDescription` varchar(50) NOT NULL,
+  `NotificationDescription` varchar(500) NOT NULL,
   `SenderId` varchar(100) NOT NULL,
   `ReceiverId` varchar(100) NOT NULL,
   `ReceiverType` varchar(50) NOT NULL
@@ -372,7 +351,13 @@ CREATE TABLE `notification_tbl` (
 INSERT INTO `notification_tbl` (`NotificatioId`, `NotificationType`, `NotificationDate`, `NotificationTitle`, `NotificationDescription`, `SenderId`, `ReceiverId`, `ReceiverType`) VALUES
 (1, '', '2018-11-21 02:37:09', '', '', '0', '0', ''),
 (2, 'Exam Link', '2018-11-21 02:51:38', 'Exam Link', 'Your Exam Link:www.exam.com', 'Company 1', 'sumith', 'user'),
-(3, 'Exam Link', '2018-11-21 07:01:41', 'Exam Link', 'Your Exam Link:www.exam.com', 'Company 1', 'sumith', 'user');
+(3, 'Exam Link', '2018-11-21 07:01:41', 'Exam Link', 'Your Exam Link:www.exam.com', 'Company 1', 'sumith', 'user'),
+(4, 'Exam Link', '2018-11-26 07:14:59', 'Exam Link', 'Your Exam Link:www.exam.com', 'Company 1', 'sumith', 'user'),
+(5, 'Exam Link', '2018-11-26 07:53:31', 'Exam Link', 'Company will active link .You can acces from status page', 'Company 1', 'sumith', 'user'),
+(6, 'Exam Link', '2018-11-26 07:55:21', 'Exam Link', 'Company will active link .You can acces from status page', 'Company 1', 'sumith', 'user'),
+(7, 'Exam Link', '2018-11-26 07:57:09', 'Exam Link', 'Company will active link .You can acces from status page', 'Company 1', 'sumith', 'user'),
+(8, 'Exam Link', '2018-11-26 08:00:25', 'Exam Link', 'Company will active link .You can acces from status page', 'Company 1', 'sumith', 'user'),
+(9, 'Exam Link', '2018-11-26 08:04:22', 'Exam Link', 'Company will active link .You can acces from status page', 'Company 1', 'sumith', 'user');
 
 -- --------------------------------------------------------
 
@@ -455,9 +440,9 @@ CREATE TABLE `user_reg` (
   `Cv` varchar(50) DEFAULT NULL,
   `MarkList` varchar(50) DEFAULT NULL,
   `IdProof` varchar(50) DEFAULT NULL,
-  `Home` varchar(50) DEFAULT NULL,
-  `State` varchar(50) DEFAULT NULL,
-  `PostCode` varchar(10) DEFAULT NULL
+  `Home` varchar(50) NOT NULL,
+  `State` varchar(50) NOT NULL,
+  `PostCode` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -466,9 +451,7 @@ CREATE TABLE `user_reg` (
 
 INSERT INTO `user_reg` (`UserId`, `UserName`, `FirstName`, `LastName`, `Gender`, `Dob`, `Email`, `Country`, `City`, `Contact`, `Experience`, `HigherQualification`, `Marks`, `University`, `RegDate`, `RegTime`, `ProfileNotification`, `EmailNotification`, `Photo`, `Cv`, `MarkList`, `IdProof`, `Home`, `State`, `PostCode`) VALUES
 (1, 'sumith', 'sda', 'ad', 'Male', '2018-11-14 18:30:00', 'sumith@gmail.com', 'India', 'Vytilla', '9656761101', '4', 'MCA', 234, 'df', '2018-11-06 18:30:00', '2018-11-15 08:08:05', 'false', 'true', NULL, NULL, NULL, NULL, 'ad', 'Kerala', '682019 '),
-(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-15 08:19:18', '2018-11-15 08:19:18', NULL, NULL, NULL, NULL, NULL, NULL, '', '', ''),
-(3, 'Anjana', NULL, NULL, NULL, NULL, 'anjana@gmail.com', 'India', NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-23 08:20:59', '2018-11-23 08:20:59', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'Athira', NULL, NULL, NULL, NULL, 'athira@gmail.com', 'India', NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-23 08:22:35', '2018-11-23 08:22:35', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-15 08:19:18', '2018-11-15 08:19:18', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -609,7 +592,7 @@ ALTER TABLE `company_job-post`
 -- AUTO_INCREMENT for table `company_reg`
 --
 ALTER TABLE `company_reg`
-  MODIFY `CompanyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `CompanyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `exam`
@@ -633,7 +616,7 @@ ALTER TABLE `joblocationtable`
 -- AUTO_INCREMENT for table `jobpost`
 --
 ALTER TABLE `jobpost`
-  MODIFY `JobPostId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `JobPostId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `jobpost_activity`
@@ -657,13 +640,13 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `login_tbl`
 --
 ALTER TABLE `login_tbl`
-  MODIFY `LoginId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `LoginId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `notification_tbl`
 --
 ALTER TABLE `notification_tbl`
-  MODIFY `NotificatioId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `NotificatioId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `question`
@@ -687,7 +670,7 @@ ALTER TABLE `skill_tbl`
 -- AUTO_INCREMENT for table `user_reg`
 --
 ALTER TABLE `user_reg`
-  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_skill_tbl`

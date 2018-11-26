@@ -32,7 +32,7 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/candidate_update_profile", method = RequestMethod.GET)
-    public String candidate_update_profile(@RequestParam("uname") String uname) {
+    public String candidate_update_profile() {
 
         return "candidate_update_profile";
     }
@@ -80,8 +80,7 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/examAttend", method = RequestMethod.GET)
-    public String examAttend(@RequestParam("uname") String uname,
-            @RequestParam("jobPostId") String jobPostId) {
+    public String examAttend() {
         return "Exam";
     }
 

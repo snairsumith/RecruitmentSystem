@@ -199,7 +199,7 @@
                             <form class="form-inline">
 
 
-                                <button type="submit" class="btn btn-gradient-primary mr-2" onclick="job_post()">Submit</button>
+                                <button type="button" class="btn btn-gradient-primary mr-2" onclick="job_post()">Submit</button>
 
                             </form>
                         </div>
