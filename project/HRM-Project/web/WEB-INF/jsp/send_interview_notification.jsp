@@ -44,10 +44,10 @@
                     
                     <div class="form-group">
                      
-                      <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                      <textarea class="form-control" id="txtdetails" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-gradient-primary mr-2">Send</button>
-                    <button class="btn btn-light">Cancel</button>
+                      <button type="submit" class="btn btn-gradient-primary mr-2" onclick="send_iterview_notification()">Send</button>
+                    
                   </form>
                 </div>
               </div>
@@ -59,6 +59,6 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
-        <%@ include file="inc/companyfooter" %> 
+        <%@ include file="inc/companyfooter.jsp"%> 
 </html>
 

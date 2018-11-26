@@ -41,18 +41,17 @@
                         <img src="/HRM-Project/resources/images/faces/face1.jpg" alt="profile" class="img-lg rounded-circle mb-3"/>
                         <p><%= rs.getString("FirstName")%> </p>
                         <div class="d-flex justify-content-between">
-                          <button class="btn btn-gradient-success">Hire Me</button>
+                          <button class="btn btn-gradient-success"></button>
                           
                         </div>
                       </div>
                       <div class="border-bottom py-4">
-                        <p>Skills</p>
+                        <p>Personal Info</p>
                         <div>
-                          <label class="badge badge-outline-dark">c</label>
-                          <label class="badge badge-outline-dark">c++</label>
-                          <label class="badge badge-outline-dark">java</label>
-                          <label class="badge badge-outline-dark">Graphic Design</label>
-                          <label class="badge badge-outline-dark">Web Design</label>  
+                          <label class="badge badge-outline-dark"><%=rs.getString("Gender")%></label>
+                          <label class="badge badge-outline-dark"><%=rs.getString("HigherQualification")%></label>
+                          <label class="badge badge-outline-dark"><%=rs.getString("City")%></label>
+                          <label class="badge badge-outline-dark"><%=rs.getString("Country")%></label>  
                         </div>                                                               
                       </div>
                       
@@ -93,12 +92,7 @@
                             <h5 class="mb-0 mr-2 text-muted"><%= rs.getString("Country")%>,<%= rs.getString("City")%></h5>
                                                      </div>
                         </div>
-                        <div>
-                          <button class="btn btn-outline-secondary btn-icon">
-                            <i class="mdi mdi-comment-processing"></i>
-                          </button>
-                          <button class="btn btn-gradient-primary">Request</button>
-                        </div>
+                        
                       </div>
                       <div class="mt-4 py-2 border-top border-bottom">
                         <ul class="nav profile-navbar">

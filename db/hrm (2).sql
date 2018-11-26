@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2018 at 09:05 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Generation Time: Nov 23, 2018 at 12:58 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 5.6.37
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -60,12 +60,13 @@ CREATE TABLE `company_reg` (
   `CompanyName` varchar(50) DEFAULT NULL,
   `UserName` varchar(50) DEFAULT NULL,
   `Email` varchar(50) NOT NULL,
-  `Address` varchar(50) DEFAULT NULL,
   `Country` varchar(50) DEFAULT NULL,
   `City` varchar(50) DEFAULT NULL,
-  `Pin` int(11) DEFAULT NULL,
-  `Contact` int(11) DEFAULT NULL,
-  `SecondaryContact` int(11) DEFAULT NULL,
+  `State` varchar(50) DEFAULT NULL,
+  `Pin` varchar(50) DEFAULT NULL,
+  `Contact` varchar(50) DEFAULT NULL,
+  `Address` varchar(100) DEFAULT NULL,
+  `SecondaryContact` varchar(50) DEFAULT NULL,
   `CompanyWebsite` varchar(50) DEFAULT NULL,
   `EstablishmentDate` timestamp NULL DEFAULT NULL,
   `CreatedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -75,8 +76,13 @@ CREATE TABLE `company_reg` (
 -- Dumping data for table `company_reg`
 --
 
-INSERT INTO `company_reg` (`CompanyId`, `CompanyName`, `UserName`, `Email`, `Address`, `Country`, `City`, `Pin`, `Contact`, `SecondaryContact`, `CompanyWebsite`, `EstablishmentDate`, `CreatedDate`) VALUES
-(2, 'HCL', 'Company 1', 'company@gmail.com', NULL, 'India', NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-13 07:10:31');
+INSERT INTO `company_reg` (`CompanyId`, `CompanyName`, `UserName`, `Email`, `Country`, `City`, `State`, `Pin`, `Contact`, `Address`, `SecondaryContact`, `CompanyWebsite`, `EstablishmentDate`, `CreatedDate`) VALUES
+(2, 'HCL', 'Company 1', 'company@gmail.com', 'India', '14', '13', '7485', '74185296330', '', '7418529630', 'company@gmail.com', '2018-11-05 18:30:00', '2018-11-13 07:10:31'),
+(3, NULL, 'Expo', 'expo@yahoo.com', 'India', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '2018-11-23 08:23:54'),
+(4, NULL, 'TCS', 'tcs@gmail.com', 'United Kingdom', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '2018-11-23 08:27:38'),
+(5, NULL, 'ABC', 'abc@yahoo.com', 'United States of America', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '2018-11-23 08:29:20'),
+(6, NULL, 'si', 's@s.com', 'India', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '2018-11-23 08:30:39'),
+(7, NULL, 'hari', 'h@h.com', 'United States of America', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '2018-11-23 08:32:25');
 
 -- --------------------------------------------------------
 
@@ -173,6 +179,18 @@ CREATE TABLE `experience_details` (
   `StartingDate` timestamp NULL DEFAULT NULL,
   `EndingDate` timestamp NULL DEFAULT NULL,
   `Description` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `interview`
+--
+
+CREATE TABLE `interview` (
+  `InterviewId` int(11) NOT NULL,
+  `CompanyName` varchar(50) NOT NULL,
+  `Details` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -321,7 +339,14 @@ CREATE TABLE `login_tbl` (
 INSERT INTO `login_tbl` (`LoginId`, `UserName`, `Password`, `Role`, `Status`) VALUES
 (1, 'Admin', 'Admin', 1, '1'),
 (3, 'sumith', '123456789', 2, '1'),
-(4, 'Company 1', '123456789', 3, '0');
+(4, 'Company 1', '123456789', 3, '0'),
+(5, 'Anjana', 'anjana123', 2, '1'),
+(6, 'Athira', 'athira123', 2, '1'),
+(7, 'Expo', 'epoepo', 3, '0'),
+(8, 'TCS', 'tcs12345', 3, '0'),
+(9, 'ABC', 'abc12345', 3, '0'),
+(10, 'si', '56565656', 3, '0'),
+(11, 'hari', '123456789', 3, '0');
 
 -- --------------------------------------------------------
 
@@ -430,9 +455,9 @@ CREATE TABLE `user_reg` (
   `Cv` varchar(50) DEFAULT NULL,
   `MarkList` varchar(50) DEFAULT NULL,
   `IdProof` varchar(50) DEFAULT NULL,
-  `Home` varchar(50) NOT NULL,
-  `State` varchar(50) NOT NULL,
-  `PostCode` varchar(10) NOT NULL
+  `Home` varchar(50) DEFAULT NULL,
+  `State` varchar(50) DEFAULT NULL,
+  `PostCode` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -441,7 +466,9 @@ CREATE TABLE `user_reg` (
 
 INSERT INTO `user_reg` (`UserId`, `UserName`, `FirstName`, `LastName`, `Gender`, `Dob`, `Email`, `Country`, `City`, `Contact`, `Experience`, `HigherQualification`, `Marks`, `University`, `RegDate`, `RegTime`, `ProfileNotification`, `EmailNotification`, `Photo`, `Cv`, `MarkList`, `IdProof`, `Home`, `State`, `PostCode`) VALUES
 (1, 'sumith', 'sda', 'ad', 'Male', '2018-11-14 18:30:00', 'sumith@gmail.com', 'India', 'Vytilla', '9656761101', '4', 'MCA', 234, 'df', '2018-11-06 18:30:00', '2018-11-15 08:08:05', 'false', 'true', NULL, NULL, NULL, NULL, 'ad', 'Kerala', '682019 '),
-(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-15 08:19:18', '2018-11-15 08:19:18', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '');
+(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-15 08:19:18', '2018-11-15 08:19:18', NULL, NULL, NULL, NULL, NULL, NULL, '', '', ''),
+(3, 'Anjana', NULL, NULL, NULL, NULL, 'anjana@gmail.com', 'India', NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-23 08:20:59', '2018-11-23 08:20:59', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'Athira', NULL, NULL, NULL, NULL, 'athira@gmail.com', 'India', NULL, NULL, NULL, NULL, NULL, NULL, '2018-11-23 08:22:35', '2018-11-23 08:22:35', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -582,7 +609,7 @@ ALTER TABLE `company_job-post`
 -- AUTO_INCREMENT for table `company_reg`
 --
 ALTER TABLE `company_reg`
-  MODIFY `CompanyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `CompanyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `exam`
@@ -630,7 +657,7 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `login_tbl`
 --
 ALTER TABLE `login_tbl`
-  MODIFY `LoginId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `LoginId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `notification_tbl`
@@ -660,7 +687,7 @@ ALTER TABLE `skill_tbl`
 -- AUTO_INCREMENT for table `user_reg`
 --
 ALTER TABLE `user_reg`
-  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user_skill_tbl`

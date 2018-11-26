@@ -41,7 +41,7 @@ function company_registration() {
         $.ajax({url: url, success: function (data) {
                 if (data == "success") {
                     alert("Registration Sucessfull");
-                    window.location.href = "/"
+                    window.location.href = "http://localhost:8080/HRM-Project/login"
                 } else {
                     alert("incorrect username and passsword")
                 }
@@ -58,12 +58,14 @@ function emailValidation(email) {
 function company_profile() {
     var companyname = $("#txtCompanyName").val();
     var establishementdate = $("#txtEstablishmentDate").val();
-    var city = $("#txtCity").val();
-    var state = $("#txtState").val();
+    var city = $("#selCity").val();
+    var country = $("#selCountry").val();
+    var state = $("#selState").val();
     var postcode = $("#txtPostCode").val();
     var contact = $("#txtContact").val();
     var secondarycontact = $("#txtSecondaryContact").val();
-    var companywebsite = $("#txtWebsite").val();
+    var companywebsite = $("#txtUserName").val();
+     var username = localStorage.getItem("username");
     var isValid = true;
     if (companyname == "") {
         $("#err_companyname").text("Companyname required");
@@ -79,11 +81,19 @@ function company_profile() {
         $("#err_establishementdate").text("");
         isValid = true;
     }
+    
     if (city == "") {
         $("#err_city").text("city required");
         isValid = false;
     } else {
         $("#err_city").text("");
+        isValid = true;
+    }
+    if (country == "") {
+        $("#err_country").text("city required");
+        isValid = false;
+    } else {
+        $("#err_country").text("");
         isValid = true;
     }
     if (state == "") {
@@ -124,7 +134,7 @@ function company_profile() {
         $("#err_secondarycontact").text("");
         isValid = true;
     }
-    if ((secondarycontact.length > 12) || (!secondarycontact.isNaN)) {
+    if ((secondarycontact.length > 12) || (secondarycontact.isNaN)) {
         $("#err_seccon").text("Enter Valid Contact Number ");
         isValid = false;
     } else {
@@ -140,10 +150,10 @@ function company_profile() {
     }
 
     if (isValid) {
-        var url = baseUrl + "companyapi/company_profile?CompanyName=" + companyname + "&EstablishmentDate=" + establishementdate + "&City=" + city + "&State=" + state + "&PostCode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&CompanyWebsite=" + companywebsite
+        var url = baseUrl + "companyapi/company_profile?CompanyName=" + companyname + "&EstablishmentDate=" + establishementdate + "&City=" + city + "&State=" + state + "&PostCode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&CompanyWebsite=" + companywebsite + "&Username=" + username
         $.ajax({url: url, success: function (data) {
                 if (data == "success") {
-                    window.location.href = "jobpost"
+                    window.location.href = "jobpost?uname="+username;
                 } else {
                     alert("ERROR PROFILE")
                 }
@@ -167,10 +177,11 @@ function job_post() {
     var contact = $("#txtContact").val();
     var secondarycontact = $("#txtSecondaryContact").val();
     var jobdescription = $("#txtJobdescription").val();
+    var username = localStorage.getItem("username");
     var isValid = true;
 
     if (isValid) {
-        var url = baseUrl + "companyapi/jobpost?Createddate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&PostCode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&Streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&Isactive=" + isactive;
+        var url = baseUrl + "companyapi/jobpost?Createddate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&PostCode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&Streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&Isactive=" + isactive+ "&username=" + username;
         $.ajax({url: url, success: function (data) {
                 if (data == "sucess") {
                     window.location.href = "company_profile"
@@ -213,12 +224,31 @@ function companyByUsername(){
                 $("#txtCity").val(val.city);
                 $("#txtSecondaryContact").val(val.contact);
                 $("#txtName").val(val.companyWebsite);
-                $("#txtContact").val(val.email);
+                $("#txteName").val(val.companyName);
+                $("#txtUserName").val(val.email);
                 
                
             });
             }});
     
+}
+function send_iterview_notification() {
+    var username = localStorage.getItem("username");
+    var details = $("#txtdetails").val();
+     var isValid = true;
+
+    if (isValid) {
+        var url = baseUrl + "companyapi/send_iterview_notification?details=" + details+ "&userName="+username;
+        $.ajax({url: url, success: function (data) {
+                if (data == "success") {
+                    alert("Interview Notification Sucess");
+                    window.location.href = "company_profile"
+                } else {
+                    alert("ERROR JOBPOST")
+                }
+            }});
+    }
+
 }
 
 function job_post() {
@@ -240,7 +270,7 @@ function job_post() {
     var isValid = true;
 
     if (isValid) {
-        var url = baseUrl + "companyapi/jobpost?Createdate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&Postcode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&Isactive=" + isactive+"&userName="+username+"&JobLocationId="+city;
+        var url = baseUrl + "companyapi/jobpost?Createdate=" + createdate + "&Jobtitle=" + jobtitle+ "&Jobpost=" + jobname + "&Salary=" + salary + "&Industry=" + industry + "&Postcode=" + postcode + "&Contact=" + contact + "&SecondaryContact=" + secondarycontact + "&streetadd=" + streetadd + "&Remark=" + remark + "&Jobdescription=" + jobdescription+ "&City=" + city+ "&userName="+username+"&JobLocationId="+city;
         $.ajax({url: url, success: function (data) {
                 if (data == "success") {
                     alert("Job Posted Sucess");

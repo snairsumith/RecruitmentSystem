@@ -5,7 +5,8 @@
 --%>
 
 <%@ include file="inc/header.jsp" %>  
-
+<%@page import="java.sql.ResultSet"%>
+<%@page import="LiibraryFunction.DBFunctions"%>
     
     <%@ include file="inc/top_candidate.jsp"%>
     <div class="container-fluid page-body-wrapper">
@@ -91,10 +92,25 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">State</label>
+                                                        <label class="col-sm-3 col-form-label">Country</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="txtState" />
-                                                            <label id="err_state" class="text-danger"></label>
+                                                            <select class="form-control" id="selCountry" onchange="getallocation()">
+                                                                    <option>Select Country</option>
+                                                                    <%
+                                                         String sql11 = "select * from location where ParentId=0";
+                                         DBFunctions db = new DBFunctions();
+                                                         ResultSet rs11 = db.SelectQuery(sql11);
+                                                         while (rs11.next()) {
+                                                                    %>
+                                                                    <option value=<%= rs11.getString("LocationId")%>><%= rs11.getString("LocationName")%></option>
+                                                                    <%
+                                                                        }
+                                                                    %>
+                                                                </select>
+                                                            
+                                                            
+                                                           <label id="err_country" class="text-danger"></label>
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -102,10 +118,13 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">City</label>
+                                                        <label class="col-sm-3 col-form-label">State</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="txtCity"/>
-                                                            <label id="err_city" class="text-danger"></label>
+                                                            <select class="form-control" id="selState" onchange="getallCity()">
+                                                                    <option value="0">Select State</option>
+                                                                </select>
+                                                            <label id="err_state" class="text-danger"></label>
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -122,16 +141,13 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Country</label>
+                                                        <label class="col-sm-3 col-form-label">City</label>
                                                         <div class="col-sm-9">
-                                                            <select class="form-control" id="selCountry">
-                                                                
-                                                                <option>America</option>
-                                                                <option>Italy</option>
-                                                                <option>Russia</option>
-                                                                <option>Britain</option>
-                                                            </select>
-                                                            <label id="err_country" class="text-danger"></label>
+                                                             <select class="form-control" id="selCity" onchange="getallCity()">
+                                                                    <option value="0">Select City</option>
+                                                                </select>
+                                                           <label id="err_city" class="text-danger"></label>
+                                                            
                                                         </div>
                                                     </div>    
                                                 </div>
@@ -187,7 +203,7 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-check">
                                                         <label class="form-check-label">
-                                                            <input type="radio" class="form-check-input" name="membershipRadios" id="radExperience" value="1" checked="">
+                                                            <input type="radio" class="form-check-input" name="membershipRadios" id="radExperience" value="1">
                                                             Fresher
                                                             <i class="input-helper"></i></label>
                                                     </div>
@@ -217,7 +233,7 @@
                                 <div class="form-group">
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" checked="" id="chkEmail">
+                                            <input type="checkbox" class="form-check-input" id="chkEmail">
                                             Email
                                             <i class="input-helper"></i></label>
                                     </div>

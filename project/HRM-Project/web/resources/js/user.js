@@ -17,7 +17,7 @@ function login() {
                     window.location.href = baseUrl + "Admin/AdminDashboard"
 
                 } else if (data == 2) {
-                    window.location.href = baseUrl + "Candidate/candidate_update_profile?uname="+username
+                    window.location.href = baseUrl + "Candidate/candidate_candidate_profile?uname="+username
 
                 } else if (data == 3) {
                     window.location.href = baseUrl + "company/company_update_profile?uname="+username
