@@ -76,8 +76,7 @@
                                                     if(Status==1){
                                                 %>
 
-                                                <h2>Notification</h2>
-                                                <p><%= rs.getString("JobDeatilsFromComp")%></p>
+                                                
                                                 <br>
                                                 <br>
                                                 <a href="examAttend?uname=<%= request.getParameter("uname") %>&jobPostId=<%= rs.getString("postActivityId")%>">Attend Exam</a>
@@ -89,7 +88,8 @@
 
                                                 %>
 
-
+<h2>Notification</h2>
+                                                <p><%= rs.getString("JobDeatilsFromComp")%></p>
 
                                             </div>
 

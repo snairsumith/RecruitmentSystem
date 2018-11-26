@@ -342,7 +342,7 @@ function applyJob(jobId){
               alert("Job Applied Sucessfully");
                     window.location.reload();
                 } else {
-                    alert("incorrect username and passsword")
+                    alert("Can't apply job")
                 }
         }});
 }

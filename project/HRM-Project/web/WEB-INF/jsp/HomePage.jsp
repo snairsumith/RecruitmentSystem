@@ -58,10 +58,10 @@ Home
 
 
 <li class="nav-item">
-<a class="nav-link" href="login">Sign In</a>
+<a class="nav-link" href="HRM-Project/login">Sign In</a>
 </li>
 <li class="button-group">
-<a href="reg_link" class="button btn btn-common">Register</a>
+<a href="HRM-Project/reg_link" class="button btn btn-common">Register</a>
 </li>
 </ul>
 </div>

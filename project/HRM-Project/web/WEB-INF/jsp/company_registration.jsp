@@ -55,7 +55,7 @@
                                         </div>
                                         <input type="text" class="form-control form-control-lg border-left-0" id="txtName" placeholder="Username">
                                    </div>
-                                    <label class="text-danger" id="err_username"></label>
+                                    <label class="text-danger" id="err_name"></label>
                                 </div>
                                 <div class="form-group">
                                     <label>Username</label>

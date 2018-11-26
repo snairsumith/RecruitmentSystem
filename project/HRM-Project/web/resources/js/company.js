@@ -6,6 +6,14 @@ function company_registration() {
     var password = $("#txtPassword").val();
     var name=$("#txtName").val();
     var isValid = true;
+    
+    if (name == "") {
+        $("#err_name").text("Username required");
+        isValid = false;
+    } else {
+        $("#err_name").text("");
+        isValid = true;
+    }
     if (username == "") {
         $("#err_username").text("Username required");
         isValid = false;

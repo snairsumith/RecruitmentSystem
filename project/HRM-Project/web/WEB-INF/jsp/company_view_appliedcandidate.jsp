@@ -49,11 +49,12 @@
 
                                            
                                             <th>
-                                                Send Exam Link
+                                                Send Interview Details
                                             </th>
                                             <th>
                                                 Active Exam Link
                                             </th>
+                                            
                                         </tr>
                                     </thead>
                                     <%
@@ -90,7 +91,7 @@
                                     
                                     <td>
                                          <% if(rs.getInt("ExamActive")==0){ %>
-                                        <a href="#" onclick="ActiveExam(<%= request.getParameter("JobPostId") %>)">Active</a>
+                                        <a href="#" onclick="ActiveExam(<%= rs.getString("JobPostId") %>)">Active</a>
                                          <% }else{ %>
                                           Exam Activated
                                            <% } %>
