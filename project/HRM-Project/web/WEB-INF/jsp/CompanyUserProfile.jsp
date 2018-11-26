@@ -41,7 +41,13 @@
                         <img src="/HRM-Project/resources/images/faces/face1.jpg" alt="profile" class="img-lg rounded-circle mb-3"/>
                         <p><%= rs.getString("FirstName")%> </p>
                         <div class="d-flex justify-content-between">
-                          <button class="btn btn-gradient-success"></button>
+                          <button class="btn btn-gradient-success"><%
+                              if(rs.getString("Experience")!=null ||rs.getString("Experience")=="0"){ %>
+                              <%= rs.getString("Experience") %> Year Exp
+                              <% }else{ %>
+Fresher
+<% }
+                              %></button>
                           
                         </div>
                       </div>
